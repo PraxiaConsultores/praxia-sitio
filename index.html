@@ -1,162 +1,529 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Praxia Consultores</title>
-  <style>
-    body {
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Praxia Consultores</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    * {
       margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f2f9ff;
-      color: #003e66;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    header {
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f9fbfd;
+      color: #1c2b36;
+      line-height: 1.6;
+    }
+
+    .container {
       display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      padding: 1rem;
-      background-color: #e6f3fa;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 120, 166, 0.1);
+      z-index: 10;
+      position: fixed;
+      height: 100vh;
     }
 
-    .logo {
-      height: 60px;
+    .logo-container {
+      background-color: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0, 87, 128, 0.15);
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 220px;
     }
 
-    nav {
-      margin-left: auto;
-      display: flex;
-      gap: 1rem;
+    .logo-container img {
+      display: block;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 87, 128, 0.15);
     }
 
-    nav a {
-      text-decoration: none;
-      color: #003e66;
-      font-weight: 500;
-    }
-
-    .hero {
-      padding: 3rem 2rem;
-      background: linear-gradient(to right, #e1f5ff, #f0fbff);
+    .sidebar h1 {
+      font-size: 1.6rem;
+      color: #005780;
       text-align: center;
+      margin-bottom: 2.5rem;
+      font-weight: 700;
+      position: relative;
     }
 
-    .hero h1 {
-      font-size: 2rem;
-      color: #00568b;
+    .sidebar h1::after {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #00a7c7;
+      border-radius: 2px;
+    }
+
+    .nav-links {
+      list-style: none;
+      width: 100%;
+    }
+
+    .nav-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.8rem 1.2rem;
+      text-decoration: none;
+      color: #1c2b36;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 2px 5px rgba(0, 87, 128, 0.1);
+    }
+
+    .nav-links a:hover {
+      background: white;
+      color: #007ca6;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 87, 128, 0.15);
+    }
+
+    .nav-links a i {
+      margin-right: 10px;
+      color: #00a7c7;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      margin-left: 280px;
+      padding: 3rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.9) 0%, rgba(230, 247, 255, 0.8) 100%);
+      border-radius: 15px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 5px 20px rgba(0, 87, 128, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%2300a7c7" fill-opacity="0.1" d="M28.2,20C13,34.8,10,60.8,22.5,77.3c12.5,16.5,37,19,52.7,6.4C91,71,93.5,45,81.1,28.5C68.7,12,43.5,5.2,28.2,20z"/></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.7;
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      color: #005780;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      max-width: 800px;
     }
 
     .hero p {
-      max-width: 700px;
-      margin: 1rem auto 0;
       font-size: 1.1rem;
+      max-width: 800px;
+      color: #2d3e4f;
     }
 
-    section.servicios {
-      padding: 2rem;
-    }
-
-    section.servicios h2 {
-      text-align: center;
+    /* Services Section */
+    .section-title {
+      color: #005780;
       font-size: 1.8rem;
       margin-bottom: 2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 3px solid #00a7c7;
+      display: inline-block;
     }
 
-    .cards-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
     }
 
-    .card.servicio {
-      width: 300px;
-      height: 200px;
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 87, 128, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 87, 128, 0.15);
+    }
+
+    .card-header {
+      height: 180px;
       background-size: cover;
       background-position: center;
-      border-radius: 12px;
       position: relative;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
     }
 
-    .card.servicio:hover {
-      transform: scale(1.03);
-    }
-
-    .card.servicio .contenido {
+    .card-header::after {
+      content: "";
       position: absolute;
       bottom: 0;
-      background: rgba(0,0,0,0.5);
-      color: white;
+      left: 0;
       width: 100%;
-      padding: 1rem;
+      height: 60%;
+      background: linear-gradient(to top, rgba(0, 87, 128, 0.8) 0%, transparent 100%);
     }
 
-    footer {
+    .card-header h3 {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      font-size: 1.4rem;
+      z-index: 2;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-content {
+      padding: 1.8rem;
+    }
+
+    .card-content ul {
+      padding-left: 1.5rem;
+    }
+
+    .card-content li {
+      margin-bottom: 0.7rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
       text-align: center;
-      padding: 1rem;
-      background-color: #e6f3fa;
-      margin-top: 2rem;
+      padding: 3.5rem 2rem;
+      margin: 4rem 0;
+      background: linear-gradient(120deg, #007ca6, #00a7c7);
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 120, 166, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+
+    .cta-section::after {
+      content: "";
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: #007ca6;
+      padding: 1.2rem 2.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 700;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      background: #f0f8ff;
+    }
+
+    .cta-button i {
+      margin-left: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background: #1c2b36;
+      color: white;
+      padding: 2.5rem 1rem;
+      border-radius: 15px 15px 0 0;
+      text-align: center;
+    }
+
+    .contact-info {
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-item a {
+      color: #5dd9fc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-item a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: #00a7c7;
+      transform: translateY(-3px);
+    }
+
+    .copyright {
       font-size: 0.9rem;
-      color: #666;
+      color: #a0b1bd;
+      margin-top: 1.5rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1.5rem;
+      }
+      
+      .main-content {
+        margin-left: 0;
+        padding: 2rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <img src="assets-img/logo-praxia.jpg" alt="Logo Praxia Consultores" class="logo" />
-    <nav>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Previsión, Preparación y Contingencia para los desafíos de la nueva era</h1>
-    <p>
-      Consultoría profesional en Seguridad e Higiene, Sistemas de Gestión ISO y Automatización de Tareas Empresariales.
-      Transformamos desafíos en oportunidades con soluciones innovadoras y personalizadas.
-    </p>
-  </section>
-
-  <section class="servicios" id="servicios">
-    <h2>Nuestros Servicios</h2>
-    <div class="cards-container">
-      
-      <!-- Seguridad e Higiene -->
-      <div class="card servicio" style="background-image: url('assets-img/seguridad.e.higiene.istockphoto-1497168229-612x612.webp');">
-        <div class="contenido">
-          <h3>Seguridad e Higiene</h3>
-          <p>Implementamos programas efectivos para garantizar ambientes laborales seguros.</p>
-        </div>
-      </div>
-
-      <!-- Normas ISO -->
-      <div class="card servicio" style="background-image: url('assets-img/ISO.istockphoto-1472086290-612x612.webp');">
-        <div class="contenido">
-          <h3>Normas ISO</h3>
-          <p>Asesoría integral para certificaciones y cumplimiento de estándares internacionales.</p>
-        </div>
-      </div>
-
-      <!-- Automatización -->
-      <div class="card servicio" style="background-image: url('assets-img/automatizacionIA.webp');">
-        <div class="contenido">
-          <h3>Automatización de procesos</h3>
-          <p>Optimizamos tareas administrativas y operativas con herramientas digitales e IA.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer id="contacto">
-    © 2025 Praxia Consultores · Todos los derechos reservados
-  </footer>
-
+<div class="container">
+<!-- Sidebar -->
+<aside class="sidebar">
+<div class="logo-container"><img alt="Logo Praxia Consultores" src="assets-img/logo-praxia.jpg"/></div>
+<h1>Praxia Consultores</h1>
+<ul class="nav-links">
+<li><a href="#servicios"><i class="fas fa-cogs"></i> Servicios</a></li>
+<li><a href="#automatizacion"><i class="fas fa-robot"></i> Automatización</a></li>
+<li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+</ul>
+</aside>
+<!-- Main Content -->
+<main class="main-content">
+<!-- Hero Section -->
+<section class="hero">
+<h2>Previsión, Preparación y Contingencia para los desafíos de la nueva era</h2>
+<p>Consultoría profesional en Seguridad e Higiene, Sistemas de Gestión ISO y Automatización de Tareas Empresariales. Transformamos desafíos en oportunidades con soluciones innovadoras y personalizadas.</p>
+</section>
+<!-- Services Section -->
+<section id="servicios">
+<h2 class="section-title">Nuestros Servicios</h2>
+<div class="services-grid">
+<!-- Safety Card -->
+<div class="service-card">
+<div class="card-header" style="background-image: url('assets-img/seguridad.e.higiene.istockphoto-1497168229-612x612.jpg')">
+<h3>Seguridad e Higiene Laboral</h3>
+</div>
+<div class="card-content">
+<ul>
+<li>Relevamientos e inspecciones (ruido, iluminación, ergonomía, fuego)</li>
+<li>Planes de emergencia, programas de trabajo, auditorías</li>
+<li>Investigaciones de accidentes y representación ante SRT, ART, municipios</li>
+</ul>
+</div>
+</div>
+<!-- ISO Card -->
+<div class="service-card">
+<div class="card-header" style="background-image: url('assets-img/ISO.istockphoto-1472086290-612x612.jpg')">
+<h3>Normas ISO</h3>
+</div>
+<div class="card-content">
+<ul>
+<li>Implementación y auditoría interna ISO 9001, 14001, 45001</li>
+<li>Gestión de calidad, medio ambiente y seguridad laboral</li>
+<li>Preparación para certificaciones y mantenimiento de sistemas</li>
+</ul>
+</div>
+</div>
+<!-- Automation Card -->
+<div class="service-card">
+<div class="card-header" style="background-image: url('assets-img/automatizacionIA.jpg')">
+<h3>Automatización de Procesos</h3>
+</div>
+<div class="card-content">
+<ul>
+<li>Identificación de tareas automatizables en su organización</li>
+<li>Desarrollo con IA, bots, RPA y n8n</li>
+<li>Implementación de soluciones que reducen costos y errores</li>
+</ul>
+</div>
+</div>
+<!-- Training Card -->
+<div class="service-card">
+<div class="card-header" style="background-image: url('assets-img/seguridad.e.higiene.istockphoto-1497168229-612x612.jpg')">
+<h3>Capacitación y Consultoría</h3>
+</div>
+<div class="card-content">
+<ul>
+<li>Charlas y formación en seguridad laboral, gestión ambiental</li>
+<li>Capacitaciones en normas ISO y mejores prácticas</li>
+<li>Consultoría estratégica para la mejora continua</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="cta-section" id="automatizacion">
+<h2 style="color: white; margin-bottom: 1.5rem; font-size: 1.8rem;">¿Listo para transformar su empresa?</h2>
+<p style="color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 2.5rem;">Descubra cómo nuestras soluciones de automatización pueden optimizar sus procesos y aumentar su productividad.</p>
+<a class="cta-button" href="https://wa.me/5491133125827?text=Quiero%20automatizar%20mi%20empresa">
+          Automatizar mi empresa <i class="fas fa-arrow-right"></i>
+</a>
+</section>
+<!-- Footer -->
+<footer id="contacto">
+<div class="contact-info">
+<div class="contact-item">
+<i class="fas fa-envelope"></i>
+<a href="mailto:contacto.praxiaconsultores@gmail.com">contacto.praxiaconsultores@gmail.com</a>
+</div>
+<div class="contact-item">
+<i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/5491133125827">Envíanos un mensaje</a>
+</div>
+</div>
+<div class="social-links">
+<a href="https://wa.me/5491133125827" target="_blank" title="WhatsApp">
+<i class="fab fa-whatsapp"></i>
+</a>
+<a href="mailto:contacto.praxiaconsultores@gmail.com" title="Email">
+<i class="fas fa-envelope"></i>
+</a>
+<a href="https://www.linkedin.com/in/praxia-consultores-praxia-consultores-036985363" target="_blank" title="LinkedIn">
+<i class="fab fa-linkedin-in"></i>
+</a>
+</div>
+<p class="copyright">© 2025 Praxia Consultores. Todos los derechos reservados.</p>
+</footer>
+</main>
+</div>
+<script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 30,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Add animation to cards when they come into view
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.service-card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
 </body>
 </html>
