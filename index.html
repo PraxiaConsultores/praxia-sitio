@@ -120,40 +120,30 @@
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(120deg, rgba(255, 255, 255, 0.9) 0%, rgba(230, 247, 255, 0.8) 100%);
+      background: linear-gradient(rgba(0, 87, 128, 0.7), rgba(0, 87, 128, 0.7)), url('assets-img/portada.ciudad.celular.webp');
+      background-size: cover;
+      background-position: center;
       border-radius: 15px;
       padding: 3rem;
       margin-bottom: 3rem;
       box-shadow: 0 5px 20px rgba(0, 87, 128, 0.1);
       position: relative;
       overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 150px;
-      height: 150px;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%2300a7c7" fill-opacity="0.1" d="M28.2,20C13,34.8,10,60.8,22.5,77.3c12.5,16.5,37,19,52.7,6.4C91,71,93.5,45,81.1,28.5C68.7,12,43.5,5.2,28.2,20z"/></svg>');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.7;
+      color: white;
     }
 
     .hero h2 {
       font-size: 2.2rem;
-      color: #005780;
       margin-bottom: 1.5rem;
       font-weight: 700;
       max-width: 800px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
 
     .hero p {
       font-size: 1.1rem;
       max-width: 800px;
-      color: #2d3e4f;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     /* Services Section */
@@ -230,33 +220,27 @@
       text-align: center;
       padding: 3.5rem 2rem;
       margin: 4rem 0;
-      background: linear-gradient(120deg, #007ca6, #00a7c7);
+      background: linear-gradient(rgba(0, 87, 128, 0.8), rgba(0, 87, 128, 0.8)), url('assets-img/word.hand.future.webp');
+      background-size: cover;
+      background-position: center;
       border-radius: 15px;
       box-shadow: 0 8px 25px rgba(0, 120, 166, 0.3);
       position: relative;
       overflow: hidden;
     }
 
-    .cta-section::before {
-      content: "";
-      position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 200px;
-      height: 200px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
+    .cta-section h2 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
 
-    .cta-section::after {
-      content: "";
-      position: absolute;
-      bottom: -80px;
-      left: -80px;
-      width: 250px;
-      height: 250px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 50%;
+    .cta-section p {
+      color: rgba(255,255,255,0.9);
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     .cta-button {
@@ -452,8 +436,8 @@
 </section>
 <!-- CTA Section -->
 <section class="cta-section" id="automatizacion">
-<h2 style="color: white; margin-bottom: 1.5rem; font-size: 1.8rem;">¿Listo para transformar su empresa?</h2>
-<p style="color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 2.5rem;">Descubra cómo nuestras soluciones de automatización pueden optimizar sus procesos y aumentar su productividad.</p>
+<h2>¿Listo para transformar su empresa?</h2>
+<p>Descubra cómo nuestras soluciones de automatización pueden optimizar sus procesos y aumentar su productividad.</p>
 <a class="cta-button" href="https://wa.me/5491133125827?text=Quiero%20automatizar%20mi%20empresa">
           Automatizar mi empresa <i class="fas fa-arrow-right"></i>
 </a>
