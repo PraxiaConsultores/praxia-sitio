@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Praxia Consultores</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Praxia Consultores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
     * {
       margin: 0;
       padding: 0;
@@ -39,6 +40,7 @@
       z-index: 10;
       position: fixed;
       height: 100vh;
+      overflow-y: auto;
     }
 
     .logo-container {
@@ -97,6 +99,7 @@
       transition: all 0.3s ease;
       background: rgba(255, 255, 255, 0.7);
       box-shadow: 0 2px 5px rgba(0, 87, 128, 0.1);
+      cursor: pointer;
     }
 
     .nav-links a:hover {
@@ -116,6 +119,16 @@
       flex: 1;
       margin-left: 280px;
       padding: 3rem;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Pantallas internas */
+    .screen {
+      display: none;
+    }
+
+    .screen.active {
+      display: block;
     }
 
     /* Hero Section */
@@ -169,6 +182,7 @@
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0, 87, 128, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
     .service-card:hover {
@@ -333,6 +347,124 @@
       margin-top: 1.5rem;
     }
 
+    /* Estilos del Calculador de Carga de Fuego */
+    .calculador-container {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 5px 20px rgba(0, 87, 128, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .calculador-container h1 {
+      color: #005780;
+      margin-bottom: 1rem;
+    }
+
+    .calculador-container .muted {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .calculador-container .layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .calculador-container .card {
+      background: #f7f8fa;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .calculador-container label {
+      display: block;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    .calculador-container input, 
+    .calculador-container select, 
+    .calculador-container textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      box-sizing: border-box;
+      font-size: 0.9rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .calculador-container button {
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      background: #007ca6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    .calculador-container button:hover {
+      background: #005780;
+    }
+
+    .calculador-container table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .calculador-container th, 
+    .calculador-container td {
+      border: 1px solid #e6e6e6;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .calculador-container .sector {
+      border: 1px dashed #e9e9e9;
+      padding: 0.8rem;
+      border-radius: 6px;
+      margin-top: 0.8rem;
+    }
+
+    .calculador-container .row {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .calculador-container .row > * {
+      flex: 1;
+    }
+
+    .calculador-container .report {
+      white-space: pre-wrap;
+      font-family: monospace;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 6px;
+      min-height: 300px;
+      overflow: auto;
+      border: 1px solid #eee;
+    }
+
+    .back-button {
+      background: #6c757d !important;
+      margin-bottom: 1rem;
+    }
+
+    .back-button:hover {
+      background: #5a6268 !important;
+    }
+
     /* Responsive Design */
     @media (max-width: 900px) {
       .container {
@@ -354,158 +486,610 @@
       .services-grid {
         grid-template-columns: 1fr;
       }
+
+      .calculador-container .layout {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 <div class="container">
-<!-- Sidebar -->
-<aside class="sidebar">
-<div class="logo-container"><img alt="Logo Praxia Consultores" src="assets-img/logo-praxia.jpg"/></div>
-<h1>Praxia Consultores</h1>
-<ul class="nav-links">
-<li><a href="#servicios"><i class="fas fa-cogs"></i> Servicios</a></li>
-<li><a href="#automatizacion"><i class="fas fa-robot"></i> Automatización</a></li>
-<li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
-</ul>
-</aside>
-<!-- Main Content -->
-<main class="main-content">
-<!-- Hero Section -->
-<section class="hero">
-<h2>Previsión, Preparación y Contingencia para los desafíos de la nueva era</h2>
-<p>Consultoría profesional en Seguridad e Higiene, Sistemas de Gestión ISO y Automatización de Tareas Empresariales. Transformamos desafíos en oportunidades con soluciones innovadoras y personalizadas.</p>
-</section>
-<!-- Services Section -->
-<section id="servicios">
-<h2 class="section-title">Nuestros Servicios</h2>
-<div class="services-grid">
-<!-- Safety Card -->
-<div class="service-card">
-<div class="card-header" style="background-image: url('assets-img/seguridad.e.higiene.istockphoto-1497168229-612x612.webp'); background-size: cover; background-position: center;">
-<h3>Seguridad e Higiene Laboral</h3>
-</div>
-<div class="card-content">
-<ul>
-<li>Relevamientos e inspecciones (ruido, iluminación, ergonomía, fuego)</li>
-<li>Planes de emergencia, programas de trabajo, auditorías</li>
-<li>Investigaciones de accidentes y representación ante SRT, ART, municipios</li>
-</ul>
-</div>
-</div>
-<!-- ISO Card -->
-<div class="service-card">
-<div class="card-header" style="background-image: url('assets-img/ISO.istockphoto-1472086290-612x612.webp'); background-size: cover; background-position: center;">
-<h3>Normas ISO</h3>
-</div>
-<div class="card-content">
-<ul>
-<li>Implementación y auditoría interna ISO 9001, 14001, 45001</li>
-<li>Gestión de calidad, medio ambiente y seguridad laboral</li>
-<li>Preparación para certificaciones y mantenimiento de sistemas</li>
-</ul>
-</div>
-</div>
-<!-- Automation Card -->
-<div class="service-card">
-<div class="card-header" style="background-image: url('assets-img/automatizacionIA.webp'); background-size: cover; background-position: center;">
-<h3>Automatización de Procesos</h3>
-</div>
-<div class="card-content">
-<ul>
-<li>Identificación de tareas automatizables en su organización</li>
-<li>Desarrollo con IA, bots, RPA y n8n</li>
-<li>Implementación de soluciones que reducen costos y errores</li>
-</ul>
-</div>
-</div>
-<!-- Training Card -->
-<div class="service-card">
-<div class="card-header" style="background-image: url('assets-img/seguridad.e.higiene.istockphoto-1497168229-612x612.webp'); background-size: cover; background-position: center;">
-<h3>Capacitación y Consultoría</h3>
-</div>
-<div class="card-content">
-<ul>
-<li>Charlas y formación en seguridad laboral, gestión ambiental</li>
-<li>Capacitaciones en normas ISO y mejores prácticas</li>
-<li>Consultoría estratégica para la mejora continua</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="cta-section" id="automatizacion">
-<h2>¿Listo para transformar su empresa?</h2>
-<p>Descubra cómo nuestras soluciones de automatización pueden optimizar sus procesos y aumentar su productividad.</p>
-<a class="cta-button" href="https://wa.me/5491133125827?text=Quiero%20automatizar%20mi%20empresa">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo-container"><img alt="Logo Praxia Consultores" src="assets-img/logo-praxia.jpg"/></div>
+    <h1>Praxia Consultores</h1>
+    <ul class="nav-links">
+      <li><a class="nav-link" data-target="home"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a class="nav-link" data-target="seguridad-higiene"><i class="fas fa-cogs"></i> Seguridad e Higiene</a></li>
+      <li><a class="nav-link" data-target="automatizacion"><i class="fas fa-robot"></i> Automatización</a></li>
+      <li><a class="nav-link" data-target="contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Pantalla de Inicio -->
+    <section id="home" class="screen active">
+      <!-- Hero Section -->
+      <section class="hero">
+        <h2>Previsión, Preparación y Contingencia para los desafíos de la nueva era</h2>
+        <p>Consultoría profesional en Seguridad e Higiene, Sistemas de Gestión ISO y Automatización de Tareas Empresariales. Transformamos desafíos en oportunidades con soluciones innovadoras y personalizadas.</p>
+      </section>
+
+      <!-- Services Section -->
+      <section id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+          <!-- Safety Card -->
+          <div class="service-card" data-target="seguridad-higiene">
+            <div class="card-header" style="background-image: url('assets-img/seguridad.e.higiene.istockphoto-1497168229-612x612.webp');">
+              <h3>Seguridad e Higiene Laboral</h3>
+            </div>
+            <div class="card-content">
+              <ul>
+                <li>Relevamientos e inspecciones (ruido, iluminación, ergonomía, fuego)</li>
+                <li>Planes de emergencia, programas de trabajo, auditorías</li>
+                <li>Investigaciones de accidentes y representación ante SRT, ART, municipios</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ISO Card -->
+          <div class="service-card">
+            <div class="card-header" style="background-image: url('assets-img/ISO.istockphoto-1472086290-612x612.webp');">
+              <h3>Normas ISO</h3>
+            </div>
+            <div class="card-content">
+              <ul>
+                <li>Implementación y auditoría interna ISO 9001, 14001, 45001</li>
+                <li>Gestión de calidad, medio ambiente y seguridad laboral</li>
+                <li>Preparación para certificaciones y mantenimiento de sistemas</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Automation Card -->
+          <div class="service-card" data-target="automatizacion">
+            <div class="card-header" style="background-image: url('assets-img/automatizacionIA.webp');">
+              <h3>Automatización de Procesos</h3>
+            </div>
+            <div class="card-content">
+              <ul>
+                <li>Identificación de tareas automatizables en su organización</li>
+                <li>Desarrollo con IA, bots, RPA y n8n</li>
+                <li>Implementación de soluciones que reducen costos y errores</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Training Card -->
+          <div class="service-card">
+            <div class="card-header" style="background-image: url('assets-img/seguridad.e.higiene.istockphoto-1497168229-612x612.webp');">
+              <h3>Capacitación y Consultoría</h3>
+            </div>
+            <div class="card-content">
+              <ul>
+                <li>Charlas y formación en seguridad laboral, gestión ambiental</li>
+                <li>Capacitaciones en normas ISO y mejores prácticas</li>
+                <li>Consultoría estratégica para la mejora continua</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" id="automatizacion">
+        <h2>¿Listo para transformar su empresa?</h2>
+        <p>Descubra cómo nuestras soluciones de automatización pueden optimizar sus procesos y aumentar su productividad.</p>
+        <a class="cta-button" href="https://wa.me/5491133125827?text=Quiero%20automatizar%20mi%20empresa">
           Automatizar mi empresa <i class="fas fa-arrow-right"></i>
-</a>
-</section>
-<!-- Footer -->
-<footer id="contacto">
-<div class="contact-info">
-<div class="contact-item">
-<i class="fas fa-envelope"></i>
-<a href="mailto:contacto.praxiaconsultores@gmail.com">contacto.praxiaconsultores@gmail.com</a>
+        </a>
+      </section>
+
+      <!-- Footer -->
+      <footer id="contacto">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:contacto.praxiaconsultores@gmail.com">contacto.praxiaconsultores@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/5491133125827">Envíanos un mensaje</a>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://wa.me/5491133125827" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:contacto.praxiaconsultores@gmail.com" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/praxia-consultores-praxia-consultores-036985363" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <p class="copyright">© 2025 Praxia Consultores. Todos los derechos reservados.</p>
+      </footer>
+    </section>
+
+    <!-- Pantalla de Seguridad e Higiene -->
+    <section id="seguridad-higiene" class="screen">
+      <button class="back-button" onclick="showScreen('home')"><i class="fas fa-arrow-left"></i> Volver al Inicio</button>
+      <h2 class="section-title">Servicios de Seguridad e Higiene Laboral</h2>
+      <p>Seleccione el informe que desea generar:</p>
+      
+      <div class="services-grid">
+        <div class="service-card" data-target="calculador-carga-fuego">
+          <div class="card-header" style="background-color: #007ca6;">
+            <h3>Calculador de Carga de Fuego</h3>
+          </div>
+          <div class="card-content">
+            <p>Herramienta para calcular la carga de fuego según normativa vigente.</p>
+            <ul>
+              <li>Cálculo por sectores</li>
+              <li>Reglas normativas editables</li>
+              <li>Generación de informe en PDF</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pantalla del Calculador de Carga de Fuego -->
+    <section id="calculador-carga-fuego" class="screen">
+      <button class="back-button" onclick="showScreen('seguridad-higiene')"><i class="fas fa-arrow-left"></i> Volver a Seguridad e Higiene</button>
+      
+      <div class="calculador-container">
+        <div class="topline">
+          <div>
+            <h1>Calculador de Carga de Fuego — V1</h1>
+            <div class="muted small">Basado en normativa vigente. Herramienta profesional para cálculo de carga de fuego.</div>
+          </div>
+          <div class="muted small">Fecha: <span id="fecha_now"></span></div>
+        </div>
+
+        <div class="layout" style="margin-top:10px">
+          <!-- LEFT: formulario -->
+          <div class="card">
+            <h3>Datos de la Planta</h3>
+            <label>Nombre
+              <input id="plant_name" value="Planta Bilbao"/>
+            </label>
+            <label>Rubro
+              <input id="plant_rubro" value="Textil"/>
+            </label>
+            <label>Superficie total (m²)
+              <input id="plant_area" type="number" value="3455"/>
+            </label>
+            <label>Tipo de ventilación
+              <select id="plant_vent">
+                <option>Natural</option><option>Mecánica</option>
+              </select>
+            </label>
+
+            <hr/>
+
+            <h3>Sectores</h3>
+            <div id="sectores_box"></div>
+            <div class="actions">
+              <button id="add_sector">+ Sector</button>
+              <button id="reset_sectors">Limpiar</button>
+            </div>
+
+            <hr/>
+            <h3>Librería de materiales</h3>
+            <div class="muted small">Puedes editar PCI por defecto y agregarlos luego a cada sector.</div>
+            <div id="lib_box"></div>
+            <div class="actions">
+              <button id="add_material_lib">+ Material</button>
+              <button id="restore_lib">Restaurar librería</button>
+            </div>
+
+            <hr/>
+            <h3>Reglas normativas (editable)</h3>
+            <div class="muted small">Aquí están las tablas legales integradas como reglas. Ajustá los rangos si querés que la calculadora aplique otra lógica.</div>
+            <div class="rules" id="rules_box">
+              <!-- reglas dinámicas -->
+            </div>
+
+            <div class="actions" style="margin-top:10px">
+              <button id="generar">Generar Informe</button>
+              <button id="download_pdf" disabled>Descargar PDF</button>
+            </div>
+          </div>
+
+          <!-- RIGHT: reporte -->
+          <div class="card">
+            <h3>Vista Informe — Resultado</h3>
+            <div id="report_area" class="report">No hay informe aún. Completa datos y presiona "Generar Informe".</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Otras pantallas (Automatización, Contacto) -->
+    <section id="automatizacion" class="screen">
+      <button class="back-button" onclick="showScreen('home')"><i class="fas fa-arrow-left"></i> Volver al Inicio</button>
+      <h2 class="section-title">Automatización de Procesos</h2>
+      <p>Contenido de automatización...</p>
+    </section>
+
+    <section id="contacto" class="screen">
+      <button class="back-button" onclick="showScreen('home')"><i class="fas fa-arrow-left"></i> Volver al Inicio</button>
+      <h2 class="section-title">Contacto</h2>
+      <p>Contenido de contacto...</p>
+    </section>
+  </main>
 </div>
-<div class="contact-item">
-<i class="fab fa-whatsapp"></i>
-<a href="https://wa.me/5491133125827">Envíanos un mensaje</a>
-</div>
-</div>
-<div class="social-links">
-<a href="https://wa.me/5491133125827" target="_blank" title="WhatsApp">
-<i class="fab fa-whatsapp"></i>
-</a>
-<a href="mailto:contacto.praxiaconsultores@gmail.com" title="Email">
-<i class="fas fa-envelope"></i>
-</a>
-<a href="https://www.linkedin.com/in/praxia-consultores-praxia-consultores-036985363" target="_blank" title="LinkedIn">
-<i class="fab fa-linkedin-in"></i>
-</a>
-</div>
-<p class="copyright">© 2025 Praxia Consultores. Todos los derechos reservados.</p>
-</footer>
-</main>
-</div>
+
 <script>
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 30,
-            behavior: 'smooth'
-          });
-        }
-      });
+  // Navegación entre pantallas
+  function showScreen(screenId) {
+    document.querySelectorAll('.screen').forEach(screen => {
+      screen.classList.remove('active');
+    });
+    document.getElementById(screenId).classList.add('active');
+  }
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+      const target = this.getAttribute('data-target');
+      showScreen(target);
+    });
+  });
+
+  document.querySelectorAll('.service-card[data-target]').forEach(card => {
+    card.addEventListener('click', function() {
+      const target = this.getAttribute('data-target');
+      showScreen(target);
+    });
+  });
+
+  // Código del Calculador de Carga de Fuego
+  document.getElementById('fecha_now').textContent = new Date().toLocaleDateString();
+
+  let materialLibrary = [
+    {key:'madera', label:'Madera', pci:18.41},
+    {key:'textil', label:'Textil', pci:20.0},
+    {key:'papel', label:'Papel', pci:16.0},
+    {key:'plastico', label:'Plástico', pci:30.0},
+    {key:'liquido_inflamable', label:'Líquido inflamable (kg equiv.)', pci:44.0},
+    {key:'metal', label:'Metal (no combustible)', pci:0.1}
+  ];
+
+  let cuadro_resistencia = [
+    {min:0,   max:50,  resistencia:'F30'},
+    {min:50,  max:150, resistencia:'F60'},
+    {min:150, max:300, resistencia:'F90'},
+    {min:300, max:Infinity, resistencia:'F120'}
+  ];
+
+  let reglas_extintor = [
+    {min_cf:0,   max_cf:50,  pot:{label:'2A 6BC', criterio:'CF<=50'}},
+    {min_cf:50,  max_cf:200, pot:{label:'6A 10BC', criterio:'50<CF<=200'}},
+    {min_cf:200, max_cf:Infinity, pot:{label:'10A 20BC', criterio:'CF>200'}}
+  ];
+
+  function $(id){return document.getElementById(id)}
+
+  const sectoresBox = $('sectores_box');
+  const libBox = $('lib_box');
+  const rulesBox = $('rules_box');
+
+  function buildLibUI(){
+    libBox.innerHTML = '';
+    materialLibrary.forEach((m, idx)=>{
+      const d = document.createElement('div');
+      d.style.display='flex'; d.style.gap='8px'; d.style.marginTop='6px';
+      d.innerHTML = `
+        <input data-idx="${idx}" class="lib_key" value="${m.key}" style="width:120px"/>
+        <input data-idx="${idx}" class="lib_label" value="${m.label}" />
+        <input data-idx="${idx}" class="lib_pci" type="number" step="0.01" value="${m.pci}" style="width:110px"/>
+        <button data-idx="${idx}" class="lib_remove">Eliminar</button>
+      `;
+      libBox.appendChild(d);
     });
     
-    // Add animation to cards when they come into view
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-          observer.unobserve(entry.target);
-        }
+    libBox.querySelectorAll('.lib_pci').forEach(inp=>{
+      inp.addEventListener('change', e=>{
+        const i = Number(e.target.dataset.idx);
+        materialLibrary[i].pci = parseFloat(e.target.value) || materialLibrary[i].pci;
       });
-    }, observerOptions);
-    
-    document.querySelectorAll('.service-card').forEach(card => {
-      observer.observe(card);
     });
-  </script>
+    libBox.querySelectorAll('.lib_label').forEach(inp=>{
+      inp.addEventListener('change', e=>{
+        const i = Number(e.target.dataset.idx);
+        materialLibrary[i].label = e.target.value;
+      });
+    });
+    libBox.querySelectorAll('.lib_key').forEach(inp=>{
+      inp.addEventListener('change', e=>{
+        const i = Number(e.target.dataset.idx);
+        materialLibrary[i].key = e.target.value;
+      });
+    });
+    libBox.querySelectorAll('.lib_remove').forEach(btn=>{
+      btn.addEventListener('click', e=>{
+        const i = Number(btn.dataset.idx);
+        materialLibrary.splice(i,1); buildLibUI();
+      });
+    });
+  }
+
+  function restoreLibrary(){
+    materialLibrary = [
+      {key:'madera', label:'Madera', pci:18.41},
+      {key:'textil', label:'Textil', pci:20.0},
+      {key:'papel', label:'Papel', pci:16.0},
+      {key:'plastico', label:'Plástico', pci:30.0},
+      {key:'liquido_inflamable', label:'Líquido inflamable (kg equiv.)', pci:44.0},
+      {key:'metal', label:'Metal (no combustible)', pci:0.1}
+    ];
+    buildLibUI();
+  }
+
+  function buildRulesUI(){
+    rulesBox.innerHTML = '';
+
+    const h1 = document.createElement('div');
+    h1.innerHTML = '<strong>CUADRO 2.2.1 — Carga (kg/m²) → Resistencia (Fxx)</strong>';
+    rulesBox.appendChild(h1);
+    cuadro_resistencia.forEach((r,idx)=>{
+      const row = document.createElement('div');
+      row.style.display='flex'; row.style.gap='6px'; row.style.marginTop='6px';
+      row.innerHTML = `
+        <input data-idx="${idx}" class="r_min" type="number" value="${r.min}" style="width:90px"/>
+        <input data-idx="${idx}" class="r_max" type="text" value="${r.max===Infinity?'Infinity':r.max}" style="width:110px"/>
+        <input data-idx="${idx}" class="r_label" value="${r.resistencia}" style="width:80px"/>
+        <button data-idx="${idx}" class="r_del">Eliminar</button>
+      `;
+      rulesBox.appendChild(row);
+    });
+    const addRowBtn = document.createElement('div'); addRowBtn.style.marginTop='8px';
+    addRowBtn.innerHTML = '<button id="add_res_rule">+ Agregar regla de resistencia</button>';
+    rulesBox.appendChild(addRowBtn);
+
+    const h2 = document.createElement('div'); h2.style.marginTop='8px';
+    h2.innerHTML = '<strong>Reglas - Potencial Extintor (según CF)</strong>';
+    rulesBox.appendChild(h2);
+    reglas_extintor.forEach((r,idx)=>{
+      const row = document.createElement('div');
+      row.style.display='flex'; row.style.gap='6px'; row.style.marginTop='6px';
+      row.innerHTML = `
+        <input data-idx="${idx}" class="e_min" type="number" value="${r.min_cf}" style="width:90px"/>
+        <input data-idx="${idx}" class="e_max" type="text" value="${r.max_cf===Infinity?'Infinity':r.max_cf}" style="width:110px"/>
+        <input data-idx="${idx}" class="e_label" value="${r.pot.label}" style="width:110px"/>
+        <button data-idx="${idx}" class="e_del">Eliminar</button>
+      `;
+      rulesBox.appendChild(row);
+    });
+    const addExtBtn = document.createElement('div'); addExtBtn.style.marginTop='8px';
+    addExtBtn.innerHTML = '<button id="add_ext_rule">+ Agregar regla de extintor</button>';
+    rulesBox.appendChild(addExtBtn);
+
+    rulesBox.querySelectorAll('.r_min').forEach(i=> i.addEventListener('change', e=> {
+      const idx = e.target.dataset.idx; cuadro_resistencia[idx].min = parseFloat(e.target.value) || 0;
+    }));
+    rulesBox.querySelectorAll('.r_max').forEach(i=> i.addEventListener('change', e=> {
+      const idx = e.target.dataset.idx; 
+      const val = e.target.value;
+      cuadro_resistencia[idx].max = (val==='Infinity')?Infinity:parseFloat(val)||Infinity;
+    }));
+    rulesBox.querySelectorAll('.r_label').forEach(i=> i.addEventListener('change', e=>{
+      cuadro_resistencia[e.target.dataset.idx].resistencia = e.target.value;
+    }));
+    rulesBox.querySelectorAll('.r_del').forEach(btn=> btn.addEventListener('click', e=>{
+      const idx = btn.dataset.idx; cuadro_resistencia.splice(idx,1); buildRulesUI();
+    }));
+
+    rulesBox.querySelectorAll('.e_min').forEach(i=> i.addEventListener('change', e=> {
+      const idx = e.target.dataset.idx; reglas_extintor[idx].min_cf = parseFloat(e.target.value) || 0;
+    }));
+    rulesBox.querySelectorAll('.e_max').forEach(i=> i.addEventListener('change', e=> {
+      const idx = e.target.dataset.idx; 
+      const val = e.target.value;
+      reglas_extintor[idx].max_cf = (val==='Infinity')?Infinity:parseFloat(val)||Infinity;
+    }));
+    rulesBox.querySelectorAll('.e_label').forEach(i=> i.addEventListener('change', e=>{
+      reglas_extintor[e.target.dataset.idx].pot.label = e.target.value;
+    }));
+    rulesBox.querySelectorAll('.e_del').forEach(btn=> btn.addEventListener('click', e=>{
+      const idx = btn.dataset.idx; reglas_extintor.splice(idx,1); buildRulesUI();
+    }));
+
+    $('add_res_rule').addEventListener('click', ()=>{
+      cuadro_resistencia.push({min:0, max:Infinity, resistencia:'F30'});
+      buildRulesUI();
+    });
+    $('add_ext_rule').addEventListener('click', ()=>{
+      reglas_extintor.push({min_cf:0, max_cf:Infinity, pot:{label:'2A 6BC', criterio:'CF<=50'}});
+      buildRulesUI();
+    });
+  }
+
+  function addSector(){
+    const sectorDiv = document.createElement('div');
+    sectorDiv.className = 'sector';
+    const id = Date.now();
+    sectorDiv.innerHTML = `
+      <div style="display:flex; justify-content:space-between">
+        <h4>Sector <span class="sector_name">Nuevo</span></h4>
+        <button class="remove_sector">Eliminar</button>
+      </div>
+      <label>Nombre sector <input class="sector_nombre" value="Sector ${id}"/></label>
+      <label>Superficie (m²) <input class="sector_area" type="number" value="100"/></label>
+      <div class="materials_box"></div>
+      <button class="add_material">+ Material</button>
+    `;
+    sectoresBox.appendChild(sectorDiv);
+
+    sectorDiv.querySelector('.sector_nombre').addEventListener('change', function(){
+      sectorDiv.querySelector('.sector_name').textContent = this.value;
+    });
+
+    sectorDiv.querySelector('.remove_sector').addEventListener('click', function(){
+      sectorDiv.remove();
+    });
+
+    sectorDiv.querySelector('.add_material').addEventListener('click', function(){
+      addMaterialToSector(sectorDiv);
+    });
+  }
+
+  function addMaterialToSector(sectorDiv){
+    const matDiv = document.createElement('div');
+    matDiv.style.display='flex'; matDiv.style.gap='8px'; matDiv.style.marginTop='6px';
+    matDiv.innerHTML = `
+      <select class="material_sel" style="width:180px">
+        ${materialLibrary.map(m=>`<option value="${m.key}">${m.label} (PCI: ${m.pci})</option>`).join('')}
+      </select>
+      <input class="material_cant" type="number" step="0.1" placeholder="Cantidad (kg)" style="width:120px"/>
+      <button class="remove_material">Eliminar</button>
+    `;
+    sectorDiv.querySelector('.materials_box').appendChild(matDiv);
+    matDiv.querySelector('.remove_material').addEventListener('click', function(){
+      matDiv.remove();
+    });
+  }
+
+  function resetSectors(){
+    sectoresBox.innerHTML = '';
+  }
+
+  function calcular(){
+    const plant_name = $('plant_name').value;
+    const plant_rubro = $('plant_rubro').value;
+    const plant_area = parseFloat($('plant_area').value) || 1;
+    const plant_vent = $('plant_vent').value;
+
+    const sectores = [];
+    sectoresBox.querySelectorAll('.sector').forEach(s=>{
+      const nombre = s.querySelector('.sector_nombre').value;
+      const area = parseFloat(s.querySelector('.sector_area').value) || 1;
+      const materiales = [];
+      s.querySelectorAll('.materials_box > div').forEach(m=>{
+        const sel = m.querySelector('.material_sel');
+        const key = sel.value;
+        const label = sel.options[sel.selectedIndex].text.split(' (')[0];
+        const pci = materialLibrary.find(mat=>mat.key===key)?.pci || 0;
+        const cantidad = parseFloat(m.querySelector('.material_cant').value) || 0;
+        materiales.push({key, label, pci, cantidad});
+      });
+      const carga_total = materiales.reduce((sum, m)=>sum + m.cantidad * m.pci, 0);
+      const carga_especifica = carga_total / area;
+      sectores.push({nombre, area, materiales, carga_total, carga_especifica});
+    });
+
+    const carga_total_planta = sectores.reduce((sum, s)=>sum + s.carga_total, 0);
+    const carga_especifica_planta = carga_total_planta / plant_area;
+
+    // Determinar resistencia según cuadro_resistencia
+    let resistencia = 'F0';
+    for(const r of cuadro_resistencia){
+      if(carga_especifica_planta >= r.min && carga_especifica_planta < r.max){
+        resistencia = r.resistencia; break;
+      }
+    }
+
+    // Determinar extintor
+    let extintor = 'Desconocido';
+    for(const r of reglas_extintor){
+      if(carga_especifica_planta >= r.min_cf && carga_especifica_planta < r.max_cf){
+        extintor = r.pot.label; break;
+      }
+    }
+
+    // Generar reporte
+    let reporte = `INFORME DE CARGA DE FUEGO\n`;
+    reporte += `========================\n\n`;
+    reporte += `Planta: ${plant_name}\n`;
+    reporte += `Rubro: ${plant_rubro}\n`;
+    reporte += `Superficie total: ${plant_area} m²\n`;
+    reporte += `Ventilación: ${plant_vent}\n`;
+    reporte += `Fecha: ${new Date().toLocaleDateString()}\n\n`;
+
+    reporte += `SECTORES:\n`;
+    sectores.forEach((s, i)=>{
+      reporte += `${i+1}. ${s.nombre} (${s.area} m²)\n`;
+      s.materiales.forEach(m=>{
+        reporte += `   - ${m.label}: ${m.cantidad} kg × PCI ${m.pci} MJ/kg = ${(m.cantidad*m.pci).toFixed(2)} MJ\n`;
+      });
+      reporte += `   CARGA TOTAL SECTOR: ${s.carga_total.toFixed(2)} MJ\n`;
+      reporte += `   CARGA ESPECÍFICA: ${s.carga_especifica.toFixed(2)} MJ/m²\n\n`;
+    });
+
+    reporte += `RESUMEN PLANTA:\n`;
+    reporte += `Carga total planta: ${carga_total_planta.toFixed(2)} MJ\n`;
+    reporte += `Carga específica planta: ${carga_especifica_planta.toFixed(2)} MJ/m²\n\n`;
+
+    reporte += `REQUERIMIENTOS NORMATIVOS:\n`;
+    reporte += `Resistencia al fuego: ${resistencia}\n`;
+    reporte += `Potencial extintor mínimo: ${extintor}\n`;
+
+    $('report_area').textContent = reporte;
+    $('download_pdf').disabled = false;
+    return {reporte, sectores, plant_name, plant_rubro, plant_area, plant_vent, carga_total_planta, carga_especifica_planta, resistencia, extintor};
+  }
+
+  function generarPDF(){
+    const {reporte, sectores, plant_name, plant_rubro, plant_area, plant_vent, carga_total_planta, carga_especifica_planta, resistencia, extintor} = calcular();
+    
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.setFontSize(16);
+    doc.text(`INFORME DE CARGA DE FUEGO`, 20, 20);
+    doc.setFontSize(10);
+    doc.text(`Planta: ${plant_name} | Rubro: ${plant_rubro} | Superficie: ${plant_area} m² | Fecha: ${new Date().toLocaleDateString()}`, 20, 30);
+
+    let y = 50;
+    sectores.forEach((s, i)=>{
+      if(y > 250){ doc.addPage(); y=20; }
+      doc.setFontSize(12);
+      doc.text(`${i+1}. ${s.nombre} (${s.area} m²)`, 20, y);
+      y+=8;
+      doc.setFontSize(10);
+      s.materiales.forEach(m=>{
+        doc.text(`   - ${m.label}: ${m.cantidad} kg × PCI ${m.pci} MJ/kg = ${(m.cantidad*m.pci).toFixed(2)} MJ`, 20, y);
+        y+=6;
+      });
+      doc.text(`   CARGA TOTAL SECTOR: ${s.carga_total.toFixed(2)} MJ`, 20, y); y+=6;
+      doc.text(`   CARGA ESPECÍFICA: ${s.carga_especifica.toFixed(2)} MJ/m²`, 20, y); y+=10;
+    });
+
+    if(y > 240){ doc.addPage(); y=20; }
+    doc.setFontSize(12);
+    doc.text(`RESUMEN PLANTA`, 20, y); y+=8;
+    doc.setFontSize(10);
+    doc.text(`Carga total planta: ${carga_total_planta.toFixed(2)} MJ`, 20, y); y+=6;
+    doc.text(`Carga específica planta: ${carga_especifica_planta.toFixed(2)} MJ/m²`, 20, y); y+=10;
+
+    doc.text(`REQUERIMIENTOS NORMATIVOS:`, 20, y); y+=6;
+    doc.text(`Resistencia al fuego: ${resistencia}`, 20, y); y+=6;
+    doc.text(`Potencial extintor mínimo: ${extintor}`, 20, y);
+
+    doc.save(`Informe_Carga_Fuego_${plant_name.replace(/\s+/g,'_')}.pdf`);
+  }
+
+  // Inicialización
+  buildLibUI();
+  buildRulesUI();
+
+  $('add_sector').addEventListener('click', addSector);
+  $('reset_sectors').addEventListener('click', resetSectors);
+  $('add_material_lib').addEventListener('click', ()=>{
+    materialLibrary.push({key:'nuevo', label:'Nuevo Material', pci:10.0});
+    buildLibUI();
+  });
+  $('restore_lib').addEventListener('click', restoreLibrary);
+  $('generar').addEventListener('click', calcular);
+  $('download_pdf').addEventListener('click', generarPDF);
+
+  // Agregar un sector por defecto al cargar
+  addSector();
+</script>
 </body>
 </html>
