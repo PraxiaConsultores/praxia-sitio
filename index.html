@@ -215,6 +215,34 @@
       margin-bottom: 0.7rem;
     }
 
+    /* Botón de herramienta dentro de la tarjeta */
+    .tool-button {
+      display: inline-block;
+      background: #00a7c7;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .tool-button:hover {
+      background: #007ca6;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 87, 128, 0.2);
+    }
+
+    .tool-button i {
+      margin-right: 8px;
+    }
+
     /* CTA Section */
     .cta-section {
       text-align: center;
@@ -391,6 +419,10 @@
 <li>Planes de emergencia, programas de trabajo, auditorías</li>
 <li>Investigaciones de accidentes y representación ante SRT, ART, municipios</li>
 </ul>
+<!-- Botón para abrir el calculador de carga de fuego -->
+<a href="Calculador_carga_de_fuego_v01.html" target="_blank" class="tool-button">
+  <i class="fas fa-calculator"></i> Calculadora de Carga de Fuego
+</a>
 </div>
 </div>
 <!-- ISO Card -->
@@ -507,5 +539,5 @@
       observer.observe(card);
     });
   </script>
-</bodi>
+</body>
 </html>
