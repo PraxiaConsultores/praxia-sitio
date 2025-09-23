@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Calculadora de Carga de Fuego</title>
+  <style>
+    body{font-family:Arial, sans-serif; margin:0; background:#f7f9fc; color:#222;}
+    header{background:#0d47a1; color:#fff; padding:16px;}
+    header h1{margin:0; font-size:20px;}
+    main{padding:20px;}
+    section{background:#fff; border-radius:8px; padding:20px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+    h2{margin-top:0; font-size:18px; color:#0d47a1;}
+    label{display:block; margin-top:10px; font-weight:bold;}
+    input,select,button{padding:8px; margin-top:4px; width:100%; max-width:400px; border:1px solid #ccc; border-radius:4px;}
+    button{background:#1976d2; color:#fff; border:none; cursor:pointer;}
+    button:hover{background:#1565c0;}
+    table{width:100%; border-collapse:collapse; margin-top:12px;}
+    th,td{border:1px solid #ccc; padding:8px; text-align:center; font-size:14px;}
+    th{background:#e3f2fd;}
+    .hidden{display:none;}
+    .report{white-space:pre-line; background:#fafafa; padding:12px; border:1px dashed #ccc; margin-top:20px; border-radius:6px;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>Calculadora de Carga de Fuego</h1>
+</header>
+<main>
+
+  <!-- Paso 1: Datos de la empresa -->
+  <section id="step1">
+    <h2>Datos de la Empresa</h2>
+    <label>Nombre de la Empresa:<input id="empresa_nombre" type="text"></label>
+    <label>Rubro:<input id="empresa_rubro" type="text"></label>
+    <label>Fecha:<input id="empresa_fecha" type="text" readonly></label>
+    <label>Superficie cubierta (m²):<input id="empresa_superficie" type="number"></label>
+    <label>Tipo de ventilación:
+      <select id="empresa_ventilacion">
+        <option value="Natural">Natural</option>
+        <option value="Mecánica">Mecánica</option>
+      </select>
+    </label>
+    <label>Realizado por:<input id="empresa_realizado" type="text"></label>
+    <button onclick="guardarEmpresa()">Guardar y continuar</button>
+  </section>
+
+  <!-- Paso 2: Selección de nivel de riesgo -->
+  <section id="step2" class="hidden">
+    <h2>Seleccione el Nivel de Riesgo (TABLA 2.1)</h2>
+    <table>
+      <tr><th>Riesgo</th><th>Descripción</th></tr>
+      <tr><td>R1</td><td>Muy Explosivo</td></tr>
+      <tr><td>R2</td><td>Inflamable</td></tr>
+      <tr><td>R3</td><td>Muy Combustibles</td></tr>
+      <tr><td>R4</td><td>Combustibles</td></tr>
+      <tr><td>R5</td><td>Poco Combustible</td></tr>
+      <tr><td>R6</td><td>Incombustible</td></tr>
+      <tr><td>R7</td><td>Refractario</td></tr>
+    </table>
+    <label>Seleccione riesgo:
+      <select id="empresa_riesgo">
+        <option value="R1">R1</option>
+        <option value="R2">R2</option>
+        <option value="R3">R3</option>
+        <option value="R4">R4</option>
+        <option value="R5">R5</option>
+        <option value="R6">R6</option>
+        <option value="R7">R7</option>
+      </select>
+    </label>
+    <button onclick="guardarRiesgo()">Confirmar riesgo</button>
+  </section>
+
+  <!-- Paso 3: Carga de sectores -->
+  <section id="step3" class="hidden">
+    <h2>Carga de Sectores</h2>
+    <button onclick="nuevoSector()">+ Nuevo Sector</button>
+    <div id="sectores"></div>
+    <button onclick="generarInforme()">Generar Informe</button>
+  </section>
+
+  <!-- Paso 4: Informe -->
+  <section id="step4" class="hidden">
+    <h2>Informe Final</h2>
+    <div id="informe" class="report"></div>
+    <button onclick="descargarPDF()">Descargar en PDF</button>
+  </section>
+
+</main>
+
+<script>
+let empresa = {};
+let sectores = [];
+
+document.getElementById("empresa_fecha").value = new Date().toLocaleDateString();
+
+function guardarEmpresa(){
+  empresa = {
+    nombre: document.getElementById("empresa_nombre").value,
+    rubro: document.getElementById("empresa_rubro").value,
+    fecha: document.getElementById("empresa_fecha").value,
+    superficie: document.getElementById("empresa_superficie").value,
+    ventilacion: document.getElementById("empresa_ventilacion").value,
+    realizado: document.getElementById("empresa_realizado").value
+  };
+  document.getElementById("step1").classList.add("hidden");
+  document.getElementById("step2").classList.remove("hidden");
+}
+
+function guardarRiesgo(){
+  empresa.riesgo = document.getElementById("empresa_riesgo").value;
+  if(confirm("Confirma que la actividad es " + empresa.riesgo + "?")){
+    document.getElementById("step2").classList.add("hidden");
+    document.getElementById("step3").classList.remove("hidden");
+  }
+}
+
+function nuevoSector(){
+  const idx = sectores.length;
+  const div = document.createElement("div");
+  div.style.border="1px solid #ccc"; div.style.padding="10px"; div.style.margin="10px 0";
+  div.innerHTML = `
+    <h3>Sector ${idx+1}</h3>
+    <label>Superficie sector (m²):<input type="number" class="sector_area"></label>
+    <div class="materiales"></div>
+    <button type="button" onclick="agregarMaterial(this)">+ Agregar Material</button>
+  `;
+  document.getElementById("sectores").appendChild(div);
+  sectores.push({area:0, materiales:[]});
+}
+
+const pciTabla = {
+  "Madera":4.4, "Plástico":30, "Papel":16, "Textil":20, "Aluminio":0.1, "PVC":25
+};
+
+function agregarMaterial(btn){
+  const cont = btn.parentNode.querySelector(".materiales");
+  const sel = document.createElement("select");
+  for(let mat in pciTabla){ sel.innerHTML += `<option>${mat}</option>`; }
+  const kg = document.createElement("input"); kg.type="number"; kg.placeholder="kg";
+  cont.appendChild(sel); cont.appendChild(kg); cont.appendChild(document.createElement("br"));
+}
+
+function generarInforme(){
+  // Calcular resultados
+  const sectorDivs = document.querySelectorAll("#sectores > div");
+  sectores = [];
+  sectorDivs.forEach(div=>{
+    const area = parseFloat(div.querySelector(".sector_area").value)||0;
+    let materiales = [];
+    const mats = div.querySelectorAll(".materiales");
+    mats.forEach(m=>{
+      const selects = m.querySelectorAll("select");
+      const inputs = m.querySelectorAll("input");
+      for(let i=0;i<selects.length;i++){
+        const mat = selects[i].value;
+        const kg = parseFloat(inputs[i].value)||0;
+        const pci = pciTabla[mat]||0;
+        const energia = kg*pci;
+        materiales.push({mat,kg,pci,energia});
+      }
+    });
+    let energiaTotal = materiales.reduce((s,m)=>s+m.energia,0);
+    let eqMadera = energiaTotal/4.4;
+    let cargaFuego = eqMadera/area;
+    sectores.push({area,materiales,energiaTotal,eqMadera,cargaFuego});
+  });
+
+  let texto = `INFORME DE CARGA DE FUEGO\n\n`;
+  texto += `Empresa: ${empresa.nombre}\nRubro: ${empresa.rubro}\nFecha: ${empresa.fecha}\nSuperficie: ${empresa.superficie} m²\nVentilación: ${empresa.ventilacion}\nRealizado por: ${empresa.realizado}\nNivel de Riesgo: ${empresa.riesgo}\n\n`;
+  texto += `INTRODUCCIÓN\nPara realizar la carga de fuego es necesario cuantificar el estado térmico potencial del sector de incendio y así en función de este parámetro establecer para cada riesgo, las condiciones de resistencia al fuego y de extinción que son necesarias cumplimentar.\n...\n\n`;
+  sectores.forEach((s,i)=>{
+    texto += `--- Sector ${i+1} ---\nSuperficie: ${s.area} m²\n`;
+    s.materiales.forEach(m=>{
+      texto += `  ${m.mat}: ${m.kg} kg x ${m.pci} = ${m.energia} MJ\n`;
+    });
+    texto += `Energía Total: ${s.energiaTotal} MJ\nEquivalente en madera: ${s.eqMadera} kg\nCarga de Fuego: ${s.cargaFuego.toFixed(2)} kg/m²\n\n`;
+  });
+
+  document.getElementById("informe").innerText = texto;
+  document.getElementById("step3").classList.add("hidden");
+  document.getElementById("step4").classList.remove("hidden");
+}
+
+function descargarPDF(){
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  const texto = document.getElementById("informe").innerText;
+  const lines = doc.splitTextToSize(texto, 180);
+  doc.text(lines,10,10);
+  doc.save("informe_carga_fuego.pdf");
+}
+</script>
+</body>
+</html>
