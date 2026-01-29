@@ -1,543 +1,171 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="light">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Praxia Consultores</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Praxia Consultores | Innovación, Seguridad y Automatización</title>
 
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f9fbfd;
-      color: #1c2b36;
-      line-height: 1.6;
-    }
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    /* Sidebar */
-    .sidebar {
-      width: 280px;
-      background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 0 15px rgba(0, 120, 166, 0.1);
-      z-index: 10;
-      position: fixed;
-      height: 100vh;
-    }
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
 
-    .logo-container {
-      background-color: white;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 4px 12px rgba(0, 87, 128, 0.15);
-      margin-bottom: 2rem;
-      width: 100%;
-      max-width: 220px;
-    }
-
-    .logo-container img {
-      display: block;
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .sidebar h1 {
-      font-size: 1.6rem;
-      color: #005780;
-      text-align: center;
-      margin-bottom: 2.5rem;
-      font-weight: 700;
-      position: relative;
-    }
-
-    .sidebar h1::after {
-      content: "";
-      position: absolute;
-      bottom: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: #00a7c7;
-      border-radius: 2px;
-    }
-
-    .nav-links {
-      list-style: none;
-      width: 100%;
-    }
-
-    .nav-links li {
-      margin-bottom: 0.8rem;
-    }
-
-    .nav-links a {
-      display: block;
-      padding: 0.8rem 1.2rem;
-      text-decoration: none;
-      color: #1c2b36;
-      font-weight: 600;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.7);
-      box-shadow: 0 2px 5px rgba(0, 87, 128, 0.1);
-    }
-
-    .nav-links a:hover {
-      background: white;
-      color: #007ca6;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 87, 128, 0.15);
-    }
-
-    .nav-links a i {
-      margin-right: 10px;
-      color: #00a7c7;
-    }
-
-    /* Main Content */
-    .main-content {
-      flex: 1;
-      margin-left: 280px;
-      padding: 3rem;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(rgba(0, 87, 128, 0.7), rgba(0, 87, 128, 0.7)), url('assets-img/portada.ciudad.celular.webp');
-      background-size: cover;
-      background-position: center;
-      border-radius: 15px;
-      padding: 3rem;
-      margin-bottom: 3rem;
-      box-shadow: 0 5px 20px rgba(0, 87, 128, 0.1);
-      position: relative;
-      overflow: hidden;
-      color: white;
-    }
-
-    .hero h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      max-width: 800px;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 800px;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Services Section */
-    .section-title {
-      color: #005780;
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 3px solid #00a7c7;
-      display: inline-block;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .service-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 87, 128, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 25px rgba(0, 87, 128, 0.15);
-    }
-
-    .card-header {
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-
-    .card-header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 60%;
-      background: linear-gradient(to top, rgba(0, 87, 128, 0.8) 0%, transparent 100%);
-    }
-
-    .card-header h3 {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      color: white;
-      font-size: 1.4rem;
-      z-index: 2;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    }
-
-    .card-content {
-      padding: 1.8rem;
-    }
-
-    .card-content ul {
-      padding-left: 1.5rem;
-    }
-
-    .card-content li {
-      margin-bottom: 0.7rem;
-    }
-
-    /* Botón de herramienta dentro de la tarjeta */
-    .tool-button {
-      display: inline-block;
-      background: #00a7c7;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1rem;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 0.9rem;
-      text-align: center;
-      width: 100%;
-    }
-
-    .tool-button:hover {
-      background: #007ca6;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 87, 128, 0.2);
-    }
-
-    .tool-button i {
-      margin-right: 8px;
-    }
-
-    /* CTA Section */
-    .cta-section {
-      text-align: center;
-      padding: 3.5rem 2rem;
-      margin: 4rem 0;
-      background: linear-gradient(rgba(0, 87, 128, 0.8), rgba(0, 87, 128, 0.8)), url('assets-img/word.hand.future.webp');
-      background-size: cover;
-      background-position: center;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0, 120, 166, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-section h2 {
-      color: white;
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    }
-
-    .cta-section p {
-      color: rgba(255,255,255,0.9);
-      max-width: 700px;
-      margin: 0 auto 2.5rem;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: white;
-      color: #007ca6;
-      padding: 1.2rem 2.8rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: 700;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-      background: #f0f8ff;
-    }
-
-    .cta-button i {
-      margin-left: 8px;
-    }
-
-    /* Footer */
-    footer {
-      background: #1c2b36;
-      color: white;
-      padding: 2.5rem 1rem;
-      border-radius: 15px 15px 0 0;
-      text-align: center;
-    }
-
-    .contact-info {
-      margin-bottom: 1.5rem;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .contact-item a {
-      color: #5dd9fc;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .contact-item a:hover {
-      color: white;
-      text-decoration: underline;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 45px;
-      height: 45px;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-    }
-
-    .social-links a:hover {
-      background: #00a7c7;
-      transform: translateY(-3px);
-    }
-
-    .copyright {
-      font-size: 0.9rem;
-      color: #a0b1bd;
-      margin-top: 1.5rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-      }
-      
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding: 1.5rem;
-      }
-      
-      .main-content {
-        margin-left: 0;
-        padding: 2rem;
-      }
-      
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
-<div class="container">
-<!-- Sidebar -->
-<aside class="sidebar">
-<div class="logo-container"><img alt="Logo Praxia Consultores" src="assets-img/logo-praxia.jpg"/></div>
-<h1>Praxia Consultores</h1>
-<ul class="nav-links">
-<li><a href="#servicios"><i class="fas fa-cogs"></i> Servicios</a></li>
-<li><a href="#automatizacion"><i class="fas fa-robot"></i> Automatización</a></li>
-<li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
-</ul>
-</aside>
-<!-- Main Content -->
-<main class="main-content">
-<!-- Hero Section -->
-<section class="hero">
-<h2>Previsión, Preparación y Contingencia para los desafíos de la nueva era</h2>
-<p>Consultoría profesional en Seguridad e Higiene, Sistemas de Gestión ISO y Automatización de Tareas Empresariales. Transformamos desafíos en oportunidades con soluciones innovadoras y personalizadas.</p>
-</section>
-<!-- Services Section -->
-<section id="servicios">
-<h2 class="section-title">Nuestros Servicios</h2>
-<div class="services-grid">
-<!-- Safety Card -->
-<div class="service-card">
-<div class="card-header" style="background-image: url('assets-img/seguridad.e.higiene.istockphoto-1497168229-612x612.webp'); background-size: cover; background-position: center;">
-<h3>Seguridad e Higiene Laboral</h3>
-</div>
-<div class="card-content">
-<ul>
-<li>Relevamientos e inspecciones (ruido, iluminación, ergonomía, fuego)</li>
-<li>Planes de emergencia, programas de trabajo, auditorías</li>
-<li>Investigaciones de accidentes y representación ante SRT, ART, municipios</li>
-</ul>
-<!-- Botón CORREGIDO - coincide con el nombre en el host -->
-<a href="Calculador_carga_de_fuego_v01.html" target="_blank" class="tool-button">
-  <i class="fas fa-calculator"></i> Calculadora de Carga de Fuego
-</a>
-</div>
-</div>
-<!-- ISO Card -->
-<div class="service-card">
-<div class="card-header" style="background-image: url('assets-img/ISO.istockphoto-1472086290-612x612.webp'); background-size: cover; background-position: center;">
-<h3>Normas ISO</h3>
-</div>
-<div class="card-content">
-<ul>
-<li>Implementación y auditoría interna ISO 9001, 14001, 45001</li>
-<li>Gestión de calidad, medio ambiente y seguridad laboral</li>
-<li>Preparación para certificaciones y mantenimiento de sistemas</li>
-</ul>
-</div>
-</div>
-<!-- Automation Card -->
-<div class="service-card">
-<div class="card-header" style="background-image: url('assets-img/automatizacionIA.webp'); background-size: cover; background-position: center;">
-<h3>Automatización de Procesos</h3>
-</div>
-<div class="card-content">
-<ul>
-<li>Identificación de tareas automatizables en su organización</li>
-<li>Desarrollo con IA, bots, RPA y n8n</li>
-<li>Implementación de soluciones que reducen costos y errores</li>
-</ul>
-</div>
-</div>
-<!-- Training Card -->
-<div class="service-card">
-<div class="card-header" style="background-image: url('assets-img/seguridad.e.higiene.istockphoto-1497168229-612x612.webp'); background-size: cover; background-position: center;">
-<h3>Capacitación y Consultoría</h3>
-</div>
-<div class="card-content">
-<ul>
-<li>Charlas y formación en seguridad laboral, gestión ambiental</li>
-<li>Capacitaciones en normas ISO y mejores prácticas</li>
-<li>Consultoría estratégica para la mejora continua</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="cta-section" id="automatizacion">
-<h2>¿Listo para transformar su empresa?</h2>
-<p>Descubra cómo nuestras soluciones de automatización pueden optimizar sus procesos y aumentar su productividad.</p>
-<a class="cta-button" href="https://wa.me/5491133125827?text=Quiero%20automatizar%20mi%20empresa">
-          Automatizar mi empresa <i class="fas fa-arrow-right"></i>
-</a>
-</section>
-<!-- Footer -->
-<footer id="contacto">
-<div class="contact-info">
-<div class="contact-item">
-<i class="fas fa-envelope"></i>
-<a href="mailto:contacto.praxiaconsultores@gmail.com">contacto.praxiaconsultores@gmail.com</a>
-</div>
-<div class="contact-item">
-<i class="fab fa-whatsapp"></i>
-<a href="https://wa.me/5491133125827">Envíanos un mensaje</a>
-</div>
-</div>
-<div class="social-links">
-<a href="https://wa.me/5491133125827" target="_blank" title="WhatsApp">
-<i class="fab fa-whatsapp"></i>
-</a>
-<a href="mailto:contacto.praxiaconsultores@gmail.com" title="Email">
-<i class="fas fa-envelope"></i>
-</a>
-<a href="https://www.linkedin.com/in/praxia-consultores-praxia-consultores-036985363" target="_blank" title="LinkedIn">
-<i class="fab fa-linkedin-in"></i>
-</a>
-</div>
-<p class="copyright">© 2025 Praxia Consultores. Todos los derechos reservados.</p>
-</footer>
-</main>
-</div>
-<script>
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 30,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-    
-    // Add animation to cards when they come into view
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0099CC",
+            accent: "#00C2FF",
+          },
+          fontFamily: {
+            display: ["Outfit", "sans-serif"],
+            body: ["Plus Jakarta Sans", "sans-serif"],
+          },
+        },
+      },
     };
-    
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-    
-    document.querySelectorAll('.service-card').forEach(card => {
-      observer.observe(card);
-    });
   </script>
+</head>
+
+<body class="font-body bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur shadow">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="assets-img/logo-praxia.jpg" alt="Praxia Consultores" class="h-10 rounded" />
+      <span class="font-display font-bold text-xl">PRAXIA</span>
+    </div>
+
+    <div class="hidden md:flex gap-8 items-center">
+      <a href="#servicios" class="hover:text-primary">Servicios</a>
+      <a href="#automatizacion" class="hover:text-primary">Automatización</a>
+      <a href="#contacto" class="hover:text-primary">Contacto</a>
+      <button onclick="document.documentElement.classList.toggle('dark')" class="p-2 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
+        <span class="material-icons-round">dark_mode</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="pt-28 pb-24 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <h1 class="font-display text-4xl lg:text-6xl font-bold mb-6">
+        Previsión y Automatización para su Empresa
+      </h1>
+      <p class="text-lg text-slate-300 mb-8">
+        Seguridad e Higiene, Sistemas de Gestión ISO y Automatización de Procesos.
+        Transformamos desafíos en oportunidades reales.
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <a href="#servicios" class="bg-primary px-8 py-4 rounded-xl font-bold hover:bg-accent transition">
+          Nuestros Servicios
+        </a>
+        <a href="https://wa.me/5491133125827?text=Quiero%20automatizar%20mi%20empresa" target="_blank"
+           class="border border-white/40 px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">
+          Automatizar mi empresa
+        </a>
+      </div>
+    </div>
+
+    <img src="assets-img/portada.ciudad.celular.webp" alt="Automatización empresarial"
+         class="rounded-2xl shadow-xl hidden lg:block" />
+  </div>
+</header>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="font-display text-4xl font-bold mb-12 text-center">Servicios</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Seguridad -->
+      <div class="rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-slate-800">
+        <img src="assets-img/seguridad.e.higiene.istockphoto-1497168229-612x612.webp" alt="" />
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-4">Seguridad e Higiene Laboral</h3>
+          <ul class="list-disc pl-5 text-sm space-y-1">
+            <li>Relevamientos e inspecciones</li>
+            <li>Planes de emergencia</li>
+            <li>Investigación de accidentes</li>
+          </ul>
+          <a href="Calculador_carga_de_fuego_v01.html" target="_blank"
+             class="inline-block mt-6 text-primary font-bold">
+            Calculadora de Carga de Fuego →
+          </a>
+        </div>
+      </div>
+
+      <!-- ISO -->
+      <div class="rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-slate-800">
+        <img src="assets-img/ISO.istockphoto-1472086290-612x612.webp" alt="" />
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-4">Normas ISO</h3>
+          <ul class="list-disc pl-5 text-sm space-y-1">
+            <li>ISO 9001 · 14001 · 45001</li>
+            <li>Auditorías internas</li>
+            <li>Mantenimiento de sistemas</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Automatización -->
+      <div class="rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-slate-800">
+        <img src="assets-img/automatizacionIA.webp" alt="" />
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-4">Automatización con IA</h3>
+          <ul class="list-disc pl-5 text-sm space-y-1">
+            <li>RPA y bots</li>
+            <li>Flujos n8n</li>
+            <li>Optimización de procesos</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="automatizacion" class="py-24 bg-slate-900 text-white text-center">
+  <h2 class="font-display text-4xl font-bold mb-6">
+    ¿Listo para transformar su empresa?
+  </h2>
+  <p class="text-slate-300 mb-10 max-w-2xl mx-auto">
+    Implementamos soluciones reales que reducen costos y aumentan productividad.
+  </p>
+  <a href="https://wa.me/5491133125827?text=Quiero%20automatizar%20mi%20empresa" target="_blank"
+     class="bg-primary px-10 py-5 rounded-xl font-bold text-lg hover:bg-accent transition">
+    Automatizar mi empresa
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer id="contacto" class="bg-slate-950 text-slate-400 py-16">
+  <div class="max-w-7xl mx-auto px-6 text-center space-y-6">
+    <p>
+      <strong class="text-white">Praxia Consultores</strong><br />
+      contacto.praxiaconsultores@gmail.com
+    </p>
+    <a href="https://wa.me/5491133125827" target="_blank" class="text-primary font-bold">
+      WhatsApp
+    </a>
+    <p class="text-sm">
+      © 2025 Praxia Consultores. Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
+
 </body>
 </html>
