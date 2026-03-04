@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>AXIO | Gestión Técnica & Ingeniería de Software</title>
+    <title>AXIO | Plataforma de Auditoría Técnica Digital</title>
     <meta name="description"
-        content="AXIO — Infraestructura modular, control de precisión y convergencia de datos para gestión técnica e ingeniería industrial." />
+        content="AXIO — Plataforma definitiva de gestión y auditoría técnica digital para construcción e ingeniería. Control documental, Quality Firewall, compras end-to-end y diseño PWA para campo." />
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
@@ -33,6 +33,8 @@
                         "background-light": "#F8F9FA",
                         "background-dark": "#121212",
                         blueprint: "rgba(42, 65, 94, 0.05)",
+                        "tech-gray": "#E8EAED",
+                        "tech-gray-dark": "#1A1D21",
                     },
                     fontFamily: {
                         display: ["Space Grotesk", "sans-serif"],
@@ -84,93 +86,6 @@
             opacity: 0.04;
         }
 
-        /* ── Rhombus / Node Composition (Hero) ── */
-        .rhombus {
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            position: absolute;
-            border: 1px solid rgba(42, 65, 94, 0.25);
-            background: rgba(42, 65, 94, 0.04);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .dark .rhombus {
-            border-color: rgba(255, 255, 255, 0.12);
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .rhombus:hover {
-            background: rgba(42, 65, 94, 0.10);
-            transform: rotate(5deg) scale(1.05);
-        }
-
-        .dark .rhombus:hover {
-            background: rgba(255, 255, 255, 0.06);
-        }
-
-        .node-dot {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: #2A415E;
-            border-radius: 2px;
-        }
-
-        .dark .node-dot {
-            background: rgba(255, 255, 255, 0.5);
-        }
-
-        .node-dot::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 18px;
-            height: 18px;
-            border: 1px solid rgba(42, 65, 94, 0.15);
-            border-radius: 2px;
-            transform: translate(-50%, -50%);
-        }
-
-        .dark .node-dot::after {
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .connector-line {
-            position: absolute;
-            height: 1px;
-            background: linear-gradient(90deg, rgba(42, 65, 94, 0.2), rgba(42, 65, 94, 0.05));
-            transform-origin: left center;
-        }
-
-        .dark .connector-line {
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
-        }
-
-        /* ── Pulse animation for hero nodes ── */
-        @keyframes nodePulse {
-
-            0%,
-            100% {
-                opacity: 0.6;
-            }
-
-            50% {
-                opacity: 1;
-            }
-        }
-
-        .node-pulse {
-            animation: nodePulse 3s ease-in-out infinite;
-        }
-
-        .node-pulse-delayed {
-            animation: nodePulse 3s ease-in-out 1s infinite;
-        }
-
-        .node-pulse-delayed2 {
-            animation: nodePulse 3s ease-in-out 2s infinite;
-        }
-
         /* ── Stat instrument border ── */
         .stat-instrument {
             position: relative;
@@ -193,6 +108,67 @@
 
         .dark .stat-instrument::before {
             background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* ── Feature card hover ── */
+        .feature-card {
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 24px rgba(42, 65, 94, 0.08);
+        }
+
+        .dark .feature-card:hover {
+            box-shadow: 0 4px 24px rgba(255, 255, 255, 0.04);
+        }
+
+        /* ── Stack item animation ── */
+        .stack-item {
+            transition: all 0.3s ease;
+        }
+
+        .stack-item:hover {
+            background: rgba(42, 65, 94, 0.06);
+        }
+
+        .dark .stack-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        /* ── Hero logo float animation ── */
+        @keyframes logoFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .logo-float {
+            animation: logoFloat 4s ease-in-out infinite;
+        }
+
+        /* ── Pulse dot ── */
+        @keyframes pulseDot {
+
+            0%,
+            100% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .pulse-dot {
+            animation: pulseDot 2.5s ease-in-out infinite;
         }
     </style>
 </head>
@@ -218,8 +194,8 @@
                 <img src="assets-img/logo-praxia.jpg" alt="Praxia Consultores" class="h-10" style="border-radius:2px" />
             </div>
             <div class="hidden md:flex space-x-8 text-xs font-mono uppercase tracking-[0.2em]">
-                <a class="hover:text-primary transition-colors" href="#servicios">Servicios</a>
-                <a class="hover:text-primary transition-colors" href="#automatizacion">Automatización</a>
+                <a class="hover:text-primary transition-colors" href="#plataforma">Plataforma</a>
+                <a class="hover:text-primary transition-colors" href="#arquitectura">Arquitectura</a>
                 <a class="hover:text-primary transition-colors" href="#contacto">Contacto</a>
             </div>
         </div>
@@ -230,108 +206,96 @@
                 <span class="material-symbols-outlined hidden dark:block text-white"
                     style="font-size:20px">light_mode</span>
             </button>
-            <a href="https://wa.me/5491133125827?text=Quiero%20automatizar%20mi%20empresa" target="_blank"
+            <a href="#demo"
                 class="border border-primary dark:border-white px-6 py-2 text-xs font-mono uppercase tracking-widest hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
                 style="border-radius:2px">
-                Contactar
+                Solicitar Demo
             </a>
         </div>
     </nav>
 
     <!-- ═══════════════════════════════════════════════ -->
-    <!-- HERO  – CSS Rhombus & Node Convergence          -->
+    <!-- HERO  – AXIO Platform Presentation              -->
     <!-- ═══════════════════════════════════════════════ -->
     <main class="relative z-10 flex flex-col items-center">
 
-        <section id="hero" class="w-full max-w-7xl px-8 pt-28 pb-32 flex flex-col items-center text-center">
+        <section id="hero" class="w-full max-w-7xl px-8 pt-32 pb-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
+                <!-- Hero Text (Left) -->
+                <div class="space-y-8">
+                    <h1
+                        class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-primary dark:text-white uppercase tracking-tight leading-[1.1]">
+                        Transforma la complejidad de tu obra en <span class="font-light opacity-80">control
+                            absoluto.</span>
+                    </h1>
+                    <p class="text-base md:text-lg text-graphite/70 dark:text-gray-400 leading-relaxed max-w-xl">
+                        AXIO es la plataforma definitiva de gestión y auditoría técnica digital diseñada para el sector
+                        de la construcción y la ingeniería. Centraliza planos, trazabilidad de ejecuciones, gestión de
+                        compras y desvíos en un único ecosistema inteligente.
+                    </p>
+                    <p
+                        class="text-sm text-graphite/60 dark:text-gray-500 leading-relaxed max-w-lg border-l-2 border-primary/30 dark:border-white/20 pl-4">
+                        Conecta a tu equipo de ingeniería y supervisores de campo en tiempo real. Elimina los cuellos de
+                        botella documentales, previene errores de ejecución con nuestro sistema
+                        <strong class="text-primary dark:text-white">Quality Firewall</strong> exclusivo.
+                    </p>
 
-            <!-- Hero Visual: Converging Rhombus & Nodes -->
-            <div class="relative w-full max-w-5xl aspect-[21/9] mb-16 overflow-hidden border border-primary/5 dark:border-white/5"
-                style="border-radius:2px">
-                <div class="absolute inset-0 bg-white/40 dark:bg-black/20">
-
-                    <!-- Central large rhombus -->
-                    <div
-                        class="rhombus w-48 h-48 md:w-64 md:h-64 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 node-pulse">
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#demo"
+                            class="bg-primary text-white dark:bg-white dark:text-primary px-10 py-5 text-sm font-mono uppercase tracking-[0.2em] font-bold hover:opacity-90 transition-opacity text-center"
+                            style="border-radius:2px">
+                            Solicitar Demo de la Plataforma
+                        </a>
+                        <a href="#arquitectura"
+                            class="border border-primary/20 dark:border-white/20 px-10 py-5 text-sm font-mono uppercase tracking-[0.2em] hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-center"
+                            style="border-radius:2px">
+                            Explorar la Arquitectura
+                        </a>
                     </div>
-
-                    <!-- Medium rhombus — upper-left -->
-                    <div class="rhombus w-28 h-28 md:w-36 md:h-36 top-[15%] left-[12%] node-pulse-delayed"
-                        style="background: rgba(42,65,94,0.06)"></div>
-
-                    <!-- Medium rhombus — lower-right -->
-                    <div class="rhombus w-32 h-32 md:w-40 md:h-40 bottom-[10%] right-[10%] node-pulse-delayed2"
-                        style="background: rgba(42,65,94,0.06)"></div>
-
-                    <!-- Small rhombus — upper-right -->
-                    <div class="rhombus w-16 h-16 md:w-20 md:h-20 top-[20%] right-[22%] node-pulse"></div>
-
-                    <!-- Small rhombus — lower-left -->
-                    <div class="rhombus w-20 h-20 md:w-24 md:h-24 bottom-[22%] left-[22%] node-pulse-delayed"></div>
-
-                    <!-- Tiny accent rhombus -->
-                    <div class="rhombus w-10 h-10 top-[35%] left-[40%] node-pulse-delayed2"></div>
-                    <div class="rhombus w-8 h-8 bottom-[35%] right-[35%] node-pulse"></div>
-
-                    <!-- Node dots -->
-                    <div class="node-dot top-[25%] left-[30%] node-pulse"></div>
-                    <div class="node-dot top-[50%] left-[18%] node-pulse-delayed"></div>
-                    <div class="node-dot top-[70%] left-[45%] node-pulse-delayed2"></div>
-                    <div class="node-dot top-[30%] right-[18%] node-pulse"></div>
-                    <div class="node-dot top-[65%] right-[25%] node-pulse-delayed"></div>
-                    <div class="node-dot top-[42%] right-[42%] node-pulse-delayed2"></div>
-                    <div class="node-dot top-[15%] left-[55%] node-pulse"></div>
-                    <div class="node-dot bottom-[18%] left-[60%] node-pulse-delayed"></div>
-
-                    <!-- Connector lines (diagonal) -->
-                    <div class="connector-line" style="top:30%;left:18%;width:200px;transform:rotate(22deg)"></div>
-                    <div class="connector-line" style="top:55%;left:35%;width:160px;transform:rotate(-15deg)"></div>
-                    <div class="connector-line" style="top:40%;right:15%;width:140px;transform:rotate(35deg)"></div>
-                    <div class="connector-line" style="bottom:30%;left:45%;width:180px;transform:rotate(-8deg)"></div>
-                    <div class="connector-line" style="top:22%;left:50%;width:120px;transform:rotate(12deg)"></div>
                 </div>
 
-                <!-- Corner marks -->
-                <div class="absolute top-3 left-3 flex gap-2">
-                    <div class="w-1.5 h-1.5 bg-primary"></div>
-                    <div class="w-1.5 h-1.5 bg-primary/40"></div>
-                </div>
-                <div
-                    class="absolute bottom-3 right-3 text-[8px] font-mono text-primary/40 dark:text-white/40 rotate-90 origin-right">
-                    NODE_CONVERGENCE_v01
+                <!-- Hero Image (Right) — AXIO Logo -->
+                <div class="relative flex items-center justify-center p-8">
+                    <div class="relative w-full max-w-md aspect-square flex items-center justify-center border border-primary/10 dark:border-white/10 bg-white/50 dark:bg-black/20"
+                        style="border-radius:2px">
+                        <!-- Corner marks -->
+                        <div class="absolute top-3 left-3 flex gap-2">
+                            <div class="w-1.5 h-1.5 bg-primary dark:bg-white"></div>
+                            <div class="w-1.5 h-1.5 bg-primary/40 dark:bg-white/40"></div>
+                        </div>
+                        <div class="absolute top-3 right-3 flex gap-2">
+                            <div class="w-1.5 h-1.5 bg-primary/40 dark:bg-white/40"></div>
+                            <div class="w-1.5 h-1.5 bg-primary dark:bg-white"></div>
+                        </div>
+                        <div class="absolute bottom-3 left-3 flex gap-2">
+                            <div class="w-1.5 h-1.5 bg-primary dark:bg-white"></div>
+                            <div class="w-1.5 h-1.5 bg-primary/40 dark:bg-white/40"></div>
+                        </div>
+                        <div class="absolute bottom-3 right-3 flex gap-2">
+                            <div class="w-1.5 h-1.5 bg-primary/40 dark:bg-white/40"></div>
+                            <div class="w-1.5 h-1.5 bg-primary dark:bg-white"></div>
+                        </div>
+
+                        <!-- AXIO Logo -->
+                        <img src="assets-img/AXIO_Logo.png" alt="AXIO - Plataforma de Auditoría Técnica Digital"
+                            class="logo-float w-4/5 h-auto object-contain" />
+
+                        <!-- Technical label -->
+                        <div
+                            class="absolute bottom-3 left-1/2 -translate-x-1/2 text-[8px] font-mono text-primary/40 dark:text-white/40 uppercase tracking-widest">
+                            AXIO_PLATFORM_v1.0
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Headline -->
-            <div class="max-w-3xl">
-                <h1
-                    class="font-display font-bold text-4xl md:text-7xl mb-8 text-primary dark:text-white uppercase tracking-tight leading-none">
-                    Ingeniería y Orden<br /><span class="font-light opacity-80">a Escala.</span>
-                </h1>
-                <p
-                    class="text-lg md:text-xl text-graphite/70 dark:text-gray-400 mb-12 max-w-xl mx-auto leading-relaxed">
-                    Software de gestión técnica e ingeniería integrada, diseñado con precisión industrial.
-                    Convergencia de datos a través de grillas modulares.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#servicios"
-                        class="bg-primary text-white dark:bg-white dark:text-primary px-10 py-5 text-sm font-mono uppercase tracking-[0.2em] font-bold hover:opacity-90 transition-opacity"
-                        style="border-radius:2px">
-                        Nuestros Servicios
-                    </a>
-                    <a href="https://wa.me/5491133125827?text=Quiero%20automatizar%20mi%20empresa" target="_blank"
-                        class="border border-primary/20 dark:border-white/20 px-10 py-5 text-sm font-mono uppercase tracking-[0.2em] hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-                        style="border-radius:2px">
-                        Automatizar mi Empresa
-                    </a>
-                </div>
-            </div>
-
-            <!-- ─── Stats: Instrumentation Style ─── -->
+        <!-- ─── Stats: Instrumentation Style ─── -->
+        <section class="w-full max-w-7xl px-8 pb-24">
             <div
-                class="grid grid-cols-1 md:grid-cols-4 gap-px bg-primary/10 dark:bg-white/10 w-full mt-28 border border-primary/10 dark:border-white/10">
+                class="grid grid-cols-1 md:grid-cols-4 gap-px bg-primary/10 dark:bg-white/10 w-full border border-primary/10 dark:border-white/10">
                 <div
                     class="stat-instrument bg-background-light dark:bg-background-dark p-8 text-left hover:bg-white dark:hover:bg-zinc-900 transition-colors">
                     <span class="font-mono text-[10px] uppercase tracking-widest opacity-40 block mb-2">Metric 01</span>
@@ -360,96 +324,140 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════ -->
-        <!-- SERVICIOS                                       -->
+        <!-- PLATAFORMA — 4 PILARES                         -->
         <!-- ═══════════════════════════════════════════════ -->
-        <section id="servicios" class="w-full border-t border-primary/10 dark:border-white/10 py-24 px-8">
+        <section id="plataforma" class="w-full border-t border-primary/10 dark:border-white/10 py-24 px-8">
             <div class="max-w-7xl mx-auto">
 
-                <div class="inline-block px-3 py-1 bg-primary text-white text-[10px] font-mono tracking-widest uppercase mb-6"
-                    style="border-radius:2px">Servicios v4</div>
-                <h2 class="font-display font-bold text-4xl uppercase tracking-tight mb-16">Servicios<br /><span
-                        class="font-light opacity-70">Técnicos</span></h2>
+                <div class="mb-16">
+                    <h2 class="font-display font-bold text-4xl uppercase tracking-tight mb-4">Los Pilares<br /><span
+                            class="font-light opacity-70">de AXIO</span></h2>
+                    <p class="text-graphite/60 dark:text-gray-500 max-w-2xl text-sm leading-relaxed">
+                        Cuatro capacidades integradas que transforman la gestión técnica de obra en un ecosistema
+                        digital
+                        de control y trazabilidad absoluta.
+                    </p>
+                </div>
 
                 <div
-                    class="grid grid-cols-1 md:grid-cols-3 gap-px bg-primary/10 dark:bg-white/10 border border-primary/10 dark:border-white/10">
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-primary/10 dark:bg-white/10 border border-primary/10 dark:border-white/10">
 
-                    <!-- Seguridad e Higiene -->
+                    <!-- Pilar 01: Control Documental -->
                     <div
-                        class="bg-background-light dark:bg-background-dark p-8 text-left group hover:bg-white dark:hover:bg-zinc-900 transition-colors">
+                        class="feature-card bg-background-light dark:bg-background-dark p-8 text-left group hover:bg-white dark:hover:bg-zinc-900">
                         <div class="mb-6 flex justify-between items-start">
                             <span
-                                class="material-symbols-outlined text-primary dark:text-white text-3xl">health_and_safety</span>
+                                class="material-symbols-outlined text-primary dark:text-white text-3xl">description</span>
                             <span class="font-mono text-[10px] opacity-40">01</span>
                         </div>
-                        <h3 class="font-display font-bold text-xl uppercase mb-4 tracking-wider">Seguridad e Higiene
-                        </h3>
+                        <h3 class="font-display font-bold text-lg uppercase mb-4 tracking-wider">Control Documental</h3>
+                        <p class="text-sm text-graphite/60 dark:text-gray-500 leading-relaxed mb-6">
+                            Gestión inteligente de revisiones. Construcción siempre basada en la última versión
+                            aprobada.
+                        </p>
                         <ul class="space-y-2 font-mono text-xs uppercase tracking-widest opacity-70">
                             <li class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                                Relevamientos e inspecciones
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"></span>
+                                Versionado automático
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                                Planes de emergencia
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"
+                                    style="animation-delay:0.5s"></span>
+                                Aprobación de planos
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                                Investigación de accidentes
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"
+                                    style="animation-delay:1s"></span>
+                                Trazabilidad completa
                             </li>
                         </ul>
-                        <a href="Calculador_carga_de_fuego_v01.html" target="_blank"
-                            class="inline-block mt-6 text-primary dark:text-white font-mono text-xs uppercase tracking-widest hover:opacity-70 transition-opacity">
-                            Calculadora Carga de Fuego →
-                        </a>
                     </div>
 
-                    <!-- Normas ISO -->
+                    <!-- Pilar 02: Quality Firewall -->
                     <div
-                        class="bg-background-light dark:bg-background-dark p-8 text-left group hover:bg-white dark:hover:bg-zinc-900 transition-colors">
+                        class="feature-card bg-background-light dark:bg-background-dark p-8 text-left group hover:bg-white dark:hover:bg-zinc-900">
                         <div class="mb-6 flex justify-between items-start">
-                            <span
-                                class="material-symbols-outlined text-primary dark:text-white text-3xl">verified</span>
+                            <span class="material-symbols-outlined text-primary dark:text-white text-3xl">shield</span>
                             <span class="font-mono text-[10px] opacity-40">02</span>
                         </div>
-                        <h3 class="font-display font-bold text-xl uppercase mb-4 tracking-wider">Normas ISO</h3>
+                        <h3 class="font-display font-bold text-lg uppercase mb-4 tracking-wider">Quality Firewall</h3>
+                        <p class="text-sm text-graphite/60 dark:text-gray-500 leading-relaxed mb-6">
+                            Motor de reglas que bloquea operaciones inconsistentes o planos obsoletos automáticamente.
+                        </p>
                         <ul class="space-y-2 font-mono text-xs uppercase tracking-widest opacity-70">
                             <li class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                                ISO 9001 · 14001 · 45001
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"></span>
+                                Bloqueo automático
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                                Auditorías internas
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"
+                                    style="animation-delay:0.5s"></span>
+                                Reglas personalizables
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                                Mantenimiento de sistemas
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"
+                                    style="animation-delay:1s"></span>
+                                Alertas en tiempo real
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Automatización con IA -->
+                    <!-- Pilar 03: Gestión de Compras End-to-End -->
                     <div
-                        class="bg-background-light dark:bg-background-dark p-8 text-left group hover:bg-white dark:hover:bg-zinc-900 transition-colors">
+                        class="feature-card bg-background-light dark:bg-background-dark p-8 text-left group hover:bg-white dark:hover:bg-zinc-900">
                         <div class="mb-6 flex justify-between items-start">
                             <span
-                                class="material-symbols-outlined text-primary dark:text-white text-3xl">precision_manufacturing</span>
+                                class="material-symbols-outlined text-primary dark:text-white text-3xl">local_shipping</span>
                             <span class="font-mono text-[10px] opacity-40">03</span>
                         </div>
-                        <h3 class="font-display font-bold text-xl uppercase mb-4 tracking-wider">Automatización con IA
-                        </h3>
+                        <h3 class="font-display font-bold text-lg uppercase mb-4 tracking-wider">Compras End-to-End</h3>
+                        <p class="text-sm text-graphite/60 dark:text-gray-500 leading-relaxed mb-6">
+                            Trazabilidad total desde el Requerimiento (RQ) hasta el Registro de Entregas.
+                        </p>
                         <ul class="space-y-2 font-mono text-xs uppercase tracking-widest opacity-70">
                             <li class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                                RPA y Bots
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"></span>
+                                Flujo RQ → OC → Entrega
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                                Flujos N8N
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"
+                                    style="animation-delay:0.5s"></span>
+                                Control de desvíos
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                                Optimización de procesos
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"
+                                    style="animation-delay:1s"></span>
+                                Auditoría integrada
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Pilar 04: Diseño PWA para Campo -->
+                    <div
+                        class="feature-card bg-background-light dark:bg-background-dark p-8 text-left group hover:bg-white dark:hover:bg-zinc-900">
+                        <div class="mb-6 flex justify-between items-start">
+                            <span
+                                class="material-symbols-outlined text-primary dark:text-white text-3xl">smartphone</span>
+                            <span class="font-mono text-[10px] opacity-40">04</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg uppercase mb-4 tracking-wider">PWA para Campo</h3>
+                        <p class="text-sm text-graphite/60 dark:text-gray-500 leading-relaxed mb-6">
+                            Interfaz móvil ágil para registros "in situ" por supervisores de obra.
+                        </p>
+                        <ul class="space-y-2 font-mono text-xs uppercase tracking-widest opacity-70">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"></span>
+                                Funciona offline
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"
+                                    style="animation-delay:0.5s"></span>
+                                Registro fotográfico
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-primary dark:bg-white pulse-dot"
+                                    style="animation-delay:1s"></span>
+                                Sincronización auto
                             </li>
                         </ul>
                     </div>
@@ -458,59 +466,121 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════ -->
-        <!-- ARCHITECTURE / INFRASTRUCTURE DETAIL            -->
+        <!-- ARQUITECTURA TÉCNICA (IT Stakeholders)         -->
         <!-- ═══════════════════════════════════════════════ -->
-        <section class="w-full border-t border-primary/10 dark:border-white/10 py-24 px-8 bg-white/10">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="space-y-8">
-                    <div class="inline-block px-3 py-1 bg-primary text-white text-[10px] font-mono tracking-widest uppercase mb-4"
-                        style="border-radius:2px">Arquitectura v4</div>
-                    <h2 class="font-display font-bold text-4xl uppercase tracking-tight">
-                        Infraestructura<br />Sistemática</h2>
-                    <p class="text-graphite/70 dark:text-gray-400 leading-relaxed max-w-lg">
-                        AXIO opera sobre una base estructural rígida, garantizando que cada parámetro de ingeniería
-                        sea contemplado. Nuestra interfaz aprovecha principios arquitectónicos para presentar
-                        información
-                        compleja con total claridad.
+        <section id="arquitectura"
+            class="w-full border-t border-primary/10 dark:border-white/10 py-24 px-8 bg-tech-gray dark:bg-tech-gray-dark">
+            <div class="max-w-7xl mx-auto">
+
+                <div class="mb-16 max-w-3xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="material-symbols-outlined text-primary dark:text-white text-2xl">terminal</span>
+                        <span class="font-mono text-[10px] uppercase tracking-widest opacity-60">Stack Técnico</span>
+                    </div>
+                    <h2 class="font-display font-bold text-4xl uppercase tracking-tight mb-4">
+                        Arquitectura<br /><span class="font-light opacity-70">Técnica</span>
+                    </h2>
+                    <p class="text-graphite/60 dark:text-gray-500 leading-relaxed text-sm">
+                        Diseñada para CTOs y equipos de IT. Una infraestructura robusta, escalable y segura que
+                        cumple con los más altos estándares de la industria.
                     </p>
-                    <ul class="space-y-4 font-mono text-xs uppercase tracking-widest opacity-80">
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                            Visualización CAD multicapa
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                            Analítica estructural en tiempo real
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 bg-primary dark:bg-white"></span>
-                            Reportes de cumplimiento automatizados
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Technical schematic panel -->
-                <div class="relative p-12 border border-primary/10 dark:border-white/10 bg-white/50 dark:bg-black/20 overflow-hidden"
-                    style="border-radius:2px">
-                    <div class="absolute top-0 left-0 w-8 h-8 border-l border-t border-primary dark:border-white/30">
-                    </div>
-                    <div class="absolute top-0 right-0 w-8 h-8 border-r border-t border-primary dark:border-white/30">
-                    </div>
-                    <div class="absolute bottom-0 left-0 w-8 h-8 border-l border-b border-primary dark:border-white/30">
-                    </div>
-                    <div
-                        class="absolute bottom-0 right-0 w-8 h-8 border-r border-b border-primary dark:border-white/30">
-                    </div>
-                    <div class="space-y-6">
-                        <div class="h-2 w-2/3 bg-primary/10"></div>
-                        <div class="h-2 w-full bg-primary/10"></div>
-                        <div
-                            class="h-40 w-full border border-primary/10 dark:border-white/10 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-6xl opacity-10">polyline</span>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-px bg-primary/10 dark:bg-white/10 border border-primary/10 dark:border-white/10">
+
+                    <!-- Arquitectura Multi-Tenant -->
+                    <div class="stack-item bg-background-light dark:bg-background-dark p-8">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 w-10 h-10 flex items-center justify-center border border-primary/20 dark:border-white/20 shrink-0"
+                                style="border-radius:2px">
+                                <span class="material-symbols-outlined text-primary dark:text-white"
+                                    style="font-size:20px">cloud</span>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-2">Arquitectura
+                                </h3>
+                                <p
+                                    class="font-mono text-xs text-primary/80 dark:text-white/70 uppercase tracking-wide mb-3">
+                                    Multi-Tenant (SaaS)
+                                </p>
+                                <p class="text-sm text-graphite/60 dark:text-gray-500 leading-relaxed">
+                                    Aislamiento lógico de datos mediante <code
+                                        class="font-mono text-xs bg-primary/5 dark:bg-white/10 px-1.5 py-0.5">tenant_id</code>,
+                                    garantizando la segregación total entre organizaciones sin comprometer el
+                                    rendimiento.
+                                </p>
+                            </div>
                         </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="h-2 w-full bg-primary/10"></div>
-                            <div class="h-2 w-1/2 bg-primary/10"></div>
+                    </div>
+
+                    <!-- Backend / Frontend -->
+                    <div class="stack-item bg-background-light dark:bg-background-dark p-8">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 w-10 h-10 flex items-center justify-center border border-primary/20 dark:border-white/20 shrink-0"
+                                style="border-radius:2px">
+                                <span class="material-symbols-outlined text-primary dark:text-white"
+                                    style="font-size:20px">code</span>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-2">Backend /
+                                    Frontend</h3>
+                                <p
+                                    class="font-mono text-xs text-primary/80 dark:text-white/70 uppercase tracking-wide mb-3">
+                                    Node.js (MVC) + PWA
+                                </p>
+                                <p class="text-sm text-graphite/60 dark:text-gray-500 leading-relaxed">
+                                    Arquitectura MVC modular en Node.js con PWA de alto rendimiento. Service Workers
+                                    para
+                                    operación offline y sincronización inteligente en campo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Base de Datos -->
+                    <div class="stack-item bg-background-light dark:bg-background-dark p-8">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 w-10 h-10 flex items-center justify-center border border-primary/20 dark:border-white/20 shrink-0"
+                                style="border-radius:2px">
+                                <span class="material-symbols-outlined text-primary dark:text-white"
+                                    style="font-size:20px">database</span>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-2">Base de Datos
+                                </h3>
+                                <p
+                                    class="font-mono text-xs text-primary/80 dark:text-white/70 uppercase tracking-wide mb-3">
+                                    MySQL · Integridad Referencial
+                                </p>
+                                <p class="text-sm text-graphite/60 dark:text-gray-500 leading-relaxed">
+                                    MySQL con integridad referencial estricta y triggers transaccionales. Diseño
+                                    normalizado
+                                    con constraints para auditoría y trazabilidad de datos críticos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seguridad -->
+                    <div class="stack-item bg-background-light dark:bg-background-dark p-8">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 w-10 h-10 flex items-center justify-center border border-primary/20 dark:border-white/20 shrink-0"
+                                style="border-radius:2px">
+                                <span class="material-symbols-outlined text-primary dark:text-white"
+                                    style="font-size:20px">lock</span>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm uppercase tracking-wider mb-2">Seguridad</h3>
+                                <p
+                                    class="font-mono text-xs text-primary/80 dark:text-white/70 uppercase tracking-wide mb-3">
+                                    JWT · Zero-Trust · RBAC
+                                </p>
+                                <p class="text-sm text-graphite/60 dark:text-gray-500 leading-relaxed">
+                                    Autenticación JWT con roles granulares y política Zero-Trust. Cada request es
+                                    verificado, cada acción es auditada, cada acceso es controlado.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -520,21 +590,29 @@
         <!-- ═══════════════════════════════════════════════ -->
         <!-- CTA                                             -->
         <!-- ═══════════════════════════════════════════════ -->
-        <section id="automatizacion"
+        <section id="demo"
             class="w-full border-t border-primary/10 dark:border-white/10 py-24 px-8 bg-primary text-white text-center">
             <div class="max-w-3xl mx-auto">
                 <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 uppercase tracking-tight">
-                    ¿Listo para transformar su empresa?
+                    ¿Listo para digitalizar<br />su gestión de obra?
                 </h2>
                 <p
                     class="text-white/60 mb-12 max-w-2xl mx-auto font-mono text-sm uppercase tracking-widest leading-relaxed">
-                    Implementamos soluciones reales que reducen costos y aumentan productividad.
+                    Auditoría técnica digital de precisión. Control absoluto sobre cada fase de su proyecto.
                 </p>
-                <a href="https://wa.me/5491133125827?text=Quiero%20automatizar%20mi%20empresa" target="_blank"
-                    class="inline-block bg-white text-primary px-12 py-5 text-sm font-mono uppercase tracking-[0.2em] font-bold hover:opacity-90 transition-opacity"
-                    style="border-radius:2px">
-                    Automatizar mi Empresa
-                </a>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/5491133125827?text=Quiero%20solicitar%20una%20demo%20de%20AXIO"
+                        target="_blank"
+                        class="inline-block bg-white text-primary px-12 py-5 text-sm font-mono uppercase tracking-[0.2em] font-bold hover:opacity-90 transition-opacity"
+                        style="border-radius:2px">
+                        Solicitar Demo de la Plataforma
+                    </a>
+                    <a href="#arquitectura"
+                        class="inline-block border border-white/30 text-white px-12 py-5 text-sm font-mono uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-all"
+                        style="border-radius:2px">
+                        Explorar la Arquitectura
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -557,7 +635,8 @@
             <div class="flex gap-12 font-mono text-[10px] uppercase tracking-[0.2em] opacity-60">
                 <a class="hover:text-primary transition-colors" href="https://wa.me/5491133125827"
                     target="_blank">WhatsApp</a>
-                <a class="hover:text-primary transition-colors" href="#servicios">Servicios</a>
+                <a class="hover:text-primary transition-colors" href="#plataforma">Plataforma</a>
+                <a class="hover:text-primary transition-colors" href="#arquitectura">Arquitectura</a>
                 <a class="hover:text-primary transition-colors" href="#contacto">Contacto</a>
             </div>
         </div>
