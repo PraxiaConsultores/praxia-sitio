@@ -170,6 +170,206 @@
         .pulse-dot {
             animation: pulseDot 2.5s ease-in-out infinite;
         }
+
+        /* ===== SECCIÓN SERVICIOS CON TABS — PRAXIA ===== */
+        .praxia-servicios {
+            padding: 80px 20px;
+            background: #F8F9FA;
+            font-family: inherit;
+            width: 100%;
+        }
+
+        .dark .praxia-servicios {
+            background: #1A1D21;
+        }
+
+        .praxia-servicios h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2A415E;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .dark .praxia-servicios h2 {
+            color: #ffffff;
+        }
+
+        .praxia-servicios .praxia-subtitulo {
+            text-align: center;
+            color: #5a6a7e;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .dark .praxia-servicios .praxia-subtitulo {
+            color: #9ca3af;
+        }
+
+        /* Tabs */
+        .praxia-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+
+        .praxia-tab-btn {
+            padding: 11px 28px;
+            border: 1px solid #2A415E;
+            border-radius: 2px;
+            background: transparent;
+            color: #2A415E;
+            font-size: 0.78rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            outline: none;
+        }
+
+        .dark .praxia-tab-btn {
+            border-color: rgba(255,255,255,0.3);
+            color: #e5e7eb;
+        }
+
+        .praxia-tab-btn:hover {
+            background: #2A415E;
+            color: #ffffff;
+        }
+
+        .praxia-tab-btn.praxia-activo {
+            background: #2A415E;
+            color: #ffffff;
+        }
+
+        .dark .praxia-tab-btn.praxia-activo {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.6);
+            color: #ffffff;
+        }
+
+        /* Contenido de tabs */
+        .praxia-tab-content {
+            display: none;
+            max-width: 1100px;
+            margin: 0 auto;
+            animation: praxiaFadeIn 0.3s ease;
+        }
+
+        .praxia-tab-content.praxia-activo {
+            display: block;
+        }
+
+        @keyframes praxiaFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Grilla de cards */
+        .praxia-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1px;
+            background: rgba(42, 65, 94, 0.1);
+            border: 1px solid rgba(42, 65, 94, 0.1);
+        }
+
+        .dark .praxia-cards {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.06);
+        }
+
+        .praxia-card {
+            background: #ffffff;
+            padding: 32px 28px;
+            transition: background 0.25s ease;
+            border-left: 3px solid #e8a020;
+        }
+
+        .dark .praxia-card {
+            background: #121212;
+        }
+
+        .praxia-card:hover {
+            background: #F8F9FA;
+        }
+
+        .dark .praxia-card:hover {
+            background: #1f2023;
+        }
+
+        .praxia-card .praxia-icono {
+            font-size: 1.8rem;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .praxia-card h3 {
+            color: #2A415E;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .dark .praxia-card h3 {
+            color: #ffffff;
+        }
+
+        .praxia-card p {
+            color: #5a6a7e;
+            font-size: 0.85rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .dark .praxia-card p {
+            color: #9ca3af;
+        }
+
+        /* CTA al pie de cada tab */
+        .praxia-tab-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .praxia-tab-cta a {
+            display: inline-block;
+            padding: 14px 36px;
+            background: #e8a020;
+            color: #fff;
+            border-radius: 2px;
+            font-weight: 700;
+            font-size: 0.78rem;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            transition: background 0.2s ease, opacity 0.2s ease;
+        }
+
+        .praxia-tab-cta a:hover {
+            background: #c8880a;
+            opacity: 0.92;
+        }
+
+        @media (max-width: 600px) {
+            .praxia-servicios h2 { font-size: 1.4rem; }
+            .praxia-tab-btn { padding: 10px 16px; font-size: 0.72rem; }
+            .praxia-card { padding: 24px 20px; }
+        }
+        /* ===== FIN SECCIÓN SERVICIOS ===== */
     </style>
 </head>
 
@@ -616,6 +816,116 @@
             </div>
         </section>
 
+        <!-- ===== INICIO: SECCIÓN SERVICIOS PRAXIA ===== -->
+        <section class="praxia-servicios" id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <p class="praxia-subtitulo">Soluciones integrales para organizaciones que buscan la excelencia operativa y el cumplimiento normativo</p>
+
+            <!-- Botones de pestañas -->
+            <div class="praxia-tabs">
+                <button class="praxia-tab-btn praxia-activo" onclick="praxiaAbrirTab(event, 'tab-sih')">
+                    🦺 Seguridad e Higiene
+                </button>
+                <button class="praxia-tab-btn" onclick="praxiaAbrirTab(event, 'tab-iso')">
+                    📋 Certificaciones ISO
+                </button>
+            </div>
+
+            <!-- TAB 1: Seguridad e Higiene -->
+            <div class="praxia-tab-content praxia-activo" id="tab-sih">
+                <div class="praxia-cards">
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">🔍</span>
+                        <h3>Relevamiento y Diagnóstico</h3>
+                        <p>Evaluación inicial del estado de situación en materia de seguridad e higiene laboral en su organización, identificando riesgos, incumplimientos y oportunidades de mejora.</p>
+                    </div>
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">📝</span>
+                        <h3>Programa Anual de Seguridad</h3>
+                        <p>Elaboración y gestión del Programa Anual de Higiene y Seguridad en el Trabajo (PAHST) conforme a la Ley 19587 y su decreto reglamentario 351/79.</p>
+                    </div>
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">⚠️</span>
+                        <h3>Identificación de Riesgos (IPER)</h3>
+                        <p>Identificación de peligros, evaluación y control de riesgos laborales. Elaboración de matrices de riesgo y planes de acción correctivos y preventivos.</p>
+                    </div>
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">🧑‍🏫</span>
+                        <h3>Capacitación al Personal</h3>
+                        <p>Diseño e implementación de planes de capacitación en prevención de accidentes, uso de EPP, evacuación, primeros auxilios y cultura de seguridad organizacional.</p>
+                    </div>
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">🗂️</span>
+                        <h3>Documentación Legal</h3>
+                        <p>Confección y actualización de toda la documentación exigida por la SRT: registros, legajos, planillas de capacitación, investigación de accidentes e incidentes.</p>
+                    </div>
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">🏗️</span>
+                        <h3>Gestión en Obras y Empresas</h3>
+                        <p>Asesoramiento continuo en empresas de construcción, industria y servicios. Presencia en obra, confección de legajos y seguimiento ante organismos de control.</p>
+                    </div>
+
+                </div>
+                <div class="praxia-tab-cta">
+                    <a href="#contacto">Consultar sobre Seguridad e Higiene →</a>
+                </div>
+            </div>
+
+            <!-- TAB 2: Certificaciones ISO -->
+            <div class="praxia-tab-content" id="tab-iso">
+                <div class="praxia-cards">
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">🏅</span>
+                        <h3>ISO 9001 — Calidad</h3>
+                        <p>Preparación, asesoramiento e implementación de Sistemas de Gestión de la Calidad. Acompañamos a su organización desde el diagnóstico inicial hasta la auditoría de certificación.</p>
+                    </div>
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">🌿</span>
+                        <h3>ISO 14001 — Medio Ambiente</h3>
+                        <p>Implementación de Sistemas de Gestión Ambiental. Evaluación de aspectos e impactos ambientales, cumplimiento legal y mejora continua del desempeño ambiental de su empresa.</p>
+                    </div>
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">🦺</span>
+                        <h3>ISO 45001 — SST</h3>
+                        <p>Implementación de Sistemas de Gestión de Seguridad y Salud en el Trabajo. Integración con los requisitos legales argentinos y con otras normas del sistema integrado de gestión.</p>
+                    </div>
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">📊</span>
+                        <h3>Diagnóstico GAP Analysis</h3>
+                        <p>Análisis de brechas (GAP Analysis) previo a la certificación: evaluamos el nivel de cumplimiento actual de su organización respecto a los requisitos de la norma aplicable.</p>
+                    </div>
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">🔎</span>
+                        <h3>Auditoría Interna Previa</h3>
+                        <p>Realización de auditorías internas antes de la certificación para detectar no conformidades, preparar al personal y asegurar el éxito de la auditoría externa.</p>
+                    </div>
+
+                    <div class="praxia-card">
+                        <span class="praxia-icono">🤝</span>
+                        <h3>Acompañamiento en Auditoría</h3>
+                        <p>Presencia y soporte profesional durante los días de auditoría con el organismo certificador, gestionando consultas, hallazgos y planes de acción correctivos.</p>
+                    </div>
+
+                </div>
+                <div class="praxia-tab-cta">
+                    <a href="#contacto">Consultar sobre Certificaciones ISO →</a>
+                </div>
+            </div>
+
+        </section>
+        <!-- ===== FIN: SECCIÓN SERVICIOS PRAXIA ===== -->
+
     </main>
 
     <!-- ═══════════════════════════════════════════════ -->
@@ -642,6 +952,23 @@
         </div>
     </footer>
 
+    <script>
+        // ===== TABS SERVICIOS PRAXIA =====
+        function praxiaAbrirTab(evento, idTab) {
+            // Ocultar todos los contenidos
+            document.querySelectorAll('.praxia-tab-content').forEach(function (tab) {
+                tab.classList.remove('praxia-activo');
+            });
+            // Desactivar todos los botones
+            document.querySelectorAll('.praxia-tab-btn').forEach(function (btn) {
+                btn.classList.remove('praxia-activo');
+            });
+            // Activar el tab seleccionado
+            document.getElementById(idTab).classList.add('praxia-activo');
+            evento.currentTarget.classList.add('praxia-activo');
+        }
+        // ===== FIN TABS SERVICIOS PRAXIA =====
+    </script>
 </body>
 
 </html>
