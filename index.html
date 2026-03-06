@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>AXIO | Plataforma de Auditoría Técnica Digital</title>
+    <title>Praxia Consultores</title>
     <meta name="description"
         content="AXIO — Plataforma definitiva de gestión y auditoría técnica digital para construcción e ingeniería. Control documental, Quality Firewall, compras end-to-end y diseño PWA para campo." />
 
@@ -353,6 +353,540 @@
         }
 
         /* ===== FIN SECCIÓN SERVICIOS ===== */
+
+        /* ===== HOME PRAXIA REDISEÑO ===== */
+
+        /* --- Hero Home --- */
+        .ph-hero {
+            background: linear-gradient(135deg, #1a2e4a 0%, #2c4a6e 60%, #1a2e4a 100%);
+            color: #ffffff;
+            padding: 90px 40px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ph-hero::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 320px;
+            height: 320px;
+            background: rgba(232, 160, 32, 0.08);
+            border-radius: 50%;
+        }
+
+        .ph-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+        }
+
+        .ph-hero-tag {
+            display: inline-block;
+            background: rgba(232, 160, 32, 0.2);
+            color: #e8a020;
+            border: 1px solid rgba(232, 160, 32, 0.4);
+            padding: 5px 18px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .ph-hero h1 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ph-hero h1 span {
+            color: #e8a020;
+        }
+
+        .ph-hero p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 540px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+
+        .ph-hero-ctas {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .ph-btn-primary {
+            padding: 14px 32px;
+            background: #e8a020;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .ph-btn-primary:hover {
+            background: #c8880a;
+            transform: scale(1.03);
+        }
+
+        .ph-btn-secondary {
+            padding: 14px 32px;
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .ph-btn-secondary:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* --- Números / Stats --- */
+        .ph-stats {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            background: #1a2e4a;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .ph-stat {
+            flex: 1;
+            min-width: 160px;
+            padding: 28px 20px;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .ph-stat:last-child {
+            border-right: none;
+        }
+
+        .ph-stat-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #e8a020;
+            display: block;
+        }
+
+        .ph-stat-label {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.65);
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* --- Quiénes somos --- */
+        .ph-quienes {
+            padding: 80px 40px;
+            background: #ffffff;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .ph-quienes-texto h2 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #1a2e4a;
+            margin-bottom: 8px;
+        }
+
+        .ph-quienes-texto .ph-linea {
+            width: 50px;
+            height: 4px;
+            background: #e8a020;
+            border-radius: 2px;
+            margin-bottom: 22px;
+        }
+
+        .ph-quienes-texto p {
+            color: #5a6a7e;
+            font-size: 0.97rem;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .ph-pilares {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ph-pilar {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 18px 20px;
+            border-radius: 10px;
+            background: #f4f6f9;
+            border-left: 4px solid #e8a020;
+        }
+
+        .ph-pilar-icono {
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .ph-pilar-titulo {
+            font-weight: 700;
+            color: #1a2e4a;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .ph-pilar-desc {
+            color: #5a6a7e;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        /* --- Servicios resumen --- */
+        .ph-servicios-wrap {
+            background: #f4f6f9;
+            padding: 80px 40px;
+        }
+
+        .ph-servicios-wrap h2 {
+            text-align: center;
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #1a2e4a;
+            margin-bottom: 8px;
+        }
+
+        .ph-servicios-wrap .ph-subtitulo {
+            text-align: center;
+            color: #5a6a7e;
+            margin-bottom: 44px;
+            font-size: 0.97rem;
+        }
+
+        .ph-servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .ph-servicio-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 36px 30px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-top: 5px solid #1a2e4a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ph-servicio-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #e8a020;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+            transform-origin: left;
+        }
+
+        .ph-servicio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.13);
+        }
+
+        .ph-servicio-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .ph-servicio-icono {
+            font-size: 2.4rem;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .ph-servicio-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a2e4a;
+            margin-bottom: 10px;
+        }
+
+        .ph-servicio-card p {
+            color: #5a6a7e;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .ph-servicio-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #e8a020;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .ph-servicio-link:hover {
+            color: #c8880a;
+        }
+
+        @media (max-width: 768px) {
+            .ph-quienes {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                padding: 50px 24px;
+            }
+
+            .ph-hero {
+                padding: 60px 24px 50px;
+            }
+
+            .ph-servicios-wrap {
+                padding: 60px 24px;
+            }
+        }
+
+        /* ===== FIN HOME PRAXIA ===== */
+
+        /* ===== ACORDEÓN SEGURIDAD E HIGIENE ===== */
+        .psyh-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 70px 30px;
+        }
+
+        .psyh-header {
+            margin-bottom: 48px;
+        }
+
+        .psyh-header .ph-hero-tag {
+            margin-bottom: 14px;
+        }
+
+        .psyh-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1a2e4a;
+            margin-bottom: 12px;
+        }
+
+        .psyh-header p {
+            color: #5a6a7e;
+            font-size: 0.97rem;
+            line-height: 1.7;
+            max-width: 620px;
+        }
+
+        .psyh-acordeon {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .psyh-item {
+            border-radius: 10px;
+            border: 1px solid #e0e6ef;
+            background: #fff;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .psyh-item.abierto {
+            box-shadow: 0 4px 20px rgba(26, 46, 74, 0.1);
+            border-color: #1a2e4a;
+        }
+
+        .psyh-pregunta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            cursor: pointer;
+            user-select: none;
+            background: #fff;
+            transition: background 0.15s;
+        }
+
+        .psyh-item.abierto .psyh-pregunta {
+            background: #f4f6f9;
+        }
+
+        .psyh-pregunta-icono {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: #f4f6f9;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .psyh-item.abierto .psyh-pregunta-icono {
+            background: #1a2e4a;
+        }
+
+        .psyh-pregunta-titulo {
+            flex: 1;
+            font-weight: 700;
+            color: #1a2e4a;
+            font-size: 0.97rem;
+        }
+
+        .psyh-chevron {
+            font-size: 0.8rem;
+            color: #5a6a7e;
+            transition: transform 0.25s;
+            flex-shrink: 0;
+        }
+
+        .psyh-item.abierto .psyh-chevron {
+            transform: rotate(180deg);
+        }
+
+        .psyh-respuesta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s;
+            padding: 0 24px;
+        }
+
+        .psyh-item.abierto .psyh-respuesta {
+            max-height: 400px;
+            padding: 0 24px 22px;
+        }
+
+        .psyh-respuesta p {
+            color: #5a6a7e;
+            font-size: 0.92rem;
+            line-height: 1.75;
+            margin: 0;
+            padding-top: 4px;
+        }
+
+        .psyh-respuesta ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+            color: #5a6a7e;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .psyh-cta-bloque {
+            margin-top: 44px;
+            background: linear-gradient(135deg, #1a2e4a, #2c4a6e);
+            border-radius: 14px;
+            padding: 36px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .psyh-cta-bloque p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin: 6px 0 0;
+        }
+
+        .psyh-cta-bloque h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* ===== FIN ACORDEÓN SYH ===== */
+
+        /* ===== ACORDEÓN ISO ===== */
+        .piso-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 70px 30px;
+        }
+
+        .piso-normas {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 44px;
+            flex-wrap: wrap;
+        }
+
+        .piso-norma-badge {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            border: 2px solid;
+        }
+
+        .piso-norma-badge.calidad {
+            border-color: #1a2e4a;
+            color: #1a2e4a;
+            background: rgba(26, 46, 74, 0.07);
+        }
+
+        .piso-norma-badge.ambiente {
+            border-color: #2a7a4a;
+            color: #2a7a4a;
+            background: rgba(42, 122, 74, 0.07);
+        }
+
+        .piso-norma-badge.seguridad {
+            border-color: #e8a020;
+            color: #c8880a;
+            background: rgba(232, 160, 32, 0.10);
+        }
+
+        /* Reutiliza .psyh-* para el acordeón — mismos estilos */
+        /* ===== FIN ISO ===== */
     </style>
 </head>
 
@@ -374,7 +908,7 @@
         class="fixed top-0 w-full z-50 border-b border-primary/10 dark:border-white/10 px-8 py-5 flex items-center justify-between backdrop-blur-sm bg-white/40 dark:bg-black/40">
         <div class="flex items-center space-x-12">
             <div class="flex items-center">
-                <img src="assets-img/logo-praxia.jpg" alt="Praxia Consultores" class="h-10" style="border-radius:2px" />
+                <img src="assets-img/logo-praxia.jpg" alt="Praxia Consultores" class="h-20" style="border-radius:2px" />
             </div>
             <div class="hidden md:flex space-x-8 text-xs font-mono uppercase tracking-[0.2em]">
                 <button class="nav-tab active hover:text-primary transition-colors"
@@ -410,6 +944,128 @@
 
         <!-- ===== VISTA: HOME ===== -->
         <div id="view-home" class="view-section active w-full">
+            <!-- HERO -->
+            <div class="ph-hero">
+                <div class="ph-hero-tag">Consultoría Profesional</div>
+                <h1>Gestionamos el <span>cumplimiento normativo</span> para que vos te enfoques en tu negocio</h1>
+                <p>Asesoramos a empresas de todos los sectores en Seguridad e Higiene Laboral y en la implementación y
+                    certificación de normas ISO, con soluciones concretas y acompañamiento continuo.</p>
+                <div class="ph-hero-ctas">
+                    <button class="ph-btn-primary" onclick="cambiarVistaPrincipal('view-sih')">Seguridad e
+                        Higiene</button>
+                    <button class="ph-btn-secondary" onclick="cambiarVistaPrincipal('view-iso')">Certificaciones
+                        ISO</button>
+                </div>
+            </div>
+
+            <!-- STATS -->
+            <div class="ph-stats">
+                <div class="ph-stat">
+                    <span class="ph-stat-num">+10</span>
+                    <span class="ph-stat-label">Años de experiencia</span>
+                </div>
+                <div class="ph-stat">
+                    <span class="ph-stat-num">+80</span>
+                    <span class="ph-stat-label">Empresas asesoradas</span>
+                </div>
+                <div class="ph-stat">
+                    <span class="ph-stat-num">3</span>
+                    <span class="ph-stat-label">Normas ISO implementadas</span>
+                </div>
+                <div class="ph-stat">
+                    <span class="ph-stat-num">100%</span>
+                    <span class="ph-stat-label">Compromiso profesional</span>
+                </div>
+            </div>
+
+            <!-- QUIÉNES SOMOS -->
+            <div class="ph-quienes">
+                <div class="ph-quienes-texto">
+                    <h2>¿Por qué elegir Praxia?</h2>
+                    <div class="ph-linea"></div>
+                    <p>Somos una consultora argentina especializada en gestión de la seguridad, salud ocupacional y
+                        sistemas integrados de calidad. Trabajamos con empresas de construcción, industria, servicios y
+                        comercio en todo el país.</p>
+                    <p>Nuestro enfoque combina el conocimiento técnico profundo de la normativa argentina con las
+                        mejores prácticas internacionales, brindando soluciones prácticas y sostenibles en el tiempo.
+                    </p>
+                </div>
+                <div class="ph-pilares">
+                    <div class="ph-pilar">
+                        <span class="ph-pilar-icono">🎯</span>
+                        <div>
+                            <div class="ph-pilar-titulo">Experiencia sectorial comprobada</div>
+                            <div class="ph-pilar-desc">Conocemos los desafíos reales de cada industria y adaptamos
+                                nuestras soluciones a su contexto específico.</div>
+                        </div>
+                    </div>
+                    <div class="ph-pilar">
+                        <span class="ph-pilar-icono">📋</span>
+                        <div>
+                            <div class="ph-pilar-titulo">Cumplimiento legal garantizado</div>
+                            <div class="ph-pilar-desc">Mantenemos actualizados los requisitos de la SRT, AFIP y
+                                organismos de certificación para proteger a su empresa.</div>
+                        </div>
+                    </div>
+                    <div class="ph-pilar">
+                        <span class="ph-pilar-icono">🤝</span>
+                        <div>
+                            <div class="ph-pilar-titulo">Acompañamiento continuo</div>
+                            <div class="ph-pilar-desc">No entregamos documentos y nos retiramos. Estamos presentes en
+                                cada etapa del proceso, hasta la certificación y más allá.</div>
+                        </div>
+                    </div>
+                    <div class="ph-pilar">
+                        <span class="ph-pilar-icono">💡</span>
+                        <div>
+                            <div class="ph-pilar-titulo">Tecnología aplicada con AXIO</div>
+                            <div class="ph-pilar-desc">Nuestra plataforma propia digitaliza la gestión de auditorías y
+                                el seguimiento de indicadores en tiempo real.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESUMEN DE SERVICIOS -->
+            <div class="ph-servicios-wrap">
+                <h2>Nuestros Servicios</h2>
+                <p class="ph-subtitulo">Tres pilares para la excelencia operativa y el cumplimiento normativo</p>
+                <div class="ph-servicios-grid">
+
+                    <div class="ph-servicio-card">
+                        <span class="ph-servicio-icono">📊</span>
+                        <h3>AXIO — Plataforma de Auditoría</h3>
+                        <p>Sistema digital propio para la gestión de auditorías internas, seguimiento de no
+                            conformidades y análisis de indicadores de seguridad y calidad en tiempo real.</p>
+                        <button class="ph-servicio-link" onclick="cambiarVistaPrincipal('view-axio')">Conocer AXIO
+                            →</button>
+                    </div>
+
+                    <div class="ph-servicio-card">
+                        <span class="ph-servicio-icono">🦺</span>
+                        <h3>Seguridad e Higiene Laboral</h3>
+                        <p>Asesoramiento integral en materia de seguridad e higiene conforme a la Ley 19587.
+                            Diagnóstico, programa anual, capacitaciones, documentación y gestión ante la SRT.</p>
+                        <button class="ph-servicio-link" onclick="cambiarVistaPrincipal('view-sih')">Ver servicio
+                            →</button>
+                    </div>
+
+                    <div class="ph-servicio-card">
+                        <span class="ph-servicio-icono">🏅</span>
+                        <h3>Sistemas de Gestión ISO</h3>
+                        <p>Preparación, implementación y auditoría previa para la certificación en ISO 9001 (Calidad),
+                            ISO 14001 (Medio Ambiente) e ISO 45001 (Seguridad y Salud en el Trabajo).</p>
+                        <button class="ph-servicio-link" onclick="cambiarVistaPrincipal('view-iso')">Ver servicio
+                            →</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ===== FIN VISTA: HOME ===== -->
+
+        <!-- ===== VISTA: AXIO ===== -->
+        <div id="view-axio" class="view-section w-full">
             <section id="hero" class="w-full max-w-7xl mx-auto px-8 pt-32 pb-24">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -486,11 +1142,6 @@
                 </div>
             </section>
 
-        </div>
-        <!-- ===== FIN VISTA: HOME ===== -->
-
-        <!-- ===== VISTA: AXIO ===== -->
-        <div id="view-axio" class="view-section w-full">
             <!-- ─── Stats: Instrumentation Style ─── -->
             <section class="max-w-7xl mx-auto px-8 pb-24 pt-32">
                 <div
@@ -835,126 +1486,293 @@
 
         <!-- ===== VISTA: SEGURIDAD E HIGIENE ===== -->
         <div id="view-sih" class="view-section w-full">
-            <section class="praxia-servicios pt-32" id="servicios-sih">
-                <div class="max-w-7xl mx-auto">
-                    <h2>Seguridad e Higiene</h2>
-                    <p class="praxia-subtitulo">Soluciones integrales para organizaciones que buscan la excelencia
-                        operativa y el cumplimiento normativo</p>
-
-                    <div class="praxia-cards mt-12">
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">🔍</span>
-                            <h3>Relevamiento y Diagnóstico</h3>
-                            <p>Evaluación inicial del estado de situación en materia de seguridad e higiene laboral en
-                                su organización, identificando riesgos, incumplimientos y oportunidades de mejora.</p>
-                        </div>
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">📝</span>
-                            <h3>Programa Anual de Seguridad</h3>
-                            <p>Elaboración y gestión del Programa Anual de Higiene y Seguridad en el Trabajo (PAHST)
-                                conforme a la Ley 19587 y su decreto reglamentario 351/79.</p>
-                        </div>
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">⚠️</span>
-                            <h3>Identificación de Riesgos (IPER)</h3>
-                            <p>Identificación de peligros, evaluación y control de riesgos laborales. Elaboración de
-                                matrices de riesgo y planes de acción correctivos y preventivos.</p>
-                        </div>
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">🧑‍🏫</span>
-                            <h3>Capacitación al Personal</h3>
-                            <p>Diseño e implementación de planes de capacitación en prevención de accidentes, uso de
-                                EPP, evacuación, primeros auxilios y cultura de seguridad organizacional.</p>
-                        </div>
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">🗂️</span>
-                            <h3>Documentación Legal</h3>
-                            <p>Confección y actualización de toda la documentación exigida por la SRT: registros,
-                                legajos, planillas de capacitación, investigación de accidentes e incidentes.</p>
-                        </div>
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">🏗️</span>
-                            <h3>Gestión en Obras y Empresas</h3>
-                            <p>Asesoramiento continuo en empresas de construcción, industria y servicios. Presencia en
-                                obra, confección de legajos y seguimiento ante organismos de control.</p>
-                        </div>
-
-                    </div>
-                    <div class="praxia-tab-cta">
-                        <a href="#contacto">Consultar sobre Seguridad e Higiene →</a>
-                    </div>
+            <div class="psyh-wrap">
+                <div class="psyh-header">
+                    <div class="ph-hero-tag">Servicio</div>
+                    <h2>Seguridad e Higiene Laboral</h2>
+                    <p>Brindamos asesoramiento integral para que su empresa cumpla con la normativa vigente (Ley 19587 /
+                        Dec. 351/79) y construya una cultura preventiva real, más allá del cumplimiento formal.</p>
                 </div>
-            </section>
+
+                <div class="psyh-acordeon">
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">🔍</div>
+                            <div class="psyh-pregunta-titulo">Relevamiento y Diagnóstico Inicial</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>Realizamos una evaluación exhaustiva del estado de situación de su empresa en materia de
+                                seguridad e higiene laboral. Identificamos riesgos presentes, incumplimientos legales y
+                                oportunidades de mejora, entregando un informe con prioridades de acción claras.</p>
+                            <ul>
+                                <li>Visita técnica a las instalaciones</li>
+                                <li>Relevamiento de puestos de trabajo y tareas</li>
+                                <li>Análisis de documentación existente</li>
+                                <li>Informe de diagnóstico con mapa de riesgos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">📝</div>
+                            <div class="psyh-pregunta-titulo">Programa Anual de Higiene y Seguridad (PAHST)</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>Elaboramos y gestionamos el Programa Anual de Higiene y Seguridad en el Trabajo exigido
+                                por la SRT. El programa contempla todas las acciones preventivas planificadas para el
+                                año, con objetivos medibles y seguimiento periódico.</p>
+                            <ul>
+                                <li>Confección del PAHST conforme normativa SRT</li>
+                                <li>Definición de metas e indicadores</li>
+                                <li>Seguimiento trimestral de avance</li>
+                                <li>Presentación ante ART y organismos de control</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">⚠️</div>
+                            <div class="psyh-pregunta-titulo">Identificación y Evaluación de Riesgos (IPER)</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>Identificamos los peligros presentes en cada puesto de trabajo, evaluamos su nivel de
+                                riesgo y definimos las medidas de control más adecuadas, siguiendo metodologías
+                                reconocidas internacionalmente.</p>
+                            <ul>
+                                <li>Matrices IPER por puesto y sector</li>
+                                <li>Evaluación de riesgos físicos, químicos y ergonómicos</li>
+                                <li>Plan de acción con medidas preventivas y correctivas</li>
+                                <li>Actualización ante cambios en los procesos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">🧑‍🏫</div>
+                            <div class="psyh-pregunta-titulo">Capacitación y Formación del Personal</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>Diseñamos e implementamos planes de capacitación adaptados a los riesgos específicos de
+                                su empresa y a los requisitos legales aplicables, con registros válidos para la SRT.</p>
+                            <ul>
+                                <li>Inducción de seguridad para personal nuevo</li>
+                                <li>Uso correcto de EPP por puesto</li>
+                                <li>Plan de evacuación y emergencias</li>
+                                <li>Primeros auxilios básicos</li>
+                                <li>Registros firmados y archivo legal</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">🗂️</div>
+                            <div class="psyh-pregunta-titulo">Documentación Legal y Registros</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>Confeccionamos y mantenemos actualizada toda la documentación que exige la normativa
+                                vigente, evitando sanciones y asegurando que la empresa esté preparada para cualquier
+                                inspección.</p>
+                            <ul>
+                                <li>Legajos por establecimiento y empleado</li>
+                                <li>Registros de capacitaciones y entrega de EPP</li>
+                                <li>Investigación de accidentes e incidentes</li>
+                                <li>Planillas de inspección periódica</li>
+                                <li>Gestión ante SRT y ART</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">🏗️</div>
+                            <div class="psyh-pregunta-titulo">Asesoramiento en Obras y Presencia en Planta</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>Ofrecemos acompañamiento profesional continuo en empresas constructoras, industriales y
+                                de servicios. La presencia regular del responsable de higiene y seguridad garantiza el
+                                cumplimiento operativo día a día.</p>
+                            <ul>
+                                <li>Visitas periódicas a obra o planta</li>
+                                <li>Confección de legajos de obra (Dec. 911/96)</li>
+                                <li>Gestión ante IERIC y SRT en construcción</li>
+                                <li>Coordinación con aseguradoras y organismos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CTA -->
+                <div class="psyh-cta-bloque">
+                    <div>
+                        <h3>¿Necesitás cumplir con la normativa de seguridad?</h3>
+                        <p>Consultanos sin compromiso. Evaluamos tu situación y te proponemos la mejor solución.</p>
+                    </div>
+                    <button class="ph-btn-primary" onclick="window.location.href='#contacto'">Solicitar consulta
+                        →</button>
+                </div>
+            </div>
         </div>
         <!-- ===== FIN VISTA: SEGURIDAD E HIGIENE ===== -->
 
         <!-- ===== VISTA: SISTEMA DE GESTIÓN (ISO) ===== -->
         <div id="view-iso" class="view-section w-full">
-            <section class="praxia-servicios pt-32" id="servicios-iso">
-                <div class="max-w-7xl mx-auto">
-                    <h2>Sistemas de Gestión / Certificaciones ISO</h2>
-                    <p class="praxia-subtitulo">Excelencia en estándares internacionales para la mejora continua</p>
-
-                    <div class="praxia-cards mt-12">
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">🏅</span>
-                            <h3>ISO 9001 — Calidad</h3>
-                            <p>Preparación, asesoramiento e implementación de Sistemas de Gestión de la Calidad.
-                                Acompañamos a su organización desde el diagnóstico inicial hasta la auditoría de
-                                certificación.</p>
-                        </div>
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">🌿</span>
-                            <h3>ISO 14001 — Medio Ambiente</h3>
-                            <p>Implementación de Sistemas de Gestión Ambiental. Evaluación de aspectos e impactos
-                                ambientales, cumplimiento legal y mejora continua del desempeño ambiental de su empresa.
-                            </p>
-                        </div>
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">🦺</span>
-                            <h3>ISO 45001 — SST</h3>
-                            <p>Implementación de Sistemas de Gestión de Seguridad y Salud en el Trabajo. Integración con
-                                los requisitos legales argentinos y con otras normas del sistema integrado de gestión.
-                            </p>
-                        </div>
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">📊</span>
-                            <h3>Diagnóstico GAP Analysis</h3>
-                            <p>Análisis de brechas (GAP Analysis) previo a la certificación: evaluamos el nivel de
-                                cumplimiento actual de su organización respecto a los requisitos de la norma aplicable.
-                            </p>
-                        </div>
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">🔎</span>
-                            <h3>Auditoría Interna Previa</h3>
-                            <p>Realización de auditorías internas antes de la certificación para detectar no
-                                conformidades, preparar al personal y asegurar el éxito de la auditoría externa.</p>
-                        </div>
-
-                        <div class="praxia-card">
-                            <span class="praxia-icono">🤝</span>
-                            <h3>Acompañamiento en Auditoría</h3>
-                            <p>Presencia y soporte profesional durante los días de auditoría con el organismo
-                                certificador, gestionando consultas, hallazgos y planes de acción correctivos.</p>
-                        </div>
-
-                    </div>
-                    <div class="praxia-tab-cta">
-                        <a href="#contacto">Consultar sobre Sistemas de Gestión →</a>
-                    </div>
+            <div class="piso-wrap">
+                <div class="psyh-header">
+                    <div class="ph-hero-tag">Servicio</div>
+                    <h2>Sistemas de Gestión ISO</h2>
+                    <p>Acompañamos a su organización en todo el proceso de implementación y certificación de normas ISO:
+                        desde el diagnóstico inicial hasta estar listos para la auditoría externa con el organismo
+                        certificador.</p>
                 </div>
-            </section>
+
+                <div class="piso-normas">
+                    <span class="piso-norma-badge calidad">ISO 9001 — Calidad</span>
+                    <span class="piso-norma-badge ambiente">ISO 14001 — Medio Ambiente</span>
+                    <span class="piso-norma-badge seguridad">ISO 45001 — SST</span>
+                </div>
+
+                <div class="psyh-acordeon">
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">📊</div>
+                            <div class="psyh-pregunta-titulo">Diagnóstico GAP Analysis</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>El primer paso de todo proceso de certificación es conocer el punto de partida.
+                                Realizamos un análisis de brechas (GAP Analysis) comparando el estado actual de su
+                                organización contra los requisitos de la norma que desea certificar.</p>
+                            <ul>
+                                <li>Evaluación de procesos, documentación y recursos existentes</li>
+                                <li>Porcentaje de cumplimiento por cláusula de la norma</li>
+                                <li>Identificación de brechas críticas y riesgos</li>
+                                <li>Hoja de ruta personalizada hacia la certificación</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">�️</div>
+                            <div class="psyh-pregunta-titulo">Implementación del Sistema de Gestión</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>Diseñamos e implementamos el sistema de gestión adaptado a su organización, sus procesos
+                                reales y su contexto. No vendemos documentos genéricos: construimos un sistema que
+                                funciona en la práctica.</p>
+                            <ul>
+                                <li>Análisis del contexto de la organización y partes interesadas</li>
+                                <li>Definición de política, objetivos e indicadores</li>
+                                <li>Mapeo y documentación de procesos</li>
+                                <li>Gestión de riesgos y oportunidades</li>
+                                <li>Elaboración de procedimientos e instructivos de trabajo</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">🧑‍🏫</div>
+                            <div class="psyh-pregunta-titulo">Capacitación al Equipo</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>El éxito de un sistema de gestión depende de que el personal lo entienda y lo viva.
+                                Capacitamos a los equipos en los conceptos, requisitos y herramientas de la norma
+                                aplicable.</p>
+                            <ul>
+                                <li>Sensibilización general al personal sobre la norma</li>
+                                <li>Formación específica para el equipo de gestión</li>
+                                <li>Taller de auditores internos (opcional)</li>
+                                <li>Soporte ante consultas durante toda la implementación</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">🔎</div>
+                            <div class="psyh-pregunta-titulo">Auditoría Interna Previa a Certificación</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>Antes de la auditoría de certificación, realizamos una auditoría interna completa
+                                simulando el proceso externo. Detectamos no conformidades potenciales y las cerramos
+                                antes de que el organismo certificador las encuentre.</p>
+                            <ul>
+                                <li>Auditoría interna por cláusula de la norma</li>
+                                <li>Informe de no conformidades y observaciones</li>
+                                <li>Planes de acción correctiva y seguimiento</li>
+                                <li>Revisión por la dirección previa a la certificación</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">🤝</div>
+                            <div class="psyh-pregunta-titulo">Acompañamiento durante la Auditoría Externa</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>Estamos presentes durante los días de auditoría con el organismo certificador (IRAM,
+                                Bureau Veritas, SGS u otro). Gestionamos las consultas del auditor, facilitamos el
+                                acceso a la evidencia y coordinamos respuestas ante hallazgos.</p>
+                            <ul>
+                                <li>Presencia profesional en todos los días de auditoría</li>
+                                <li>Coordinación logística con el organismo certificador</li>
+                                <li>Gestión inmediata de hallazgos y no conformidades</li>
+                                <li>Seguimiento post-auditoría hasta la emisión del certificado</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="psyh-item">
+                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
+                            <div class="psyh-pregunta-icono">🔄</div>
+                            <div class="psyh-pregunta-titulo">Mantenimiento y Mejora Continua</div>
+                            <span class="psyh-chevron">▼</span>
+                        </div>
+                        <div class="psyh-respuesta">
+                            <p>Obtener el certificado es el inicio, no el fin. Acompañamos a su organización en el
+                                mantenimiento del sistema para las auditorías de seguimiento y recertificación,
+                                asegurando la mejora continua real.</p>
+                            <ul>
+                                <li>Revisiones periódicas del sistema de gestión</li>
+                                <li>Actualización de documentación ante cambios internos</li>
+                                <li>Preparación para auditorías de seguimiento anuales</li>
+                                <li>Soporte continuo al equipo de gestión</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CTA -->
+                <div class="psyh-cta-bloque">
+                    <div>
+                        <h3>¿Querés certificar una norma ISO?</h3>
+                        <p>Evaluamos tu situación actual y te proponemos un plan realista para llegar a la
+                            certificación.</p>
+                    </div>
+                    <button class="ph-btn-primary" onclick="window.location.href='#contacto'">Solicitar diagnóstico
+                        →</button>
+                </div>
+            </div>
         </div>
         <!-- ===== FIN VISTA: SISTEMA DE GESTIÓN (ISO) ===== -->
 
@@ -988,6 +1806,21 @@
     </footer>
 
     <script>
+        // ===== ACORDEÓN SERVICIOS PRAXIA =====
+        function psyhToggle(elemento) {
+            var item = elemento.parentElement;
+            var estaAbierto = item.classList.contains('abierto');
+            // Cerrar todos
+            document.querySelectorAll('.psyh-item').forEach(function (i) {
+                i.classList.remove('abierto');
+            });
+            // Si estaba cerrado, abrirlo
+            if (!estaAbierto) {
+                item.classList.add('abierto');
+            }
+        }
+        // ===== FIN ACORDEÓN =====
+
         // ===== CAMBIAR VISTAS PRINCIPALES (SPA) =====
         function cambiarVistaPrincipal(idVista) {
             // Ocultar todas las vistas
