@@ -887,6 +887,116 @@
 
         /* Reutiliza .psyh-* para el acordeón — mismos estilos */
         /* ===== FIN ISO ===== */
+        /* ===== CONTACTO PRAXIA ===== */
+        .pc-wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 70px 30px;
+            text-align: center;
+        }
+
+        .pc-wrap h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1a2e4a;
+            margin-bottom: 10px;
+        }
+
+        .pc-wrap .pc-subtitulo {
+            color: #5a6a7e;
+            font-size: 0.97rem;
+            margin-bottom: 50px;
+            line-height: 1.7;
+        }
+
+        .pc-canales {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 44px;
+        }
+
+        .pc-canal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            padding: 36px 24px;
+            border-radius: 16px;
+            background: #ffffff;
+            border: 2px solid #e0e6ef;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.22s ease;
+            cursor: pointer;
+        }
+
+        .pc-canal:hover {
+            border-color: #1a2e4a;
+            box-shadow: 0 8px 28px rgba(26, 46, 74, 0.13);
+            transform: translateY(-4px);
+        }
+
+        .pc-canal-icono {
+            font-size: 2.4rem;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pc-canal-icono.wsp {
+            background: #e8f5e9;
+        }
+
+        .pc-canal-icono.mail {
+            background: #e8f0fe;
+        }
+
+        .pc-canal-icono.li {
+            background: #e8f0fb;
+        }
+
+        .pc-canal-titulo {
+            font-weight: 700;
+            color: #1a2e4a;
+            font-size: 1rem;
+        }
+
+        .pc-canal-dato {
+            font-size: 0.85rem;
+            color: #5a6a7e;
+            word-break: break-all;
+        }
+
+        .pc-nota {
+            background: #f4f6f9;
+            border-radius: 12px;
+            padding: 22px 28px;
+            color: #5a6a7e;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            text-align: left;
+            border-left: 4px solid #e8a020;
+        }
+
+        .pc-nota strong {
+            color: #1a2e4a;
+        }
+
+        @media (max-width: 480px) {
+            .pc-canales {
+                grid-template-columns: 1fr;
+            }
+
+            .pc-wrap {
+                padding: 50px 20px;
+            }
+        }
+
+        /* ===== FIN CONTACTO ===== */
     </style>
 </head>
 
@@ -958,25 +1068,7 @@
                 </div>
             </div>
 
-            <!-- STATS -->
-            <div class="ph-stats">
-                <div class="ph-stat">
-                    <span class="ph-stat-num">+10</span>
-                    <span class="ph-stat-label">Años de experiencia</span>
-                </div>
-                <div class="ph-stat">
-                    <span class="ph-stat-num">+80</span>
-                    <span class="ph-stat-label">Empresas asesoradas</span>
-                </div>
-                <div class="ph-stat">
-                    <span class="ph-stat-num">3</span>
-                    <span class="ph-stat-label">Normas ISO implementadas</span>
-                </div>
-                <div class="ph-stat">
-                    <span class="ph-stat-num">100%</span>
-                    <span class="ph-stat-label">Compromiso profesional</span>
-                </div>
-            </div>
+
 
             <!-- QUIÉNES SOMOS -->
             <div class="ph-quienes">
@@ -1003,8 +1095,8 @@
                         <span class="ph-pilar-icono">📋</span>
                         <div>
                             <div class="ph-pilar-titulo">Cumplimiento legal garantizado</div>
-                            <div class="ph-pilar-desc">Mantenemos actualizados los requisitos de la SRT, AFIP y
-                                organismos de certificación para proteger a su empresa.</div>
+                            <div class="ph-pilar-desc">Mantenemos actualizados los requisitos de la SRT y organismos de
+                                control para proteger a su empresa ante cualquier inspección o auditoría.</div>
                         </div>
                     </div>
                     <div class="ph-pilar">
@@ -1142,41 +1234,7 @@
                 </div>
             </section>
 
-            <!-- ─── Stats: Instrumentation Style ─── -->
-            <section class="max-w-7xl mx-auto px-8 pb-24 pt-32">
-                <div
-                    class="grid grid-cols-1 md:grid-cols-4 gap-px bg-primary/10 dark:bg-white/10 w-full border border-primary/10 dark:border-white/10">
-                    <div
-                        class="stat-instrument bg-background-light dark:bg-background-dark p-8 text-left hover:bg-white dark:hover:bg-zinc-900 transition-colors">
-                        <span class="font-mono text-[10px] uppercase tracking-widest opacity-40 block mb-2">Metric
-                            01</span>
-                        <span class="font-mono text-3xl font-bold text-primary dark:text-white">+120</span>
-                        <span class="block mt-2 text-xs uppercase tracking-wider opacity-60">PROYECTOS
-                            GESTIONADOS</span>
-                    </div>
-                    <div
-                        class="stat-instrument bg-background-light dark:bg-background-dark p-8 text-left hover:bg-white dark:hover:bg-zinc-900 transition-colors">
-                        <span class="font-mono text-[10px] uppercase tracking-widest opacity-40 block mb-2">Metric
-                            02</span>
-                        <span class="font-mono text-3xl font-bold text-primary dark:text-white">99.7%</span>
-                        <span class="block mt-2 text-xs uppercase tracking-wider opacity-60">UPTIME OPERATIVO</span>
-                    </div>
-                    <div
-                        class="stat-instrument bg-background-light dark:bg-background-dark p-8 text-left hover:bg-white dark:hover:bg-zinc-900 transition-colors">
-                        <span class="font-mono text-[10px] uppercase tracking-widest opacity-40 block mb-2">Metric
-                            03</span>
-                        <span class="font-mono text-3xl font-bold text-primary dark:text-white">ISO</span>
-                        <span class="block mt-2 text-xs uppercase tracking-wider opacity-60">9001 · 14001 · 45001</span>
-                    </div>
-                    <div
-                        class="stat-instrument bg-background-light dark:bg-background-dark p-8 text-left hover:bg-white dark:hover:bg-zinc-900 transition-colors">
-                        <span class="font-mono text-[10px] uppercase tracking-widest opacity-40 block mb-2">Metric
-                            04</span>
-                        <span class="font-mono text-3xl font-bold text-primary dark:text-white">24/7</span>
-                        <span class="block mt-2 text-xs uppercase tracking-wider opacity-60">MONITOREO CONTINUO</span>
-                    </div>
-                </div>
-            </section>
+
 
             <!-- ═══════════════════════════════════════════════ -->
             <!-- PLATAFORMA — 4 PILARES                         -->
@@ -1491,7 +1549,8 @@
                     <div class="ph-hero-tag">Servicio</div>
                     <h2>Seguridad e Higiene Laboral</h2>
                     <p>Brindamos asesoramiento integral para que su empresa cumpla con la normativa vigente (Ley 19587 /
-                        Dec. 351/79) y construya una cultura preventiva real, más allá del cumplimiento formal.</p>
+                        Dec. 351/79 / Dec. 911/96) y construya una cultura preventiva real, más allá del cumplimiento
+                        formal.</p>
                 </div>
 
                 <div class="psyh-acordeon">
@@ -1518,7 +1577,7 @@
                     <div class="psyh-item">
                         <div class="psyh-pregunta" onclick="psyhToggle(this)">
                             <div class="psyh-pregunta-icono">📝</div>
-                            <div class="psyh-pregunta-titulo">Programa Anual de Higiene y Seguridad (PAHST)</div>
+                            <div class="psyh-pregunta-titulo">Programa Anual de Higiene y Seguridad</div>
                             <span class="psyh-chevron">▼</span>
                         </div>
                         <div class="psyh-respuesta">
@@ -1526,7 +1585,7 @@
                                 por la SRT. El programa contempla todas las acciones preventivas planificadas para el
                                 año, con objetivos medibles y seguimiento periódico.</p>
                             <ul>
-                                <li>Confección del PAHST conforme normativa SRT</li>
+                                <li>Confección del Programa conforme normativa SRT</li>
                                 <li>Definición de metas e indicadores</li>
                                 <li>Seguimiento trimestral de avance</li>
                                 <li>Presentación ante ART y organismos de control</li>
@@ -1785,8 +1844,8 @@
         class="relative z-10 border-t border-primary/10 dark:border-white/10 p-12 bg-background-light dark:bg-background-dark">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             <div class="space-y-4">
-                <div class="font-display font-bold text-xl tracking-tighter text-primary dark:text-white uppercase">AXIO
-                    — PRAXIA CONSULTORES</div>
+                <div class="font-display font-bold text-xl tracking-tighter text-primary dark:text-white uppercase">
+                    PRAXIA CONSULTORES</div>
                 <p class="text-xs font-mono opacity-50 uppercase tracking-widest">contacto.praxiaconsultores@gmail.com
                 </p>
                 <p class="text-xs font-mono opacity-40 uppercase tracking-widest">© 2025 Praxia Consultores. Todos los
