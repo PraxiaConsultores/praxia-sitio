@@ -1031,6 +1031,16 @@
             border-color: rgba(16, 185, 129, 0.6);
         }
 
+        .hover\:tech-glow-cyan:hover {
+            box-shadow: 0 0 35px -5px rgba(0, 242, 254, 0.4);
+            border-color: rgba(0, 242, 254, 0.6);
+        }
+
+        .hover\:tech-glow-green:hover {
+            box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.4);
+            border-color: rgba(16, 185, 129, 0.6);
+        }
+
         /* Tech blueprint custom animated background */
         .tech-grid-overlay {
             background-size: 20px 20px;
@@ -1118,7 +1128,7 @@
                     style="font-size:20px">light_mode</span>
             </button>
             <a href="#demo" onclick="scrollToLeadMagnet(); return false;"
-                class="border border-tech-cyan/40 bg-transparent text-tech-cyan px-6 py-2 text-xs font-mono uppercase tracking-widest transition-all duration-300 hover:bg-tech-cyan hover:text-tech-deep-blue hover:shadow-[0_0_25px_rgba(6,182,212,0.6)]"
+                class="bg-transparent border border-tech-cyan/40 text-tech-cyan px-6 py-2 text-xs font-mono uppercase tracking-widest transition-all duration-300 hover:bg-tech-cyan hover:text-tech-deep-blue hover:tech-glow-cyan"
                 style="border-radius:2px">
                 Solicitar Demo
             </a>
@@ -2047,180 +2057,247 @@
                     </div>
                 </div>
             </section>
-        </div>les, requiriendo un enfoque técnico riguroso.</p>
-                            <ul>
-                                <li>Elaboración de procedimientos de trabajo en altura</li>
-                                <li>Evaluación de riesgos específicos por tarea y altura</li>
-                                <li>Selección y verificación de equipos de protección individual (arneses, líneas de
-                                    vida)</li>
-                                <li>Capacitación específica al personal que realiza trabajos en altura</li>
-                                <li>Permisos de trabajo y planillas de control conforme Res. 61/2023</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- CTA -->
-                <div class="psyh-cta-bloque">
-                    <div>
-                        <h3>¿Necesitás cumplir con la normativa de seguridad?</h3>
-                        <p>Consultanos sin compromiso. Evaluamos tu situación y te proponemos la mejor solución.</p>
-                    </div>
-                    <button class="ph-btn-primary" onclick="window.location.href='#contacto'">Solicitar consulta
-                        →</button>
-                </div>
-            </div>
         </div>
         <!-- ===== FIN VISTA: SEGURIDAD E HIGIENE ===== -->
 
         <!-- ===== VISTA: SISTEMA DE GESTIÓN (ISO) ===== -->
         <div id="view-iso" class="view-section w-full">
-            <div class="piso-wrap">
-                <div class="psyh-header">
-                    <div class="ph-hero-tag">Servicio</div>
-                    <h2>Sistemas de Gestión ISO</h2>
-                    <p>Acompañamos a su organización en todo el proceso de implementación y certificación de normas ISO:
-                        desde el diagnóstico inicial hasta estar listos para la auditoría externa con el organismo
-                        certificador.</p>
+            <!-- Header section -->
+            <section class="relative w-full py-20 px-6 md:px-12 bg-gradient-to-br from-[#051a14] via-[#0b132b]/20 to-black border-b border-white/5 flex flex-col items-center justify-center text-center">
+                <!-- Tech grid overlay -->
+                <div class="absolute inset-0 tech-grid-overlay opacity-20 pointer-events-none"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-tech-green/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+                <div class="relative z-10 max-w-4xl mx-auto space-y-6">
+                    <!-- Tag superior -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tech-green/10 border border-tech-green/20 text-tech-green text-xs font-mono uppercase tracking-[0.2em]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-tech-green pulsing-dot-green"></span>
+                        Estructura Operativa & Certificación Global
+                    </div>
+                    
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white uppercase tracking-tight">
+                        Sistemas de Gestión ISO
+                    </h2>
+                    
+                    <p class="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto leading-relaxed font-body">
+                        Acompañamos a su organización en todo el proceso de implementación y certificación de normas ISO. Construimos una infraestructura documental robusta e inteligente, integrando el control a su operación diaria.
+                    </p>
                 </div>
+            </section>
 
-                <div class="piso-normas">
-                    <span class="piso-norma-badge calidad">ISO 9001 — Calidad</span>
-                    <span class="piso-norma-badge ambiente">ISO 14001 — Medio Ambiente</span>
-                    <span class="piso-norma-badge seguridad">ISO 45001 — SST</span>
+            <!-- State micro-chips (Badges) -->
+            <section class="w-full py-10 px-6 md:px-12 bg-background-light dark:bg-background-dark border-b border-gray-100 dark:border-white/5 transition-colors duration-300">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <div class="bg-black/5 dark:bg-black/35 border border-tech-cyan text-tech-cyan px-5 py-2.5 font-mono text-xs uppercase tracking-widest flex items-center gap-3 rounded-sm shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+                            <span class="w-2.5 h-2.5 rounded-full bg-tech-cyan pulsing-dot-cyan"></span>
+                            ISO 9001 // CALIDAD
+                        </div>
+                        <div class="bg-black/5 dark:bg-black/35 border border-tech-green text-tech-green px-5 py-2.5 font-mono text-xs uppercase tracking-widest flex items-center gap-3 rounded-sm shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                            <span class="w-2.5 h-2.5 rounded-full bg-tech-green pulsing-dot-green"></span>
+                            ISO 14001 // MEDIO AMBIENTE
+                        </div>
+                        <div class="bg-black/5 dark:bg-black/35 border border-tech-green text-tech-green px-5 py-2.5 font-mono text-xs uppercase tracking-widest flex items-center gap-3 rounded-sm shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                            <span class="w-2.5 h-2.5 rounded-full bg-tech-green pulsing-dot-green"></span>
+                            ISO 45001 // SST
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <div class="psyh-acordeon">
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">📊</div>
-                            <div class="psyh-pregunta-titulo">Diagnóstico GAP Analysis</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>El primer paso de todo proceso de certificación es conocer el punto de partida.
-                                Realizamos un análisis de brechas (GAP Analysis) comparando el estado actual de su
-                                organización contra los requisitos de la norma que desea certificar.</p>
-                            <ul>
-                                <li>Evaluación de procesos, documentación y recursos existentes</li>
-                                <li>Porcentaje de cumplimiento por cláusula de la norma</li>
-                                <li>Identificación de brechas críticas y riesgos</li>
-                                <li>Hoja de ruta personalizada hacia la certificación</li>
-                            </ul>
-                        </div>
+            <!-- Process Stack List -->
+            <section class="w-full py-16 px-6 md:px-12 bg-background-light dark:bg-background-dark transition-colors duration-300">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <div class="text-center mb-12 space-y-2">
+                        <span class="font-mono text-xs text-tech-green uppercase tracking-[0.2em]">Workflow de Certificación</span>
+                        <h3 class="font-display font-bold text-2xl text-primary dark:text-white uppercase tracking-tight">Fases del Proceso Operativo</h3>
+                        <div class="w-12 h-0.5 bg-tech-green mx-auto"></div>
                     </div>
 
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">�️</div>
-                            <div class="psyh-pregunta-titulo">Implementación del Sistema de Gestión</div>
-                            <span class="psyh-chevron">▼</span>
+                    <div class="space-y-4">
+                        
+                        <!-- Paso 1: GAP Analysis -->
+                        <div class="glass-card rounded-sm p-6 border border-tech-green/10 hover:border-tech-green/30 transition-all duration-300 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 hover:translate-x-1 shadow-sm">
+                            <div class="flex items-center md:items-start gap-4">
+                                <!-- Automated verification check indicator (left side) -->
+                                <div class="flex flex-col items-center justify-center shrink-0">
+                                    <div class="w-10 h-10 rounded-sm bg-tech-green/10 border border-tech-green/20 flex items-center justify-center text-tech-green relative">
+                                        <span class="material-symbols-outlined text-xl">analytics</span>
+                                        <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-tech-green pulsing-dot-green"></span>
+                                    </div>
+                                    <span class="font-mono text-[9px] text-gray-500 mt-1">STEP_01</span>
+                                </div>
+                                <div class="space-y-2 text-center md:text-left">
+                                    <h4 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide flex items-center gap-2 justify-center md:justify-start">
+                                        Diagnóstico GAP Analysis
+                                        <span class="material-symbols-outlined text-tech-green text-lg font-bold">verified</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                        El primer paso de todo proceso de certificación es conocer el punto de partida. Realizamos un análisis de brechas (GAP Analysis) comparando el estado actual de su organización contra los requisitos de la norma que desea certificar.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 pt-1.5 justify-center md:justify-start">
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Evaluación de procesos</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Mapeo de riesgos</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Hoja de ruta</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="psyh-respuesta">
-                            <p>Diseñamos e implementamos el sistema de gestión adaptado a su organización, sus procesos
-                                reales y su contexto. No vendemos documentos genéricos: construimos un sistema que
-                                funciona en la práctica.</p>
-                            <ul>
-                                <li>Análisis del contexto de la organización y partes interesadas</li>
-                                <li>Definición de política, objetivos e indicadores</li>
-                                <li>Mapeo y documentación de procesos</li>
-                                <li>Gestión de riesgos y oportunidades</li>
-                                <li>Elaboración de procedimientos e instructivos de trabajo</li>
-                            </ul>
+
+                        <!-- Paso 2: Implementación -->
+                        <div class="glass-card rounded-sm p-6 border border-tech-green/10 hover:border-tech-green/30 transition-all duration-300 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 hover:translate-x-1 shadow-sm">
+                            <div class="flex items-center md:items-start gap-4">
+                                <div class="flex flex-col items-center justify-center shrink-0">
+                                    <div class="w-10 h-10 rounded-sm bg-tech-green/10 border border-tech-green/20 flex items-center justify-center text-tech-green relative">
+                                        <span class="material-symbols-outlined text-xl">architecture</span>
+                                        <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-tech-green pulsing-dot-green"></span>
+                                    </div>
+                                    <span class="font-mono text-[9px] text-gray-500 mt-1">STEP_02</span>
+                                </div>
+                                <div class="space-y-2 text-center md:text-left">
+                                    <h4 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide flex items-center gap-2 justify-center md:justify-start">
+                                        Implementación del Sistema de Gestión
+                                        <span class="material-symbols-outlined text-tech-green text-lg font-bold">verified</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                        Diseñamos e implementamos el sistema de gestión adaptado a su organización, sus procesos reales y su contexto. No vendemos documentos genéricos: construimos un sistema que funciona en la práctica.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 pt-1.5 justify-center md:justify-start">
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Política e KPI</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Mapeo de procesos</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Manual de gestión</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Paso 3: Capacitación -->
+                        <div class="glass-card rounded-sm p-6 border border-tech-green/10 hover:border-tech-green/30 transition-all duration-300 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 hover:translate-x-1 shadow-sm">
+                            <div class="flex items-center md:items-start gap-4">
+                                <div class="flex flex-col items-center justify-center shrink-0">
+                                    <div class="w-10 h-10 rounded-sm bg-tech-green/10 border border-tech-green/20 flex items-center justify-center text-tech-green relative">
+                                        <span class="material-symbols-outlined text-xl">groups</span>
+                                        <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-tech-green pulsing-dot-green"></span>
+                                    </div>
+                                    <span class="font-mono text-[9px] text-gray-500 mt-1">STEP_03</span>
+                                </div>
+                                <div class="space-y-2 text-center md:text-left">
+                                    <h4 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide flex items-center gap-2 justify-center md:justify-start">
+                                        Capacitación y Formación al Equipo
+                                        <span class="material-symbols-outlined text-tech-green text-lg font-bold">verified</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                        El éxito de un sistema de gestión depende de que el personal lo entienda y lo viva. Capacitamos a los equipos en los conceptos, requisitos y herramientas de la norma aplicable.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 pt-1.5 justify-center md:justify-start">
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Sensibilización</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Formación equipo</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Taller auditores</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 4: Auditoría Interna -->
+                        <div class="glass-card rounded-sm p-6 border border-tech-green/10 hover:border-tech-green/30 transition-all duration-300 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 hover:translate-x-1 shadow-sm">
+                            <div class="flex items-center md:items-start gap-4">
+                                <div class="flex flex-col items-center justify-center shrink-0">
+                                    <div class="w-10 h-10 rounded-sm bg-tech-green/10 border border-tech-green/20 flex items-center justify-center text-tech-green relative">
+                                        <span class="material-symbols-outlined text-xl">policy</span>
+                                        <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-tech-green pulsing-dot-green"></span>
+                                    </div>
+                                    <span class="font-mono text-[9px] text-gray-500 mt-1">STEP_04</span>
+                                </div>
+                                <div class="space-y-2 text-center md:text-left">
+                                    <h4 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide flex items-center gap-2 justify-center md:justify-start">
+                                        Auditoría Interna Pre-Certificación
+                                        <span class="material-symbols-outlined text-tech-green text-lg font-bold">verified</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                        Antes de la auditoría de certificación, realizamos una auditoría interna completa simulando el proceso externo. Detectamos no conformidades potenciales y las cerramos proactivamente.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 pt-1.5 justify-center md:justify-start">
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Simulacro completo</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Informe desvíos</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Planes correctivos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 5: Acompañamiento -->
+                        <div class="glass-card rounded-sm p-6 border border-tech-green/10 hover:border-tech-green/30 transition-all duration-300 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 hover:translate-x-1 shadow-sm">
+                            <div class="flex items-center md:items-start gap-4">
+                                <div class="flex flex-col items-center justify-center shrink-0">
+                                    <div class="w-10 h-10 rounded-sm bg-tech-green/10 border border-tech-green/20 flex items-center justify-center text-tech-green relative">
+                                        <span class="material-symbols-outlined text-xl">handshake</span>
+                                        <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-tech-green pulsing-dot-green"></span>
+                                    </div>
+                                    <span class="font-mono text-[9px] text-gray-500 mt-1">STEP_05</span>
+                                </div>
+                                <div class="space-y-2 text-center md:text-left">
+                                    <h4 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide flex items-center gap-2 justify-center md:justify-start">
+                                        Acompañamiento en Auditoría Externa
+                                        <span class="material-symbols-outlined text-tech-green text-lg font-bold">verified</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                        Estamos presentes durante los días de auditoría con el organismo certificador (IRAM, Bureau Veritas, SGS u otro). Gestionamos las consultas del auditor, facilitamos el acceso a la evidencia y coordinamos respuestas.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 pt-1.5 justify-center md:justify-start">
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Presencia en auditoría</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Logística certificador</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Soporte post-auditoría</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 6: Mejora Continua -->
+                        <div class="glass-card rounded-sm p-6 border border-tech-green/10 hover:border-tech-green/30 transition-all duration-300 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 hover:translate-x-1 shadow-sm">
+                            <div class="flex items-center md:items-start gap-4">
+                                <div class="flex flex-col items-center justify-center shrink-0">
+                                    <div class="w-10 h-10 rounded-sm bg-tech-green/10 border border-tech-green/20 flex items-center justify-center text-tech-green relative">
+                                        <span class="material-symbols-outlined text-xl">sync</span>
+                                        <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-tech-green pulsing-dot-green"></span>
+                                    </div>
+                                    <span class="font-mono text-[9px] text-gray-500 mt-1">STEP_06</span>
+                                </div>
+                                <div class="space-y-2 text-center md:text-left">
+                                    <h4 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide flex items-center gap-2 justify-center md:justify-start">
+                                        Mantenimiento y Mejora Continua
+                                        <span class="material-symbols-outlined text-tech-green text-lg font-bold">verified</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                        Obtener el certificado es el inicio, no el fin. Acompañamos a su organización en el mantenimiento del sistema para las auditorías de seguimiento y recertificación, asegurando la mejora continua real.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 pt-1.5 justify-center md:justify-start">
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Revisiones de sistema</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Auditorías anuales</span>
+                                        <span class="bg-black/5 dark:bg-black/35 font-mono text-[9px] px-2 py-0.5 text-gray-500 uppercase">Soporte continuo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🧑‍🏫</div>
-                            <div class="psyh-pregunta-titulo">Capacitación al Equipo</div>
-                            <span class="psyh-chevron">▼</span>
+                    <!-- CTA -->
+                    <div class="mt-16 bg-gradient-to-r from-tech-deep-blue via-[#051a14]/60 to-black border border-white/10 rounded-sm p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
+                        <!-- Tech circles inside CTA -->
+                        <div class="absolute -top-10 -right-10 w-48 h-48 bg-tech-green/5 rounded-full blur-2xl pointer-events-none"></div>
+                        <div class="relative z-10 space-y-2 text-left">
+                            <h3 class="font-display font-bold text-xl sm:text-2xl text-white uppercase tracking-tight">¿Querés certificar una norma ISO?</h3>
+                            <p class="text-xs sm:text-sm text-gray-400 max-w-xl font-body">
+                                Evaluamos tu situación actual y te proponemos un plan realista con soporte end-to-end para alcanzar la certificación oficial.
+                            </p>
                         </div>
-                        <div class="psyh-respuesta">
-                            <p>El éxito de un sistema de gestión depende de que el personal lo entienda y lo viva.
-                                Capacitamos a los equipos en los conceptos, requisitos y herramientas de la norma
-                                aplicable.</p>
-                            <ul>
-                                <li>Sensibilización general al personal sobre la norma</li>
-                                <li>Formación específica para el equipo de gestión</li>
-                                <li>Taller de auditores internos (opcional)</li>
-                                <li>Soporte ante consultas durante toda la implementación</li>
-                            </ul>
-                        </div>
+                        <button onclick="scrollToContact()" class="relative z-10 shrink-0 px-8 py-4 bg-tech-green text-white font-mono text-xs uppercase tracking-[0.2em] font-bold rounded-sm hover:tech-glow-green transition-all duration-300 hover:bg-white hover:text-black">
+                            Solicitar diagnóstico →
+                        </button>
                     </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🔎</div>
-                            <div class="psyh-pregunta-titulo">Auditoría Interna Previa a Certificación</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Antes de la auditoría de certificación, realizamos una auditoría interna completa
-                                simulando el proceso externo. Detectamos no conformidades potenciales y las cerramos
-                                antes de que el organismo certificador las encuentre.</p>
-                            <ul>
-                                <li>Auditoría interna por cláusula de la norma</li>
-                                <li>Informe de no conformidades y observaciones</li>
-                                <li>Planes de acción correctiva y seguimiento</li>
-                                <li>Revisión por la dirección previa a la certificación</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🤝</div>
-                            <div class="psyh-pregunta-titulo">Acompañamiento durante la Auditoría Externa</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Estamos presentes durante los días de auditoría con el organismo certificador (IRAM,
-                                Bureau Veritas, SGS u otro). Gestionamos las consultas del auditor, facilitamos el
-                                acceso a la evidencia y coordinamos respuestas ante hallazgos.</p>
-                            <ul>
-                                <li>Presencia profesional en todos los días de auditoría</li>
-                                <li>Coordinación logística con el organismo certificador</li>
-                                <li>Gestión inmediata de hallazgos y no conformidades</li>
-                                <li>Seguimiento post-auditoría hasta la emisión del certificado</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🔄</div>
-                            <div class="psyh-pregunta-titulo">Mantenimiento y Mejora Continua</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Obtener el certificado es el inicio, no el fin. Acompañamos a su organización en el
-                                mantenimiento del sistema para las auditorías de seguimiento y recertificación,
-                                asegurando la mejora continua real.</p>
-                            <ul>
-                                <li>Revisiones periódicas del sistema de gestión</li>
-                                <li>Actualización de documentación ante cambios internos</li>
-                                <li>Preparación para auditorías de seguimiento anuales</li>
-                                <li>Soporte continuo al equipo de gestión</li>
-                            </ul>
-                        </div>
-                    </div>
-
                 </div>
-
-                <!-- CTA -->
-                <div class="psyh-cta-bloque">
-                    <div>
-                        <h3>¿Querés certificar una norma ISO?</h3>
-                        <p>Evaluamos tu situación actual y te proponemos un plan realista para llegar a la
-                            certificación.</p>
-                    </div>
-                    <button class="ph-btn-primary" onclick="window.location.href='#contacto'">Solicitar diagnóstico
-                        →</button>
-                </div>
-            </div>
+            </section>
         </div>
         <!-- ===== FIN VISTA: SISTEMA DE GESTIÓN (ISO) ===== -->
 
