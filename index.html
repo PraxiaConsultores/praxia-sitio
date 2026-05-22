@@ -1110,14 +1110,15 @@
             </div>
             <div class="hidden md:flex space-x-8 text-xs font-mono uppercase tracking-[0.2em]">
                 <button class="nav-tab active hover:text-tech-cyan transition-colors"
-                    onclick="cambiarVistaPrincipal('view-home')">Home</button>
+                    onclick="cambiarVistaPrincipal('home')">Home</button>
                 <button class="nav-tab hover:text-tech-cyan transition-colors"
-                    onclick="cambiarVistaPrincipal('view-axio')">AXIO</button>
+                    onclick="cambiarVistaPrincipal('axio')">AXIO</button>
                 <button class="nav-tab hover:text-tech-cyan transition-colors"
-                    onclick="cambiarVistaPrincipal('view-sih')">Seguridad e Higiene</button>
+                    onclick="cambiarVistaPrincipal('sih')">Seguridad e Higiene</button>
                 <button class="nav-tab hover:text-tech-cyan transition-colors"
-                    onclick="cambiarVistaPrincipal('view-iso')">Sistemas de Gestión</button>
-                <a class="hover:text-tech-cyan transition-colors flex items-center" href="#contacto" onclick="scrollToContact(); return false;">Contacto</a>
+                    onclick="cambiarVistaPrincipal('iso')">Sistemas de Gestión</button>
+                <button class="nav-tab hover:text-tech-cyan transition-colors"
+                    onclick="cambiarVistaPrincipal('contacto')">Contacto</button>
             </div>
         </div>
         <div class="flex items-center space-x-6">
@@ -1709,9 +1710,6 @@
                 </div>
             </section>
 
-            <!-- ═══════════════════════════════════════════════ -->
-            <!-- CTA                                             -->
-            <!-- ═══════════════════════════════════════════════ -->
             <section id="demo"
                 class="w-full border-t border-primary/10 dark:border-white/10 py-24 px-8 bg-primary text-white text-center">
                 <div class="max-w-3xl mx-auto">
@@ -1722,7 +1720,17 @@
                         class="text-white/60 mb-12 max-w-2xl mx-auto font-mono text-sm uppercase tracking-widest leading-relaxed">
                         Auditoría técnica digital de precisión. Control absoluto sobre cada fase de su proyecto.
                     </p>
-          <div id="view-sih" class="view-section w-full">
+                    <a href="#contacto" onclick="scrollToContact(); return false;"
+                        class="inline-block bg-white text-primary px-10 py-5 text-sm font-mono uppercase tracking-[0.2em] font-bold hover:bg-gray-100 transition-colors"
+                        style="border-radius:2px">
+                        Solicitar Demo de la Plataforma
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===== VISTA: SEGURIDAD E HIGIENE ===== -->
+        <div id="view-sih" class="view-section w-full">
             <!-- Header section -->
             <section class="relative w-full py-20 px-6 md:px-12 bg-gradient-to-br from-[#0a1128] via-[#001f3f]/10 to-black border-b border-white/5 flex flex-col items-center justify-center text-center">
                 <!-- Tech grid overlay -->
@@ -2301,50 +2309,54 @@
         </div>
         <!-- ===== FIN VISTA: SISTEMA DE GESTIÓN (ISO) ===== -->
 
-    </main>
+        <!-- ===== VISTA: CONTACTO ===== -->
+        <div id="view-contacto" class="view-section w-full">
+            <!-- ═══════════════════════════════════════════════ -->
+            <!-- FOOTER / CONTACTO                               -->
+            <!-- ═══════════════════════════════════════════════ -->
+            <footer id="contacto"
+                class="relative z-10 border-t border-primary/10 dark:border-white/10 p-12 bg-background-light dark:bg-background-dark">
+                <div class="pc-wrap">
+                    <div class="ph-hero-tag">Contacto</div>
+                    <h2>Hablemos</h2>
+                    <p class="pc-subtitulo">
+                        Estamos disponibles para responder tus consultas sobre cualquiera de nuestros servicios.<br>
+                        Elegí el canal que prefieras y te respondemos a la brevedad.
+                    </p>
 
-    <!-- ═══════════════════════════════════════════════ -->
-    <!-- FOOTER                                          -->
-    <!-- ═══════════════════════════════════════════════ -->
-    <footer id="contacto"
-        class="relative z-10 border-t border-primary/10 dark:border-white/10 p-12 bg-background-light dark:bg-background-dark">
-        <div class="pc-wrap">
-            <div class="ph-hero-tag">Contacto</div>
-            <h2>Hablemos</h2>
-            <p class="pc-subtitulo">
-                Estamos disponibles para responder tus consultas sobre cualquiera de nuestros servicios.<br>
-                Elegí el canal que prefieras y te respondemos a la brevedad.
-            </p>
+                    <div class="pc-canales">
 
-            <div class="pc-canales">
+                        <a class="pc-canal" href="https://wa.me/541133125827" target="_blank" rel="noopener">
+                            <div class="pc-canal-icono wsp">💬</div>
+                            <div class="pc-canal-titulo">WhatsApp</div>
+                            <div class="pc-canal-dato">+54 11 3312-5827</div>
+                        </a>
 
-                <a class="pc-canal" href="https://wa.me/541133125827" target="_blank" rel="noopener">
-                    <div class="pc-canal-icono wsp">💬</div>
-                    <div class="pc-canal-titulo">WhatsApp</div>
-                    <div class="pc-canal-dato">+54 11 3312-5827</div>
-                </a>
+                        <a class="pc-canal" href="mailto:contacto.praxiaconsultores@gmail.com">
+                            <div class="pc-canal-icono mail">✉️</div>
+                            <div class="pc-canal-titulo">Correo electrónico</div>
+                            <div class="pc-canal-dato">contacto.praxiaconsultores@gmail.com</div>
+                        </a>
 
-                <a class="pc-canal" href="mailto:contacto.praxiaconsultores@gmail.com">
-                    <div class="pc-canal-icono mail">✉️</div>
-                    <div class="pc-canal-titulo">Correo electrónico</div>
-                    <div class="pc-canal-dato">contacto.praxiaconsultores@gmail.com</div>
-                </a>
+                        <a class="pc-canal" href="https://www.linkedin.com/in/praxia-consultores-praxia-consultores-036985363/"
+                            target="_blank" rel="noopener">
+                            <div class="pc-canal-icono li">🔗</div>
+                            <div class="pc-canal-titulo">LinkedIn</div>
+                            <div class="pc-canal-dato">Praxia Consultores</div>
+                        </a>
 
-                <a class="pc-canal" href="https://www.linkedin.com/in/praxia-consultores-praxia-consultores-036985363/"
-                    target="_blank" rel="noopener">
-                    <div class="pc-canal-icono li">🔗</div>
-                    <div class="pc-canal-titulo">LinkedIn</div>
-                    <div class="pc-canal-dato">Praxia Consultores</div>
-                </a>
+                    </div>
 
-            </div>
-
-            <div class="pc-nota">
-                <strong>Horario de atención:</strong> Lunes a viernes de 9 a 18 hs (hora Argentina).<br>
-                Los mensajes recibidos fuera del horario serán respondidos el siguiente día hábil.
-            </div>
+                    <div class="pc-nota">
+                        <strong>Horario de atención:</strong> Lunes a viernes de 9 a 18 hs (hora Argentina).<br>
+                        Los mensajes recibidos fuera del horario serán respondidos el siguiente día hábil.
+                    </div>
+                </div>
+            </footer>
         </div>
-    </footer>
+        <!-- ===== FIN VISTA: CONTACTO ===== -->
+
+    </main>
 
     <script>
         // ===== ACORDEÓN SERVICIOS PRAXIA =====
@@ -2373,16 +2385,26 @@
                 btn.classList.remove('active');
             });
 
+            // Determinar el ID de destino (soportar tanto formato corto 'sih' como largo 'view-sih')
+            let targetId = idVista;
+            if (!idVista.startsWith('view-')) {
+                targetId = 'view-' + idVista;
+            }
+
             // Activar la vista seleccionada
-            const vistaSeleccionada = document.getElementById(idVista);
+            const vistaSeleccionada = document.getElementById(targetId);
             if (vistaSeleccionada) {
                 vistaSeleccionada.classList.add('active');
             }
 
             // Activar el botón correspondiente en el nav
-            // Nos fijamos en el onclick string para matchear (forma sencilla)
-            document.querySelectorAll(`.nav-tab[onclick*="${idVista}"]`).forEach(function (btn) {
-                btn.classList.add('active');
+            // Nos fijamos si el onclick contiene el string original de idVista o el ID con prefijo
+            const shortId = idVista.replace('view-', '');
+            document.querySelectorAll('.nav-tab').forEach(function (btn) {
+                const onclickAttr = btn.getAttribute('onclick') || '';
+                if (onclickAttr.includes(`'${shortId}'`) || onclickAttr.includes(`'${targetId}'`) || onclickAttr.includes(`"${shortId}"`) || onclickAttr.includes(`"${targetId}"`)) {
+                    btn.classList.add('active');
+                }
             });
 
             // Scrollear hacia arriba suavemente si el usuario estaba abajo
@@ -2391,17 +2413,29 @@
 
         // ===== NUEVAS FUNCIONES SCROLL & FORMULARIO (LEAD MAGNET) =====
         function scrollToLeadMagnet() {
+            // Ir primero a la vista Home, donde reside la sección del formulario de autodiagnóstico
+            cambiarVistaPrincipal('home');
+            
             const section = document.getElementById('lead-magnet-section');
             if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
+                // Hacer scroll después de que la vista se haga visible
+                setTimeout(() => {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
             }
         }
 
         // Smooth scroll helper specifically to bypass route defaults
         function scrollToContact() {
+            // Ir primero a la vista Contacto
+            cambiarVistaPrincipal('contacto');
+            
             const section = document.getElementById('contacto');
             if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
+                // Hacer scroll después de que la vista se haga visible
+                setTimeout(() => {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
             }
         }
 
