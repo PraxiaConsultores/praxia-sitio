@@ -185,12 +185,12 @@
         }
 
         .nav-tab.active {
-            color: #2A415E;
+            color: #06B6D4;
             font-weight: 700;
         }
 
         .dark .nav-tab.active {
-            color: #ffffff;
+            color: #06B6D4;
         }
 
         /* ── SPA Views ── */
@@ -1099,15 +1099,15 @@
                 <img src="assets-img/logo-praxia.jpg" alt="Praxia Consultores" class="h-20" style="border-radius:2px" />
             </div>
             <div class="hidden md:flex space-x-8 text-xs font-mono uppercase tracking-[0.2em]">
-                <button class="nav-tab active hover:text-primary transition-colors"
+                <button class="nav-tab active hover:text-tech-cyan transition-colors"
                     onclick="cambiarVistaPrincipal('view-home')">Home</button>
-                <button class="nav-tab hover:text-primary transition-colors"
+                <button class="nav-tab hover:text-tech-cyan transition-colors"
                     onclick="cambiarVistaPrincipal('view-axio')">AXIO</button>
-                <button class="nav-tab hover:text-primary transition-colors"
+                <button class="nav-tab hover:text-tech-cyan transition-colors"
                     onclick="cambiarVistaPrincipal('view-sih')">Seguridad e Higiene</button>
-                <button class="nav-tab hover:text-primary transition-colors"
+                <button class="nav-tab hover:text-tech-cyan transition-colors"
                     onclick="cambiarVistaPrincipal('view-iso')">Sistemas de Gestión</button>
-                <a class="hover:text-primary transition-colors flex items-center" href="#contacto">Contacto</a>
+                <a class="hover:text-tech-cyan transition-colors flex items-center" href="#contacto" onclick="scrollToContact(); return false;">Contacto</a>
             </div>
         </div>
         <div class="flex items-center space-x-6">
@@ -1117,8 +1117,8 @@
                 <span class="material-symbols-outlined hidden dark:block text-white"
                     style="font-size:20px">light_mode</span>
             </button>
-            <a href="#demo"
-                class="border border-primary dark:border-white px-6 py-2 text-xs font-mono uppercase tracking-widest hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+            <a href="#demo" onclick="scrollToLeadMagnet(); return false;"
+                class="border border-tech-cyan/40 bg-transparent text-tech-cyan px-6 py-2 text-xs font-mono uppercase tracking-widest transition-all duration-300 hover:bg-tech-cyan hover:text-tech-deep-blue hover:shadow-[0_0_25px_rgba(6,182,212,0.6)]"
                 style="border-radius:2px">
                 Solicitar Demo
             </a>
@@ -1712,261 +1712,342 @@
                         class="text-white/60 mb-12 max-w-2xl mx-auto font-mono text-sm uppercase tracking-widest leading-relaxed">
                         Auditoría técnica digital de precisión. Control absoluto sobre cada fase de su proyecto.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="https://wa.me/5491133125827?text=Quiero%20solicitar%20una%20demo%20de%20AXIO"
-                            target="_blank"
-                            class="inline-block bg-white text-primary px-12 py-5 text-sm font-mono uppercase tracking-[0.2em] font-bold hover:opacity-90 transition-opacity"
-                            style="border-radius:2px">
-                            Solicitar Demo de la Plataforma
-                        </a>
-                        <a href="#arquitectura"
-                            class="inline-block border border-white/30 text-white px-12 py-5 text-sm font-mono uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-all"
-                            style="border-radius:2px">
-                            Explorar la Arquitectura
-                        </a>
+          <div id="view-sih" class="view-section w-full">
+            <!-- Header section -->
+            <section class="relative w-full py-20 px-6 md:px-12 bg-gradient-to-br from-[#0a1128] via-[#001f3f]/10 to-black border-b border-white/5 flex flex-col items-center justify-center text-center">
+                <!-- Tech grid overlay -->
+                <div class="absolute inset-0 tech-grid-overlay opacity-20 pointer-events-none"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-tech-cyan/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+                <div class="relative z-10 max-w-4xl mx-auto space-y-6">
+                    <!-- Tag superior -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tech-cyan/10 border border-tech-cyan/20 text-tech-cyan text-xs font-mono uppercase tracking-[0.2em]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-tech-cyan pulsing-dot-cyan"></span>
+                        Ingeniería Preventiva & Higiene Ocupacional
                     </div>
+                    
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white uppercase tracking-tight">
+                        Seguridad e Higiene Laboral
+                    </h2>
+                    
+                    <p class="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto leading-relaxed font-body">
+                        Brindamos asesoramiento integral para que su empresa cumpla con la normativa vigente (Ley 19587 / Dec. 351/79 / Dec. 911/96) y construya una cultura preventiva real, más allá del cumplimiento formal.
+                    </p>
                 </div>
             </section>
 
-        </div>
-        <!-- ===== FIN VISTA: AXIO ===== -->
-
-        <!-- ===== VISTA: SEGURIDAD E HIGIENE ===== -->
-        <div id="view-sih" class="view-section w-full">
-            <div class="psyh-wrap">
-                <div class="psyh-header">
-                    <div class="ph-hero-tag">Servicio</div>
-                    <h2>Seguridad e Higiene Laboral</h2>
-                    <p>Brindamos asesoramiento integral para que su empresa cumpla con la normativa vigente (Ley 19587 /
-                        Dec. 351/79 / Dec. 911/96) y construya una cultura preventiva real, más allá del cumplimiento
-                        formal.</p>
-                </div>
-
-                <div class="psyh-acordeon">
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🔍</div>
-                            <div class="psyh-pregunta-titulo">Relevamiento y Diagnóstico Inicial</div>
-                            <span class="psyh-chevron">▼</span>
+            <!-- Cards Grid Section -->
+            <section class="w-full py-16 px-6 md:px-12 bg-background-light dark:bg-background-dark transition-colors duration-300">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Card 1: Diagnóstico Inicial -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">troubleshoot</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Relevamiento y Diagnóstico Inicial
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Evaluación exhaustiva del estado de situación de su empresa en materia de seguridad e higiene laboral. Identificamos riesgos e incumplimientos legales.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Visita técnica a planta</div>
+                                    <div>&gt; Relevamiento de puestos</div>
+                                    <div>&gt; Análisis documental</div>
+                                    <div>&gt; Informe de diagnóstico</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="psyh-respuesta">
-                            <p>Realizamos una evaluación exhaustiva del estado de situación de su empresa en materia de
-                                seguridad e higiene laboral. Identificamos riesgos presentes, incumplimientos legales y
-                                oportunidades de mejora, entregando un informe con prioridades de acción claras.</p>
-                            <ul>
-                                <li>Visita técnica a las instalaciones</li>
-                                <li>Relevamiento de puestos de trabajo y tareas</li>
-                                <li>Análisis de documentación existente</li>
-                                <li>Informe de diagnóstico con mapa de riesgos</li>
-                            </ul>
+
+                        <!-- Card 2: Programa Anual -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">assignment</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Programa Anual de Higiene y Seguridad
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Elaboramos y gestionamos el Programa Anual de Higiene y Seguridad exigido por la SRT, contemplando acciones preventivas y objetivos medibles.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Confección programa SRT</div>
+                                    <div>&gt; Definición de KPI/Metas</div>
+                                    <div>&gt; Seguimiento trimestral</div>
+                                    <div>&gt; Presentación ART/SRT</div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Card 3: IPER -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">warning</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Identificación y Evaluación de Riesgos (IPER)
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Identificamos peligros en cada puesto de trabajo, evaluamos niveles de riesgo y definimos medidas de control alineadas a normas internacionales.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Matrices IPER por puesto</div>
+                                    <div>&gt; Evaluación física/química</div>
+                                    <div>&gt; Plan de medidas correctivas</div>
+                                    <div>&gt; Actualización de procesos</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Capacitación -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">school</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Capacitación y Formación del Personal
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Diseñamos e implementamos planes de capacitación adaptados a riesgos específicos y requisitos legales, con registros válidos para la SRT.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Inducción personal nuevo</div>
+                                    <div>&gt; Uso correcto de EPP</div>
+                                    <div>&gt; Plan evacuación/sismo</div>
+                                    <div>&gt; Registros de asistencia</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Documentación Legal -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">folder_open</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Documentación Legal y Registros
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Confeccionamos y mantenemos actualizada toda la documentación legal de la empresa, evitando sanciones y asegurando la preparación ante inspecciones.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Legajos por establecimiento</div>
+                                    <div>&gt; Registro de entrega de EPP</div>
+                                    <div>&gt; Reportes e investigación</div>
+                                    <div>&gt; Gestiones ante SRT/ART</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Asesoramiento en Obras -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">engineering</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Asesoramiento en Obras y Presencia en Planta
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Acompañamiento continuo en empresas constructoras e industriales. La presencia del profesional en el campo garantiza el cumplimiento operativo real.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Visitas de inspección en campo</div>
+                                    <div>&gt; Legajos de obra (Dec. 911/96)</div>
+                                    <div>&gt; Habilitaciones IERIC/SRT</div>
+                                    <div>&gt; Coordinación con inspectores</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 7: Carga de Fuego -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">local_fire_department</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Estudio de Carga de Fuego
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Cálculo de carga de fuego en sectores de incendio según Dec. 351/79, determinando el riesgo del establecimiento y requisitos de protección necesarios.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Relevamiento combustibles</div>
+                                    <div>&gt; Cálculo de Mcal/m²</div>
+                                    <div>&gt; Tipo/Cantidad de extintores</div>
+                                    <div>&gt; Planos de evacuación</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 8: Iluminación Res. SRT 84/12 -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">lightbulb</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Protocolo de Iluminación — Res. SRT 84/12
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Medición y evaluación de niveles de iluminación en puestos de trabajo, garantizando el cumplimiento de los valores mínimos requeridos por la ley.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Medición luxómetro calibrado</div>
+                                    <div>&gt; Comparación valores límites</div>
+                                    <div>&gt; Identificación de desvíos</div>
+                                    <div>&gt; Protocolo digital SRT/ART</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 9: Ruido Res. SRT 85/12 -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">hearing</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Protocolo de Ruido — Res. SRT 85/12
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Medición de exposición ocupacional al ruido para proteger la salud auditiva de los trabajadores y cumplir con las presentaciones periódicas obligatorias.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Sonometría por puesto</div>
+                                    <div>&gt; Cálculo dosis diaria LEX</div>
+                                    <div>&gt; Recomendaciones técnicas</div>
+                                    <div>&gt; Protocolo unificado SRT</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 10: Ergonomía -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">accessibility</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Protocolo de Ergonomía
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Evaluación ergonómica de puestos de trabajo mediante métodos científicos (RULA, REBA, NIOSH) para prevenir trastornos musculoesqueléticos en operarios.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Análisis biomecánico/cargas</div>
+                                    <div>&gt; Evaluación de confort</div>
+                                    <div>&gt; Matriz de riesgos ergonómicos</div>
+                                    <div>&gt; Plan de rediseño de puestos</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 11: Puesta a Tierra Res. SRT 901/15 -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">electric_bolt</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Puesta a Tierra — Res. SRT 901/15
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Medición y verificación de la puesta a tierra en planta e instalaciones de obra según norma IRAM 2281, minimizando riesgos por descargas indirectas.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Medición telurómetro calibrado</div>
+                                    <div>&gt; Control continuidad PAT</div>
+                                    <div>&gt; Informe técnico y planos</div>
+                                    <div>&gt; Presentación oficial ART/SRT</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 12: Trabajos en Altura Res. SRT 61/2023 -->
+                        <div class="glass-card p-6 rounded-sm border border-tech-cyan/10 hover:border-tech-cyan/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 shadow-sm">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-2xl">vertical_align_top</span>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-primary dark:text-white uppercase tracking-wide">
+                                    Trabajos en Altura — Res. SRT 61/2023
+                                </h3>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Asesoramiento especializado, diseño de procedimientos operativos y control documental riguroso bajo la nueva resolución argentina de trabajos en altura.
+                                </p>
+                            </div>
+                            <div class="space-y-1.5 pt-2">
+                                <span class="block font-mono text-[9px] uppercase tracking-wider text-gray-500">Deliverables técnicos:</span>
+                                <div class="bg-black/5 dark:bg-black/40 font-mono text-[10px] p-3 border-l-2 border-tech-cyan text-gray-700 dark:text-gray-300 space-y-1 overflow-x-auto">
+                                    <div>&gt; Protocolos Res. 61/2023</div>
+                                    <div>&gt; Inspección líneas de vida/EPP</div>
+                                    <div>&gt; Plan de rescate en altura</div>
+                                    <div>&gt; Capacitación y aptitud física</div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">📝</div>
-                            <div class="psyh-pregunta-titulo">Programa Anual de Higiene y Seguridad</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Elaboramos y gestionamos el Programa Anual de Higiene y Seguridad en el Trabajo exigido
-                                por la SRT. El programa contempla todas las acciones preventivas planificadas para el
-                                año, con objetivos medibles y seguimiento periódico.</p>
-                            <ul>
-                                <li>Confección del Programa conforme normativa SRT</li>
-                                <li>Definición de metas e indicadores</li>
-                                <li>Seguimiento trimestral de avance</li>
-                                <li>Presentación ante ART y organismos de control</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">⚠️</div>
-                            <div class="psyh-pregunta-titulo">Identificación y Evaluación de Riesgos (IPER)</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Identificamos los peligros presentes en cada puesto de trabajo, evaluamos su nivel de
-                                riesgo y definimos las medidas de control más adecuadas, siguiendo metodologías
-                                reconocidas internacionalmente.</p>
-                            <ul>
-                                <li>Matrices IPER por puesto y sector</li>
-                                <li>Evaluación de riesgos físicos, químicos y ergonómicos</li>
-                                <li>Plan de acción con medidas preventivas y correctivas</li>
-                                <li>Actualización ante cambios en los procesos</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🧑‍🏫</div>
-                            <div class="psyh-pregunta-titulo">Capacitación y Formación del Personal</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Diseñamos e implementamos planes de capacitación adaptados a los riesgos específicos de
-                                su empresa y a los requisitos legales aplicables, con registros válidos para la SRT.</p>
-                            <ul>
-                                <li>Inducción de seguridad para personal nuevo</li>
-                                <li>Uso correcto de EPP por puesto</li>
-                                <li>Plan de evacuación y emergencias</li>
-                                <li>Primeros auxilios básicos</li>
-                                <li>Registros firmados y archivo legal</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🗂️</div>
-                            <div class="psyh-pregunta-titulo">Documentación Legal y Registros</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Confeccionamos y mantenemos actualizada toda la documentación que exige la normativa
-                                vigente, evitando sanciones y asegurando que la empresa esté preparada para cualquier
-                                inspección.</p>
-                            <ul>
-                                <li>Legajos por establecimiento y empleado</li>
-                                <li>Registros de capacitaciones y entrega de EPP</li>
-                                <li>Investigación de accidentes e incidentes</li>
-                                <li>Planillas de inspección periódica</li>
-                                <li>Gestión ante SRT y ART</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🏗️</div>
-                            <div class="psyh-pregunta-titulo">Asesoramiento en Obras y Presencia en Planta</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Ofrecemos acompañamiento profesional continuo en empresas constructoras, industriales y
-                                de servicios. La presencia regular del responsable de higiene y seguridad garantiza el
-                                cumplimiento operativo día a día.</p>
-                            <ul>
-                                <li>Visitas periódicas a obra o planta</li>
-                                <li>Confección de legajos de obra (Dec. 911/96)</li>
-                                <li>Gestión ante IERIC y SRT en construcción</li>
-                                <li>Coordinación con aseguradoras y organismos</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🔥</div>
-                            <div class="psyh-pregunta-titulo">Estudio de Carga de Fuego</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Realizamos el cálculo de la carga de fuego de los sectores de incendio conforme a la
-                                normativa vigente (Dec. 351/79, Anexo VII). El estudio determina el riesgo de incendio
-                                de cada sector y define los requisitos de protección contra incendios aplicables.</p>
-                            <ul>
-                                <li>Relevamiento de materiales combustibles por sector</li>
-                                <li>Cálculo de carga de fuego en Mcal/m²</li>
-                                <li>Determinación del potencial extintor requerido</li>
-                                <li>Informe técnico para presentación ante organismos</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">💡</div>
-                            <div class="psyh-pregunta-titulo">Protocolo de Iluminación — Res. SRT 84/12</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Medición y evaluación de los niveles de iluminación en los puestos de trabajo, conforme a
-                                la Resolución SRT 84/12. El protocolo verifica el cumplimiento de los valores mínimos
-                                establecidos para cada tipo de tarea y ambiente.</p>
-                            <ul>
-                                <li>Medición con luxómetro calibrado por puesto de trabajo</li>
-                                <li>Comparación con valores de referencia de la norma</li>
-                                <li>Identificación de sectores con iluminación deficiente</li>
-                                <li>Informe técnico con recomendaciones de mejora</li>
-                                <li>Presentación ante ART en formato exigido por SRT</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🔊</div>
-                            <div class="psyh-pregunta-titulo">Protocolo de Ruido — Res. SRT 85/12</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Evaluación de la exposición de los trabajadores al ruido ocupacional conforme a la
-                                Resolución SRT 85/12. Determinamos si los niveles de exposición superan los límites
-                                permisibles y establecemos las medidas de control necesarias.</p>
-                            <ul>
-                                <li>Medición de niveles de presión sonora por puesto</li>
-                                <li>Cálculo de dosis de exposición diaria (LEX,8h)</li>
-                                <li>Evaluación de riesgo de hipoacusia laboral</li>
-                                <li>Recomendaciones de control técnico y uso de EPP auditivo</li>
-                                <li>Informe en formato SRT para presentación ante ART</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🪑</div>
-                            <div class="psyh-pregunta-titulo">Protocolo de Ergonomía</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Evaluación ergonómica de los puestos de trabajo para identificar factores de riesgo
-                                musculoesquelético y de confort. Aplicamos metodologías reconocidas (RULA, REBA, NIOSH)
-                                según el tipo de tarea evaluada.</p>
-                            <ul>
-                                <li>Análisis de posturas, movimientos repetitivos y manejo manual de cargas</li>
-                                <li>Evaluación de condiciones de confort en puestos de trabajo</li>
-                                <li>Informe con nivel de riesgo por puesto</li>
-                                <li>Plan de mejoras ergonómicas y rediseño de puestos</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">⚡</div>
-                            <div class="psyh-pregunta-titulo">Puesta a Tierra — Res. SRT 901/15</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Verificación y documentación de las instalaciones de puesta a tierra conforme a la
-                                Resolución SRT 901/15 y la norma IRAM 2281. La correcta puesta a tierra es un requisito
-                                legal indispensable para la protección de los trabajadores frente a riesgos eléctricos.
+                    
+                    <!-- CTA -->
+                    <div class="mt-16 bg-gradient-to-r from-tech-deep-blue to-black border border-white/10 rounded-sm p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
+                        <!-- Tech circles inside CTA -->
+                        <div class="absolute -top-10 -right-10 w-48 h-48 bg-tech-cyan/5 rounded-full blur-2xl pointer-events-none"></div>
+                        <div class="relative z-10 space-y-2 text-left">
+                            <h3 class="font-display font-bold text-xl sm:text-2xl text-white uppercase tracking-tight">¿Necesitas blindar tu cumplimiento legal?</h3>
+                            <p class="text-xs sm:text-sm text-gray-400 max-w-xl font-body">
+                                Consulta con nuestro equipo técnico. Evaluamos la situación de tus obras y establecemos un plan de acción preventivo e inspectivo inmediato.
                             </p>
-                            <ul>
-                                <li>Medición de resistencia de puesta a tierra con telurómetro</li>
-                                <li>Verificación de continuidad de los conductores de protección</li>
-                                <li>Informe técnico con los valores medidos y su evaluación</li>
-                                <li>Gestión de la documentación ante ART y organismos de control</li>
-                            </ul>
                         </div>
+                        <button onclick="scrollToContact()" class="relative z-10 shrink-0 px-8 py-4 bg-tech-cyan text-tech-deep-blue font-mono text-xs uppercase tracking-[0.2em] font-bold rounded-sm tech-glow-cyan transition-all duration-300 hover:bg-white hover:text-black">
+                            Solicitar consulta técnica →
+                        </button>
                     </div>
-
-                    <div class="psyh-item">
-                        <div class="psyh-pregunta" onclick="psyhToggle(this)">
-                            <div class="psyh-pregunta-icono">🧗</div>
-                            <div class="psyh-pregunta-titulo">Trabajos en Altura — Res. SRT 61/2023</div>
-                            <span class="psyh-chevron">▼</span>
-                        </div>
-                        <div class="psyh-respuesta">
-                            <p>Asesoramiento y documentación para la gestión segura de trabajos en altura conforme a la
-                                Resolución SRT 61/2023. Los trabajos en altura son una de las principales causas de
-                                accidentes graves y mortales, requiriendo un enfoque técnico riguroso.</p>
+                </div>
+            </section>
+        </div>les, requiriendo un enfoque técnico riguroso.</p>
                             <ul>
                                 <li>Elaboración de procedimientos de trabajo en altura</li>
                                 <li>Evaluación de riesgos específicos por tarea y altura</li>
