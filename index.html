@@ -35,6 +35,11 @@
                         blueprint: "rgba(42, 65, 94, 0.05)",
                         "tech-gray": "#E8EAED",
                         "tech-gray-dark": "#1A1D21",
+                        "tech-deep-blue": "#0B132B",
+                        "tech-cyan": "#06B6D4",
+                        "tech-cyan-glow": "#00F2FE",
+                        "tech-green": "#10B981",
+                        "tech-slate": "#1E293B",
                     },
                     fontFamily: {
                         display: ["Space Grotesk", "sans-serif"],
@@ -996,6 +1001,79 @@
             }
         }
 
+        /* ===== HIGH-TECH B2B STYLES ===== */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(42, 65, 94, 0.08);
+        }
+        .dark .glass-card {
+            background: rgba(11, 19, 43, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .tech-glow-cyan {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.2);
+            border-color: rgba(6, 182, 212, 0.3);
+        }
+        .tech-glow-cyan:hover {
+            box-shadow: 0 0 35px -5px rgba(0, 242, 254, 0.4);
+            border-color: rgba(0, 242, 254, 0.6);
+        }
+
+        .tech-glow-green {
+            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.2);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+        .tech-glow-green:hover {
+            box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.4);
+            border-color: rgba(16, 185, 129, 0.6);
+        }
+
+        /* Tech blueprint custom animated background */
+        .tech-grid-overlay {
+            background-size: 20px 20px;
+            background-image: 
+                radial-gradient(circle, rgba(6, 182, 212, 0.15) 1px, transparent 1px);
+        }
+
+        .pulsing-dot-green {
+            animation: pulseGreen 2s infinite alternate;
+        }
+        @keyframes pulseGreen {
+            0% {
+                transform: scale(0.9);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+            }
+            100% {
+                transform: scale(0.9);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+
+        .pulsing-dot-cyan {
+            animation: pulseCyan 2s infinite alternate;
+        }
+        @keyframes pulseCyan {
+            0% {
+                transform: scale(0.9);
+                box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7);
+            }
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 8px rgba(6, 182, 212, 0);
+            }
+            100% {
+                transform: scale(0.9);
+                box-shadow: 0 0 0 0 rgba(6, 182, 212, 0);
+            }
+        }
+
         /* ===== FIN CONTACTO ===== */
     </style>
 </head>
@@ -1054,105 +1132,216 @@
 
         <!-- ===== VISTA: HOME ===== -->
         <div id="view-home" class="view-section active w-full">
-            <!-- HERO -->
-            <div class="ph-hero">
-                <div class="ph-hero-tag">Consultoría Profesional</div>
-                <h1>Gestionamos el <span>cumplimiento normativo</span> para que vos te enfoques en tu negocio</h1>
-                <p>Asesoramos a empresas de todos los sectores en Seguridad e Higiene Laboral y en la implementación y
-                    certificación de normas ISO, con soluciones concretas y acompañamiento continuo.</p>
-                <div class="ph-hero-ctas">
-                    <button class="ph-btn-primary" onclick="cambiarVistaPrincipal('view-sih')">Seguridad e
-                        Higiene</button>
-                    <button class="ph-btn-secondary" onclick="cambiarVistaPrincipal('view-iso')">Certificaciones
-                        ISO</button>
-                </div>
-            </div>
-
-
-
-            <!-- QUIÉNES SOMOS -->
-            <div class="ph-quienes">
-                <div class="ph-quienes-texto">
-                    <h2>¿Por qué elegir Praxia?</h2>
-                    <div class="ph-linea"></div>
-                    <p>Somos una consultora argentina especializada en gestión de la seguridad, salud ocupacional y
-                        sistemas integrados de calidad. Trabajamos con empresas de construcción, industria, servicios y
-                        comercio en todo el país.</p>
-                    <p>Nuestro enfoque combina el conocimiento técnico profundo de la normativa argentina con las
-                        mejores prácticas internacionales, brindando soluciones prácticas y sostenibles en el tiempo.
+            
+            <!-- SECTION 1: HERO IMPACTANTE -->
+            <section class="relative w-full overflow-hidden bg-gradient-to-br from-tech-deep-blue via-[#0d1b2a] to-black text-white py-28 lg:py-36 px-6 md:px-12 flex flex-col items-center justify-center border-b border-white/5">
+                <!-- Tech grid overlay -->
+                <div class="absolute inset-0 tech-grid-overlay opacity-30 pointer-events-none"></div>
+                
+                <!-- Glowing tech circles -->
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-tech-cyan/10 rounded-full blur-[120px] pointer-events-none"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-tech-green/5 rounded-full blur-[150px] pointer-events-none"></div>
+                
+                <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8 flex flex-col items-center">
+                    
+                    <!-- Tech tag -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tech-cyan/10 border border-tech-cyan/30 text-tech-cyan text-xs font-mono uppercase tracking-[0.2em]">
+                        <span class="w-2 h-2 rounded-full bg-tech-cyan pulsing-dot-cyan"></span>
+                        ADN Digital · Coherencia Operacional
+                    </div>
+                    
+                    <!-- Main Title -->
+                    <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white uppercase tracking-tight leading-[1.1] max-w-4xl">
+                        Sistemas de Gestión Inteligentes <br class="hidden sm:inline" />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-tech-cyan to-tech-green">para Ingeniería y Construcción.</span>
+                    </h1>
+                    
+                    <!-- Subtitle -->
+                    <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl leading-relaxed font-body">
+                        Estructuramos tus normas ISO y Seguridad e Higiene bajo un modelo de <strong class="text-white">Coherencia Operacional</strong>. Mitiga riesgos legales y escala la eficiencia de tus obras con ADN digital.
                     </p>
-                </div>
-                <div class="ph-pilares">
-                    <div class="ph-pilar">
-                        <span class="ph-pilar-icono">🎯</span>
-                        <div>
-                            <div class="ph-pilar-titulo">Experiencia sectorial comprobada</div>
-                            <div class="ph-pilar-desc">Conocemos los desafíos reales de cada industria y adaptamos
-                                nuestras soluciones a su contexto específico.</div>
-                        </div>
-                    </div>
-                    <div class="ph-pilar">
-                        <span class="ph-pilar-icono">📋</span>
-                        <div>
-                            <div class="ph-pilar-titulo">Cumplimiento legal garantizado</div>
-                            <div class="ph-pilar-desc">Mantenemos actualizados los requisitos de la SRT y organismos de
-                                control para proteger a su empresa ante cualquier inspección o auditoría.</div>
-                        </div>
-                    </div>
-                    <div class="ph-pilar">
-                        <span class="ph-pilar-icono">🤝</span>
-                        <div>
-                            <div class="ph-pilar-titulo">Acompañamiento continuo</div>
-                            <div class="ph-pilar-desc">No entregamos documentos y nos retiramos. Estamos presentes en
-                                cada etapa del proceso, hasta la certificación y más allá.</div>
-                        </div>
-                    </div>
-                    <div class="ph-pilar">
-                        <span class="ph-pilar-icono">💡</span>
-                        <div>
-                            <div class="ph-pilar-titulo">Tecnología aplicada con AXIO</div>
-                            <div class="ph-pilar-desc">Nuestra plataforma propia digitaliza la gestión de auditorías y
-                                el seguimiento de indicadores en tiempo real.</div>
-                        </div>
+                    
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-5 pt-6 w-full sm:w-auto justify-center">
+                        <button onclick="scrollToLeadMagnet()" class="group relative px-8 py-4.5 bg-tech-cyan text-tech-deep-blue font-mono text-xs uppercase tracking-[0.2em] font-bold rounded-sm tech-glow-cyan transition-all duration-300 hover:bg-white hover:text-black flex items-center justify-center gap-2">
+                            Descargar Kit de Autodiagnóstico
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">download</span>
+                        </button>
+                        <button onclick="scrollToContact()" class="px-8 py-4.5 border border-white/20 bg-white/5 text-white font-mono text-xs uppercase tracking-[0.2em] rounded-sm hover:border-tech-cyan hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2">
+                            Agendar Videollamada Técnica
+                            <span class="material-symbols-outlined text-sm text-tech-cyan">calendar_today</span>
+                        </button>
                     </div>
                 </div>
-            </div>
-
-            <!-- RESUMEN DE SERVICIOS -->
-            <div class="ph-servicios-wrap">
-                <h2>Nuestros Servicios</h2>
-                <p class="ph-subtitulo">Tres pilares para la excelencia operativa y el cumplimiento normativo</p>
-                <div class="ph-servicios-grid">
-
-                    <div class="ph-servicio-card">
-                        <span class="ph-servicio-icono">📊</span>
-                        <h3>AXIO — Plataforma de Auditoría</h3>
-                        <p>Sistema digital propio para la gestión de auditorías internas, seguimiento de no
-                            conformidades y análisis de indicadores de seguridad y calidad en tiempo real.</p>
-                        <button class="ph-servicio-link" onclick="cambiarVistaPrincipal('view-axio')">Conocer AXIO
-                            →</button>
+            </section>
+            
+            <!-- SECTION 2: ENFOQUE DUAL (Doble Columna) -->
+            <section class="w-full py-24 px-6 md:px-12 bg-background-light dark:bg-background-dark transition-colors duration-300 relative">
+                <div class="max-w-7xl mx-auto">
+                    
+                    <!-- Header -->
+                    <div class="text-center mb-16 space-y-3">
+                        <div class="font-mono text-xs text-tech-cyan dark:text-tech-cyan uppercase tracking-[0.2em]">Enfoque Metodológico</div>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary dark:text-white uppercase tracking-tight">
+                            El Enfoque Dual de <span class="font-light opacity-80">PRAXIA</span>
+                        </h2>
+                        <div class="w-16 h-1 bg-tech-cyan mx-auto"></div>
                     </div>
-
-                    <div class="ph-servicio-card">
-                        <span class="ph-servicio-icono">🦺</span>
-                        <h3>Seguridad e Higiene Laboral</h3>
-                        <p>Asesoramiento integral en materia de seguridad e higiene conforme a la Ley 19587.
-                            Diagnóstico, programa anual, capacitaciones, documentación y gestión ante la SRT.</p>
-                        <button class="ph-servicio-link" onclick="cambiarVistaPrincipal('view-sih')">Ver servicio
-                            →</button>
+                    
+                    <!-- Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                        
+                        <!-- Columna 1: Consultoría e Ingeniería Legal -->
+                        <div class="glass-card rounded-md p-8 md:p-10 flex flex-col justify-between space-y-8 transition-all duration-300 hover:translate-y-[-4px] hover:shadow-xl relative overflow-hidden group">
+                            <!-- Technical corner mark -->
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-tech-cyan/5 rounded-bl-full pointer-events-none transition-all duration-300 group-hover:bg-tech-cyan/10"></div>
+                            
+                            <div class="space-y-6">
+                                <div class="w-14 h-14 rounded-sm bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center text-tech-cyan">
+                                    <span class="material-symbols-outlined text-3xl">gavel</span>
+                                </div>
+                                <h3 class="font-display font-bold text-xl sm:text-2xl text-primary dark:text-white uppercase tracking-wide">
+                                    Consultoría e Ingeniería Legal
+                                </h3>
+                                <p class="text-sm md:text-base text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Diseño e implementación de Sistemas de Gestión (ISO 9001, 45001, 14001) y planes de Seguridad e Higiene adaptados a la realidad de contratistas y constructoras.
+                                </p>
+                                
+                                <ul class="space-y-3 font-mono text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 pt-2">
+                                    <li class="flex items-center gap-3">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-tech-cyan"></span>
+                                        ISO 9001, 14001 & 45001
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-tech-cyan"></span>
+                                        Planes de Seguridad e Higiene SRT
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-tech-cyan"></span>
+                                        Mitigación y Blindaje de Riesgo Legal
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="pt-4 flex flex-wrap gap-4">
+                                <button onclick="cambiarVistaPrincipal('view-iso')" class="px-6 py-3 border border-primary/20 dark:border-white/10 text-primary dark:text-white font-mono text-xs uppercase tracking-widest rounded-sm hover:border-tech-cyan hover:text-tech-cyan dark:hover:text-tech-cyan transition-colors">
+                                    Explorar ISO →
+                                </button>
+                                <button onclick="cambiarVistaPrincipal('view-sih')" class="px-6 py-3 border border-primary/20 dark:border-white/10 text-primary dark:text-white font-mono text-xs uppercase tracking-widest rounded-sm hover:border-tech-cyan hover:text-tech-cyan dark:hover:text-tech-cyan transition-colors">
+                                    Seguridad e Higiene →
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Columna 2: Inteligencia Operacional (Powered by AXIO) -->
+                        <div class="glass-card rounded-md p-8 md:p-10 flex flex-col justify-between space-y-8 transition-all duration-300 hover:translate-y-[-4px] hover:shadow-xl relative overflow-hidden group">
+                            <!-- Technical corner mark -->
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-tech-green/5 rounded-bl-full pointer-events-none transition-all duration-300 group-hover:bg-tech-green/10"></div>
+                            
+                            <div class="space-y-6">
+                                <div class="w-14 h-14 rounded-sm bg-tech-green/10 border border-tech-green/20 flex items-center justify-center text-tech-green">
+                                    <span class="material-symbols-outlined text-3xl">query_stats</span>
+                                </div>
+                                <div class="flex items-center gap-3 flex-wrap">
+                                    <h3 class="font-display font-bold text-xl sm:text-2xl text-primary dark:text-white uppercase tracking-wide">
+                                        Inteligencia Operacional
+                                    </h3>
+                                    <span class="px-2 py-0.5 rounded-full bg-tech-green/15 text-tech-green font-mono text-[9px] uppercase tracking-widest border border-tech-green/30">
+                                        Powered by AXIO
+                                    </span>
+                                </div>
+                                <p class="text-sm md:text-base text-gray-600 dark:text-gray-400 leading-relaxed font-body">
+                                    Llevamos la teoría a la práctica técnica. Sembramos las bases de un "Quality Firewall" para que la administración, la logística de compras y la ejecución física en obra estén 100% integradas y libres de desvíos.
+                                </p>
+                                
+                                <!-- Premium high-tech widget preview -->
+                                <div class="p-4 rounded-sm border border-tech-green/20 bg-tech-green/5 space-y-3 font-mono text-xs text-tech-green">
+                                    <div class="flex justify-between items-center border-b border-tech-green/10 pb-1.5">
+                                        <span>SYSTEM_STATUS:</span>
+                                        <span class="flex items-center gap-1.5 font-bold">
+                                            <span class="w-2 h-2 rounded-full bg-tech-green pulsing-dot-green"></span>
+                                            ACTIVE
+                                        </span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-[10px] text-gray-500 dark:text-gray-400">
+                                        <div>QUALITY FIREWALL: <span class="text-white dark:text-white font-bold bg-tech-green/20 px-1 py-0.2">ONLINE</span></div>
+                                        <div>COMPRAS DESVÍOS: <span class="text-tech-green font-bold">0.0%</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-4">
+                                <button onclick="cambiarVistaPrincipal('view-axio')" class="px-8 py-3.5 bg-tech-green text-white font-mono text-xs uppercase tracking-widest rounded-sm tech-glow-green hover:opacity-90 transition-opacity">
+                                    Explorar Plataforma AXIO →
+                                </button>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="ph-servicio-card">
-                        <span class="ph-servicio-icono">🏅</span>
-                        <h3>Sistemas de Gestión ISO</h3>
-                        <p>Preparación, implementación y auditoría previa para la certificación en ISO 9001 (Calidad),
-                            ISO 14001 (Medio Ambiente) e ISO 45001 (Seguridad y Salud en el Trabajo).</p>
-                        <button class="ph-servicio-link" onclick="cambiarVistaPrincipal('view-iso')">Ver servicio
-                            →</button>
-                    </div>
-
                 </div>
-            </div>
+            </section>
+            
+            <!-- SECTION 3: BLOQUE DESTACADO DE CONVERSIÓN (Lead Magnet) -->
+            <section id="lead-magnet-section" class="w-full py-24 px-6 md:px-12 bg-gradient-to-br from-[#0c1424] via-tech-deep-blue to-black text-white relative border-t border-white/5 overflow-hidden">
+                <!-- Tech lines -->
+                <div class="absolute inset-0 tech-grid-overlay opacity-20 pointer-events-none"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-tech-cyan/5 rounded-full blur-[150px] pointer-events-none"></div>
+                
+                <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+                    <div class="glass-card dark:bg-slate-900/60 p-8 md:p-12 rounded-sm border border-white/10 w-full shadow-2xl space-y-8">
+                        
+                        <!-- Header -->
+                        <div class="text-center space-y-3">
+                            <span class="inline-block px-3 py-1 rounded-full bg-tech-cyan/10 border border-tech-cyan/20 text-tech-cyan font-mono text-[10px] uppercase tracking-widest">
+                                Diagnóstico Sin Cargo
+                            </span>
+                            <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white uppercase tracking-tight max-w-2xl mx-auto">
+                                ¿Qué tan protegida y coordinada está tu operación hoy?
+                            </h2>
+                            <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto font-body">
+                                Accede sin costo a nuestro Kit de Autodiagnóstico de Riesgo para Constructoras y evalúa tu nivel de cumplimiento normativo y control documental en minutos.
+                            </p>
+                        </div>
+                        
+                        <!-- Form -->
+                        <form id="autodiagnosticoForm" class="space-y-6 max-w-2xl mx-auto">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                                <div class="space-y-2">
+                                    <label for="form_nombre" class="block font-mono text-[11px] uppercase tracking-widest text-gray-400">Nombre completo</label>
+                                    <input type="text" id="form_nombre" name="nombre" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-tech-cyan focus:ring-1 focus:ring-tech-cyan placeholder-gray-600 transition-colors"
+                                        placeholder="Ej: Juan Pérez" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="form_empresa" class="block font-mono text-[11px] uppercase tracking-widest text-gray-400">Empresa / Constructora</label>
+                                    <input type="text" id="form_empresa" name="empresa" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-tech-cyan focus:ring-1 focus:ring-tech-cyan placeholder-gray-600 transition-colors"
+                                        placeholder="Ej: Constructora S.A." />
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="form_email" class="block font-mono text-[11px] uppercase tracking-widest text-gray-400">Email corporativo</label>
+                                    <input type="email" id="form_email" name="email" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-tech-cyan focus:ring-1 focus:ring-tech-cyan placeholder-gray-600 transition-colors"
+                                        placeholder="juan@empresa.com" />
+                                </div>
+                            </div>
+                            
+                            <div class="pt-4 flex flex-col items-center">
+                                <button type="submit" class="w-full md:w-auto px-10 py-4 bg-tech-cyan text-tech-deep-blue font-mono text-xs uppercase tracking-[0.25em] font-bold rounded-sm tech-glow-cyan hover:bg-white hover:text-black transition-all duration-300">
+                                    Descargar Kit de Autodiagnóstico
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <!-- Contact link underneath -->
+                        <div class="text-center pt-2">
+                            <a href="#contacto" onclick="scrollToContact(); return false;" class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-tech-cyan hover:text-white transition-colors">
+                                <span class="w-1.5 h-1.5 rounded-full bg-tech-cyan pulsing-dot-cyan"></span>
+                                ¿Prefieres una sesión personalizada? Agenda una videoconferencia técnica de 30 minutos aquí
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
         <!-- ===== FIN VISTA: HOME ===== -->
 
@@ -2041,7 +2230,115 @@
             // Scrollear hacia arriba suavemente si el usuario estaba abajo
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // ===== NUEVAS FUNCIONES SCROLL & FORMULARIO (LEAD MAGNET) =====
+        function scrollToLeadMagnet() {
+            const section = document.getElementById('lead-magnet-section');
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Smooth scroll helper specifically to bypass route defaults
+        function scrollToContact() {
+            const section = document.getElementById('contacto');
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('successModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+            // Reset form
+            const form = document.getElementById('autodiagnosticoForm');
+            if (form) {
+                form.reset();
+            }
+        }
+
+        function downloadKit() {
+            alert('Descargando Kit de Autodiagnóstico de Riesgo... ¡Gracias por confiar en Praxia!');
+            closeSuccessModal();
+        }
+
+        // Intercept form submission
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('autodiagnosticoForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('form_nombre').value;
+                    const company = document.getElementById('form_empresa').value;
+                    const email = document.getElementById('form_email').value;
+                    
+                    // Fill modal details
+                    document.getElementById('modal_username').innerText = name;
+                    document.getElementById('modal_company').innerText = company;
+                    document.getElementById('modal_email').innerText = email;
+                    
+                    // Show modal
+                    const modal = document.getElementById('successModal');
+                    if (modal) {
+                        modal.classList.remove('hidden');
+                        modal.classList.add('flex');
+                    }
+                });
+            }
+        });
     </script>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SUCCESS MODAL (LEAD MAGNET)                     -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="successModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-md px-4">
+        <div class="glass-card max-w-lg w-full p-8 rounded-sm border border-tech-cyan/20 text-center relative overflow-hidden flex flex-col items-center space-y-6">
+            <!-- Glowing circles -->
+            <div class="absolute -top-10 -left-10 w-32 h-32 bg-tech-cyan/15 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-tech-green/15 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="w-16 h-16 rounded-full bg-tech-cyan/15 border border-tech-cyan/30 flex items-center justify-center text-tech-cyan animate-bounce">
+                <span class="material-symbols-outlined text-4xl">task_alt</span>
+            </div>
+
+            <h3 class="font-display font-bold text-2xl text-white uppercase tracking-tight">
+                ¡Autodiagnóstico Preparado!
+            </h3>
+
+            <p class="text-sm text-gray-300 leading-relaxed font-body">
+                Hola <strong id="modal_username" class="text-white"></strong>, hemos generado exitosamente tu diagnóstico técnico. El Kit de Autodiagnóstico de Riesgo para <strong id="modal_company" class="text-white"></strong> ha sido enviado a <strong id="modal_email" class="text-white"></strong>.
+            </p>
+
+            <div class="p-4 rounded-sm border border-tech-green/20 bg-tech-green/5 w-full text-left space-y-2 font-mono text-[11px] text-tech-green">
+                <div class="flex justify-between items-center">
+                    <span>ARCHIVO:</span>
+                    <span class="font-bold text-white">Kit_Autodiagnostico_Praxia.pdf</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>TAMAÑO:</span>
+                    <span>4.8 MB</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>ESTADO:</span>
+                    <span class="px-1.5 py-0.2 bg-tech-green/20 font-bold uppercase tracking-widest text-[9px] text-tech-green">Listo para descargar</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 w-full">
+                <a href="#" onclick="downloadKit(); return false;" class="flex-1 px-6 py-3.5 bg-tech-cyan text-tech-deep-blue font-mono text-xs uppercase tracking-widest font-bold text-center rounded-sm tech-glow-cyan hover:bg-white transition-all duration-300 flex items-center justify-center gap-2">
+                    Descargar Ahora
+                    <span class="material-symbols-outlined text-sm">download</span>
+                </a>
+                <button onclick="closeSuccessModal()" class="flex-1 px-6 py-3.5 border border-white/20 hover:border-white text-white font-mono text-xs uppercase tracking-widest text-center rounded-sm hover:bg-white/5 transition-colors">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
